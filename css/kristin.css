@@ -1,0 +1,48 @@
+.network-name {
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.loadInfo {
+    font-size: 11px;
+}
+
+.justify {
+    text-align: justify;
+}
+.mid {
+    text-align: center;
+}
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+
+footer {
+    background-color: #505050;
+}
+
+p.copyright {
+    color: white;
+    margin: 10px 0 0;
+}
+
+ul.tos {
+    margin-left: 50px;
+    list-style-type: circle;
+}
+
+li.title {
+    margin: 10px 0;
+}
+
+.important {
+    font-size: 20px;
+}
+
+
