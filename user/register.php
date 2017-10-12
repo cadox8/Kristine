@@ -1,5 +1,7 @@
 <?php
-require "data/start.php";
+require "../data/init.php";
+
+$fol = false;
 
 if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['email'])){
     $username = mysqli_real_escape_string($mysql, stripslashes($_POST['name']));
@@ -21,12 +23,12 @@ if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) &&
 <html lang="en">
 
 <head>
-    <?php include "head.php"; ?>
+    <?php include "../static/head.php"; ?>
 </head>
 
     <body>
 
-    <?php include "header.php"; ?>
+    <?php include "../static/header.php"; ?>
 
     <!-- Page -->
     <section class="section">
@@ -87,7 +89,7 @@ if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) &&
             </div>
         </div>
     </section>
-    <?php include "footer.html"; ?>
+    <?php include "../static/footer.php"; ?>
 </body>
 
 </html>

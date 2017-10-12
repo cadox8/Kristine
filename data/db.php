@@ -1,10 +1,10 @@
 <?php
 date_default_timezone_set('Europe/Madrid');
 
-define('DBHOST','localhost');
-define('DBUSER','root');
-define('DBPASS','password');
-define('DBNAME','kristin');
+define('DBHOST', 'localhost');
+define('DBUSER', 'root');
+define('DBPASS', 'password');
+define('DBNAME', 'kristine');
 
 $mysql = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 

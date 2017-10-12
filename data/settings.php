@@ -1,9 +1,8 @@
 <?php
-$siteName = "Kristine";
-$forumName = "Kristine";
-
-$private = false;
+define('forumName', 'Kristine');
 
 //Do not touch
-$author = "cadox8";
-$version = "0.0.4";
+define('private', false);
+
+define('author', 'cadox8');
+define('version', '0.0.4');

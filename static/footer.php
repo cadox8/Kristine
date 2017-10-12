@@ -7,11 +7,15 @@
                 <span class="icon is-small"><i style="color: purple" class="fa fa-heart"></i></span> by
                 <a class="copyright text-muted small" style="color:yellow;" target="_blank" href="http://cadox8.me">Cadox8</a>.
             </p>
-            <p class="loadInfo" style="color: white" id="loadTime"> Getting time...</p>
+            <time class="loadInfo" style="color: white" id="loadTime"> Getting time...</time>
         </div>
     </div>
 </footer>
 
 <!-- JavaScript -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/bulma.js"></script>
+<?php
+    $jsFolder = "js/";
+    if (!$fol) $jsFolder = "../js/";
+    echo '<script type="text/javascript" src="'.$jsFolder.'bulma.js"></script>';
+?>
