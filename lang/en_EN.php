@@ -18,6 +18,10 @@ $lang['PASSWORD'] = 'Password';
 $lang['EMAIL'] = 'Email';
 $lang['NEW_ACCOUNT'] = 'Create new account';
 $lang['NEW_USER'] = 'New user';
+$lang['AE'] = ' already exists.';
+$lang['NM'] = ' does not match.';
+$lang['UR_ERROR'] = 'Failed to complete registration.';
+$lang['SUCCESS'] = 'User Created Successfully.<br>Now you can Log In.';
 
 // Utils
 $lang['PLEASE'] = 'Please';

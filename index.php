@@ -19,17 +19,24 @@
                     $catQuery = $mysql->query("SELECT * FROM `cat`");
 
                     while($cat = $catQuery->fetch_array()) {
-                        echo '<h1 class="title is-4">' . $cat['title'] . '</h1>';
-
                         $catID = $cat['id'];
+                        echo '<table class="table is-fullwidth" id="cat.'.$catID.'">';
+                        echo '<thead><tr class="is-selected"><th><a href="#cat.'.$catID.'"><span class="icon"><i class="fa fa-folder-open-o"></i></span></span> ' . $cat['title'].'</a></th>';
+                        echo '<th>Forums</th>';
+                        echo '<th>Latest</th>';
+                        echo '</tr></thead><tbody>';
+                        //echo '<h1 class="title is-4">' . $cat['title'] . '</h1>';
+
                         $forumQuery = $mysql->query("SELECT * FROM `forum` WHERE `cat`= $catID");
 
                         //Forums
                         while ($forum = $forumQuery->fetch_array()) {
-                            echo '<a href="forum.php?forumID='.$forum['id'].'">' . $forum['title'] . '</a><br>';
+                            echo '<tr><th><a href="forum.php?forumID='.$forum['id'].'">' . $forum['title'] . '</a></th>';
+                            echo '<td>'.$forumQuery->num_rows.'</td>';
+                            echo '<td>None</td></tr>';
 
-                            $forumID = $forum['id'];
-                           /* $postQuery = $mysql->query("SELECT * FROM `posts` WHERE `forum`= $forumID");
+                            /* $forumID = $forum['id'];
+                           $postQuery = $mysql->query("SELECT * FROM `posts` WHERE `forum`= $forumID");
 
                             while ($posts = $postQuery->fetch_array()) {
                                 $author = $posts['author'];
@@ -42,6 +49,8 @@
                             $postQuery->free(); */
                         }
                         $forumQuery->free();
+                        echo '</tbody>';
+                        echo '</table>';
                     }
                     $catQuery->free();
                     ?>

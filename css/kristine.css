@@ -24,12 +24,6 @@ p.copyright {
 }
 
 /* Utils */
-.justify {
-    text-align: justify;
-}
-.mid {
-    text-align: center;
-}
 .right {
     float: right;
 }
@@ -37,13 +31,8 @@ p.copyright {
     float: left;
 }
 
-.bold {
-    font-weight: bold;
-}
+/* Tables */
 
-.black {
-    color: black;
-}
 
 /* Old CSS v0.0.1 */
 .network-name {
@@ -52,19 +41,6 @@ p.copyright {
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 2px;
-}
-
-ul.tos {
-    margin-left: 50px;
-    list-style-type: circle;
-}
-
-li.title {
-    margin: 10px 0;
-}
-
-.important {
-    font-size: 20px;
 }
 
 
