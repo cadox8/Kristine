@@ -5,4 +5,4 @@ define('forumName', 'Kristine');
 define('private', false);
 
 define('author', 'cadox8');
-define('version', '0.0.4');
+define('version', '0.0.5 Alpha');
