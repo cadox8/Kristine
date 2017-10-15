@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="theme-color" content="#B21EC9">
 
+<!-- Stuff -->
+<meta property="og:title" content=<?php echo forumName; ?>>
+<meta property="og:description" content="Simple forum made with bulmaCSS">
+<meta name="author" content="cadox8">
+<meta name="twitter:card" content="summary">
+
 <!-- CSS & Favicon -->
 <?php
     $bulmaCSS = "css/bulma.css";

@@ -65,7 +65,7 @@ if (isset($_POST['name']) && isset($_POST['pass'])){
                                 <div class="control">
                                     <button class="button is-primary" type="submit"><?php echo $lang['LOG_IN']; ?></button>
                                 </div>
-                                <label class="label"><?php echo $lang['QUEST_START'].$lang['NEW_USER'].$lang['QUEST_END'].' <a href="register.php" target="_blank">'.$lang['NEW_ACCOUNT'].'</a>'; ?>.</label>
+                                <label class="label"><?php echo $lang['QUEST_START'].$lang['NEW_USER'].$lang['QUEST_END'].' <a href="register.php">'.$lang['NEW_ACCOUNT'].'</a>'; ?>.</label>
                             </div>
                         </form>
                     </div>

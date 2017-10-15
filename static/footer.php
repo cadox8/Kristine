@@ -2,12 +2,12 @@
 <footer>
     <div class="container">
         <div class="column is-12">
-            <p class="copyright text-muted small">Copyright &copy; Kristine 2017.
+            <p class="copyright">Copyright &copy; Kristine 2017.
                 <span class="icon is-small"><i style="color: #090909" class="fa fa-code"></i></span> with
                 <span class="icon is-small"><i style="color: purple" class="fa fa-heart"></i></span> by
-                <a class="copyright text-muted small" style="color:yellow;" target="_blank" href="http://cadox8.me">Cadox8</a>.
+                <a class="copyright" style="color:yellow;" target="_blank" href="http://cadox8.me">Cadox8</a>.
             </p>
-            <time class="loadInfo" style="color: white" id="loadTime"> Getting time...</time>
+            <time class="loadTime" style="color: white" id="loadTime"> Getting time...</time>
         </div>
     </div>
 </footer>

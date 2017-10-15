@@ -37,14 +37,19 @@ CREATE TABLE IF NOT EXISTS `posts` (
 
 /* User Tables */
 CREATE TABLE IF NOT EXISTS `users` (
-  `id`         INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name`       VARCHAR(50)      NOT NULL DEFAULT '',
-  `email`      VARCHAR(100)     NOT NULL,
-  `pass`       VARCHAR(50)      NOT NULL,
-  `rank`       INT(8)           NOT NULL DEFAULT 0,
-  `lang`       VARCHAR(5)       NOT NULL DEFAULT 'en_EN',
-  `points`     INT(11)          NOT NULL DEFAULT 0,
-  `icon`       VARCHAR(50)      NOT NULL DEFAULT '',
+  `id`            INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name`          VARCHAR(50)      NOT NULL DEFAULT '',
+  `email`         VARCHAR(100)     NOT NULL,
+  `pass`          VARCHAR(50)      NOT NULL,
+  `rank`          INT(8)           NOT NULL DEFAULT 0,
+  `lang`          VARCHAR(5)       NOT NULL DEFAULT 'en_EN',
+  `birthday`      TIMESTAMP        NULL,
+  `gender`        INT(1)           NOT NULL DEFAULT 0, /* 0 men, 1 women */
+  `location`      VARCHAR(5000)    NULL,
+  `firstJoin`     TIMESTAMP        NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `twitter`       VARCHAR(50)      NOT NULL DEFAULT '',
+  `points`        INT(11)          NOT NULL DEFAULT 0,
+  `icon`          VARCHAR(50)      NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name` (`name`),
   UNIQUE INDEX `email` (`email`)

@@ -20,20 +20,21 @@
 
                     while($cat = $catQuery->fetch_array()) {
                         $catID = $cat['id'];
-                        echo '<table class="table is-fullwidth" id="cat.'.$catID.'">';
-                        echo '<thead><tr class="is-selected"><th><a href="#cat.'.$catID.'"><span class="icon"><i class="fa fa-folder-open-o"></i></span></span> ' . $cat['title'].'</a></th>';
-                        echo '<th>Forums</th>';
-                        echo '<th>Latest</th>';
-                        echo '</tr></thead><tbody>';
-                        //echo '<h1 class="title is-4">' . $cat['title'] . '</h1>';
+                        echo '<nav class="level" id="cat.'.$catID.'">';
+                        echo '<div class="level-left>';
+                        echo '<div class="level-item">';
+                        echo '<a href="#cat.'.$catID.'"><span class="icon"><i class="fa fa-folder-open-o"></i></span> ' . $cat['title'].'</a>';
+                        echo '</div><div class="level-right">';
+                        echo '<p class="level-item has-text-centered">Latest</p></div>';
+                        echo '</nav><hr>';
 
                         $forumQuery = $mysql->query("SELECT * FROM `forum` WHERE `cat`= $catID");
 
                         //Forums
                         while ($forum = $forumQuery->fetch_array()) {
-                            echo '<tr><th><a href="forum.php?forumID='.$forum['id'].'">' . $forum['title'] . '</a></th>';
-                            echo '<td>'.$forumQuery->num_rows.'</td>';
-                            echo '<td>None</td></tr>';
+                            echo '<nav class="level"><div class="level-left"><div class="level-item"><div>';
+                            echo '<a href="forum.php?forumID='.$forum['id'].'">' . $forum['title'] . '</a><p class="heading">Forums: '.$forumQuery->num_rows.'</p></div></div></div>';
+                            echo '<div class="level-right"><p class="level-item">asdasdasdsadasdasdsadsadsadsadsadasdsad</p></nav>';
 
                             /* $forumID = $forum['id'];
                            $postQuery = $mysql->query("SELECT * FROM `posts` WHERE `forum`= $forumID");

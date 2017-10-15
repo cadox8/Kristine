@@ -3,12 +3,14 @@ require "../data/init.php";
 
 $fol = false;
 
+$msg = 0;
+
 if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['email'])){
     $username = mysqli_real_escape_string($mysql, stripslashes($_POST['name']));
     $email = mysqli_real_escape_string($mysql, stripslashes($_POST['email']));
     $selectedLang = $_POST['lang'];
 
-    $msg = '<div class="notification is-success">'.$lang['SUCCESS'].'</div>';
+    if ($selectedLang == '' || $selectedLang == null) $selectedLang = 'en_EN';
 
     //All Queries
     $checkUserQuery = $mysql->query("SELECT * FROM `users` WHERE `name`= '$username'");
@@ -26,6 +28,7 @@ if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) &&
                 $msg = 3;
             } else {
                 $result = $mysql->query("INSERT INTO `users` (`name`, `email`, `pass`, `lang`) VALUES ('$username', '$email', '$password', '$selectedLang')");
+                $msg = -1;
                 if(!$result) $msg = 4;
             }
         }
@@ -57,23 +60,31 @@ if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) &&
                             <h2 class="title">Please Register</h2>
 
                             <?php
-                                if(isset($msg) && $msg != 0) {
-                                    echo '<div class="notification is-danger">';
-                                    switch ($msg) {
-                                        case 1:
-                                            echo $lang['PASSWORD'].$lang['NM'];
-                                            break;
-                                        case 2:
-                                            echo $lang['USERNAME'].$lang['AE'];
-                                            break;
-                                        case 3:
-                                            echo $lang['EMAIL'].$lang['AE'];
-                                            break;
-                                        default:
-                                            echo $lang['UR_ERROR'];
-                                            break;
+                                if(isset($msg)) {
+                                    if ($msg == -1) {
+                                        echo '<div class="notification is-success">'.$lang['SUCCESS'].'</div>';
+                                    } else {
+                                        if ($msg == 0) {
+                                            echo '<div class="notification is-info">Please, fill all fields.</div>';
+                                        } else {
+                                            echo '<div class="notification is-danger">';
+                                            switch ($msg) {
+                                                case 1:
+                                                    echo $lang['PASSWORD'].$lang['NM'];
+                                                    break;
+                                                case 2:
+                                                    echo $lang['USERNAME'].$lang['AE'];
+                                                    break;
+                                                case 3:
+                                                    echo $lang['EMAIL'].$lang['AE'];
+                                                    break;
+                                                default:
+                                                    echo $lang['UR_ERROR'];
+                                                    break;
+                                            }
+                                            echo '</div>';
+                                        }
                                     }
-                                    echo '</div>';
                                 }
                             ?>
 
@@ -93,40 +104,62 @@ if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) &&
                                 </div>
                             </div>
 
-                            <label class="label">Password</label>
                             <div class="field is-horizontal">
-                                <div class="control has-icons-left">
-                                    <input class="input" type="password" name="pass1" placeholder="*********">
-                                    <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
-                                </div>
-
-                                <div class="control has-icons-left">
-                                    <input class="input" type="password" name="pass2" placeholder="*********">
-                                    <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
-                                </div>
-                            </div>
-
-                            <label class="label">Language</label>
-                            <div class="field">
-                                <div class="control">
-                                    <div class="select">
-                                        <select name="lang">
-                                            <option value="en_EN">English</option>
-                                            <option value="es_ES">Español</option>
-                                        </select>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <label class="label">Password</label>
+                                        <div class="control has-icons-left">
+                                            <input class="input" type="password" name="pass1" placeholder="*********">
+                                            <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Repeat Password</label>
+                                        <div class="control has-icons-left">
+                                            <input class="input" type="password" name="pass2" placeholder="*********">
+                                            <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <label class="label"><small>Clicking on Register, you will accept the <a href="tos.php" target="_blank">terms and conditions</a>.</small></label>
+                            <div class="field">
+                                <label class="label">I'm </label>
+                                <div class="control">
+                                    <label class="radio">
+                                        <input type="radio" name="gender">
+                                        Male
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="gender">
+                                        Female
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Language</label>
+                                <div class="control has-icons-left">
+                                    <div class="select is-primary">
+                                        <select name="lang">
+                                            <option value="en_EN" selected>English</option>
+                                            <option value="es_ES">Español</option>
+                                        </select>
+                                        <span class="icon is-small is-left"><i class="fa fa-language"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <label class="label"><small>Clicking on Register, you will accept the <a href="../help/tos.php" target="_blank">terms and conditions</a>.</small></label>
+
+                            <br>
 
                             <div class="field is-grouped">
                                 <div class="control">
                                     <button class="button is-primary" type="submit">Register</button>
                                 </div>
-                                <div class="control">
-                                    <a class="button is-info" href="login.php">Login</a>
-                                </div>
+                                <label class="label"><?php echo $lang['QUEST_START'].$lang['NOT_NEW_USER'].$lang['QUEST_END'].' <a href="register.php">'.$lang['JOIN_SITE'].'</a>'; ?>.</label>
                             </div>
                         </form>
                     </div>

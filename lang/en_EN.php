@@ -16,8 +16,12 @@ $lang['SIGN_UP'] = 'Sign Up';
 $lang['USERNAME'] = 'Username';
 $lang['PASSWORD'] = 'Password';
 $lang['EMAIL'] = 'Email';
+
 $lang['NEW_ACCOUNT'] = 'Create new account';
 $lang['NEW_USER'] = 'New user';
+$lang['NOT_NEW_USER'] = 'Have an account';
+$lang['JOIN_SITE'] = 'Go to '.$lang['LOG_IN'];
+
 $lang['AE'] = ' already exists.';
 $lang['NM'] = ' does not match.';
 $lang['UR_ERROR'] = 'Failed to complete registration.';

@@ -1,5 +1,9 @@
 /* Kristine CSS */
 
+.showInfo {
+    font-size: 14px;
+}
+
 .is-head {
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -19,7 +23,7 @@ p.copyright {
     background-color: #525451;
 }
 
-.loadInfo {
+.loadTime {
     font-size: 11px;
 }
 
