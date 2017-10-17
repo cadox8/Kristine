@@ -1,8 +1,9 @@
 <?php
 require "data/init.php";
 
-if (isset($_GET['forumID']) && is_string($_GET['forumID'])) {
+if (isset($_GET['forumID']) && isset($_GET['catName'])) {
     $aid = $_GET['forumID'];
+    $cat = $_GET['catName'];
 } else {
     header("Location: index.php");
 }
@@ -11,6 +12,8 @@ $postsQuery = $mysql->query("SELECT * FROM `posts` WHERE `forum` = $aid");
 
 /*$usersQuery = $mysql->query("SELECT * FROM `users` WHERE `user` = $forums->author");
 $users = $usersQuery->fetch_object();*/
+
+$headerTag = $cat.' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -28,25 +31,19 @@ $users = $usersQuery->fetch_object();*/
         <div class="container">
             <div class="columns">
                 <div class="column is-9">
+                    <h1 class="subtitle is-4"><?php echo $cat; ?></h1><hr>
+                    <ul>
                     <?php
                     while ($post = $postsQuery->fetch_array()) {
-                        echo '<h1 class="subtitle is-4">' . $post['title'] . '</h1><br>';
-
-                        /* $postQuery = $mysql->query("SELECT * FROM `posts` WHERE `forum`= $forumID");
-
-                         while ($posts = $postQuery->fetch_array()) {
-                             $author = $posts['author'];
-                             $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `id`= $author");
-                             $user = $usersQuery->fetch_object();
-
-                             echo $posts['title'] . ' by ' . $user->name;
-                             echo '<hr>';
-                         }
-                          */
-                        echo '<hr>';
+                        $author = $post['author'];
+                        $usersQuery = $mysql->query("SELECT `name` FROM `users` WHERE `id` = '$author'");
+                        echo '<li><a href="posts.php?id='.$post['id'].'">' . $post['title'] . '</a>';
+                        echo '<p class="heading">By: '.$usersQuery->fetch_object()->name.'</p>';
+                        echo '</li>';
                     }
                     $postsQuery->free();
                     ?>
+                    </ul>
                 </div>
             </div>
         </div>

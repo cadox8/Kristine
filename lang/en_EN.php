@@ -11,6 +11,9 @@ $lang = array();
 $lang['MENU_HOME'] = 'Home';
 $lang['LOG_IN'] = 'Log In';
 $lang['SIGN_UP'] = 'Sign Up';
+$lang['PROFILE'] = 'Profile';
+$lang['PROF_DETAILS'] = 'Details';
+$lang['PROF_SETTINGS'] = 'Settings';
 
 // Login/Register
 $lang['USERNAME'] = 'Username';
@@ -31,3 +34,11 @@ $lang['SUCCESS'] = 'User Created Successfully.<br>Now you can Log In.';
 $lang['PLEASE'] = 'Please';
 $lang['QUEST_END'] = '?';
 $lang['QUEST_START'] = '';
+
+//Ranks
+$lang['GUEST'] = 'Guest';
+$lang['MEMBER'] = 'Member';
+$lang['VIP'] = 'VIP';
+$lang['MODERATOR'] = 'Moderator';
+$lang['DEV'] = 'Developer';
+$lang['ADMIN'] = 'Administrator';

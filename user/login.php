@@ -2,22 +2,7 @@
 require "../data/init.php";
 $fol = false;
 
-if (isset($_POST['name']) && isset($_POST['pass'])){
-    $username = mysqli_real_escape_string($mysql, stripslashes($_POST['name']));
-    $password = base64_encode(mysqli_real_escape_string($mysql, stripslashes($_POST['pass'])));
-
-    $query = "SELECT * FROM `users` WHERE `name`='$username' and pass='$password'";
-    $result = mysqli_query($mysql, $query);
-
-    if(!$result) $msg = '<div class="notification is-danger">There is an error. Please, try again in some minutes.</div>';
-
-    if (mysqli_num_rows($result) != 1) {
-        $msg = '<div class="notification is-danger">Wrong username or password</div>';
-    } else {
-        $_SESSION['name'] = $username;
-        header('Location: ../index.php');
-    }
-}
+if (isset($_GET['msg'])) $msg = $_GET['msg'];
 ?>
 
 <!DOCTYPE html>
@@ -40,15 +25,26 @@ if (isset($_POST['name']) && isset($_POST['pass'])){
                         <p></p>
                     </div>
                     <div class="column is-5">
-                        <form class="is-form" method="POST" action="">
+                        <form class="is-form" method="POST" action="../core/sign_in.php">
                             <h2 class="title"><?php echo $lang['PLEASE'].', '.$lang['LOG_IN'] ?></h2>
 
-                            <?php if(isset($msg)) echo $msg; ?>
+                            <?php
+                                if(isset($msg)) {
+                                    switch ($msg) {
+                                        case 1:
+                                            echo '<div class="notification is-danger">There is an error. Please, try again in some minutes.</div>';
+                                            break;
+                                        case 2:
+                                            echo '<div class="notification is-danger">Wrong username or password</div>';
+                                            break;
+                                    }
+                                }
+                            ?>
 
                             <div class="field">
                                 <label class="label"><?php echo $lang['USERNAME']; ?></label>
                                 <div class="control has-icons-left">
-                                    <input class="input" type="text" name="name" placeholder="<?php echo $lang['USERNAME']; ?>">
+                                    <input class="input" type="text" name="name" placeholder="e.g. jonh01">
                                     <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
                                 </div>
                             </div>

@@ -27,12 +27,22 @@ p.copyright {
     font-size: 11px;
 }
 
+.image.is-profile img {
+    border-radius: 50%; !important;
+    margin-bottom: 5px; !important;
+}
+
+
+
 /* Utils */
 .right {
     float: right;
 }
 .left {
     float: left;
+}
+.mid {
+    text-align: center;
 }
 
 /* Tables */

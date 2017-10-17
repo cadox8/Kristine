@@ -20,20 +20,20 @@
 
                     while($cat = $catQuery->fetch_array()) {
                         $catID = $cat['id'];
-                        echo '<nav class="level" id="cat.'.$catID.'">';
-                        echo '<div class="level-left>';
+                        echo '<nav class="level" style="background-color: rgba(255,118,82,0.16)" id="cat.'.$catID.'">';
+                        echo '<div class="level-left">';
                         echo '<div class="level-item">';
                         echo '<a href="#cat.'.$catID.'"><span class="icon"><i class="fa fa-folder-open-o"></i></span> ' . $cat['title'].'</a>';
-                        echo '</div><div class="level-right">';
+                        echo '</div></div><div class="level-right">';
                         echo '<p class="level-item has-text-centered">Latest</p></div>';
-                        echo '</nav><hr>';
+                        echo '</nav>';
 
                         $forumQuery = $mysql->query("SELECT * FROM `forum` WHERE `cat`= $catID");
 
                         //Forums
                         while ($forum = $forumQuery->fetch_array()) {
                             echo '<nav class="level"><div class="level-left"><div class="level-item"><div>';
-                            echo '<a href="forum.php?forumID='.$forum['id'].'">' . $forum['title'] . '</a><p class="heading">Forums: '.$forumQuery->num_rows.'</p></div></div></div>';
+                            echo '<a href="forum.php?forumID='.$forum['id'].'&catName='.$cat['title'].'">' . $forum['title'] . '</a><p class="heading">Forums: '.$forumQuery->num_rows.'</p></div></div></div>';
                             echo '<div class="level-right"><p class="level-item">asdasdasdsadasdasdsadsadsadsadsadasdsad</p></nav>';
 
                             /* $forumID = $forum['id'];

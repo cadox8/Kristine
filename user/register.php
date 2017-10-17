@@ -4,36 +4,15 @@ require "../data/init.php";
 $fol = false;
 
 $msg = 0;
+if (isset($_GET['msg'])) $msg = $_GET['msg'];
 
-if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['email'])){
-    $username = mysqli_real_escape_string($mysql, stripslashes($_POST['name']));
-    $email = mysqli_real_escape_string($mysql, stripslashes($_POST['email']));
-    $selectedLang = $_POST['lang'];
-
-    if ($selectedLang == '' || $selectedLang == null) $selectedLang = 'en_EN';
-
-    //All Queries
-    $checkUserQuery = $mysql->query("SELECT * FROM `users` WHERE `name`= '$username'");
-    $checkEmailQuery = $mysql->query("SELECT * FROM `users` WHERE `email`= '$email'");
-    //
-
-    if (!hash_equals($_POST['pass1'], $_POST['pass2'])) {
-        $msg = 1;
-    } else {
-        $password = base64_encode(mysqli_real_escape_string($mysql, stripslashes($_POST['pass1'])));
-        if ($checkUserQuery->num_rows >= 1) {
-            $msg = 2;
-        } else {
-            if ($checkEmailQuery->num_rows >= 1) {
-                $msg = 3;
-            } else {
-                $result = $mysql->query("INSERT INTO `users` (`name`, `email`, `pass`, `lang`) VALUES ('$username', '$email', '$password', '$selectedLang')");
-                $msg = -1;
-                if(!$result) $msg = 4;
-            }
-        }
-    }
+if (isset($_POST['user']) && isset($_POST['pass1']) && isset($_POST['email'])) {
+    echo $_POST['user'];
+    echo $_POST['email'];
+    echo $_POST['pass1'];
 }
+
+$headerTag = $lang['SIGN_UP'].' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -56,8 +35,8 @@ if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) &&
                         <p></p>
                     </div>
                     <div class="column is-5">
-                        <form class="is-form" method="POST" action="">
-                            <h2 class="title">Please Register</h2>
+                        <form class="is-form" method="POST" action="../core/new_user.php">
+                            <h2 class="title"><?php echo $lang['PLEASE'].', '.$lang['SIGN_UP'] ?></h2>
 
                             <?php
                                 if(isset($msg)) {
@@ -91,7 +70,7 @@ if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) &&
                             <div class="field">
                                 <label class="label">Username</label>
                                 <div class="control has-icons-left">
-                                    <input class="input" type="text" name="name" placeholder="Username">
+                                    <input class="input" type="text" name="name" placeholder="e.g. jonh01">
                                     <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
                                 </div>
                             </div>
@@ -99,7 +78,7 @@ if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) &&
                             <div class="field">
                                 <label class="label">Email</label>
                                 <div class="control has-icons-left">
-                                    <input class="input" type="email" name="email" placeholder="Email">
+                                    <input class="input" type="email" name="email" placeholder="e.g. kristine@kristine.com">
                                     <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
                                 </div>
                             </div>

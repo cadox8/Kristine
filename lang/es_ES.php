@@ -11,6 +11,9 @@ $lang = array();
 $lang['MENU_HOME'] = 'Inicio';
 $lang['LOG_IN'] = 'Entrar';
 $lang['SIGN_UP'] = 'Registrarse';
+$lang['PROFILE'] = 'Perfil';
+$lang['PROF_DETAILS'] = 'Detalles';
+$lang['PROF_SETTINGS'] = 'Opciones';
 
 // Login/Register
 $lang['USERNAME'] = 'Usuario';
@@ -31,3 +34,11 @@ $lang['SUCCESS'] = 'Usuario creado.<br>Ya puedes Entrar.';
 $lang['PLEASE'] = 'Por favor';
 $lang['QUEST_END'] = '?';
 $lang['QUEST_START'] = '¿';
+
+//Ranks
+$lang['GUEST'] = 'Invitado';
+$lang['MEMBER'] = 'Miembro';
+$lang['VIP'] = 'VIP';
+$lang['MODERATOR'] = 'Moderador';
+$lang['DEV'] = 'Desarrollador';
+$lang['ADMIN'] = 'Administrator';
