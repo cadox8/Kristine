@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id`            INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name`          VARCHAR(50)      NOT NULL DEFAULT '',
   `email`         VARCHAR(100)     NOT NULL,
-  `pass`          VARCHAR(50)      NOT NULL,
+  `pass`          VARCHAR(500)     NOT NULL,
   `rank`          INT(8)           NOT NULL DEFAULT 0,
   `lang`          VARCHAR(5)       NOT NULL DEFAULT 'en_EN',
   `birthday`      TIMESTAMP        NULL,
@@ -50,9 +50,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `twitter`       VARCHAR(50)      NOT NULL DEFAULT '',
   `points`        INT(11)          NOT NULL DEFAULT 0,
   `icon`          VARCHAR(50)      NOT NULL DEFAULT '',
+  `signature`     VARCHAR(5000)    NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name` (`name`),
   UNIQUE INDEX `email` (`email`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+/* For all: 0 = true, 1 = false */
+CREATE TABLE IF NOT EXISTS `users_settings` (
+  `id`            INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `userID`        INT(11)          NOT NULL DEFAULT '',
+  `showOnline`    INT(1)           NOT NULL DEFAULT 0,
+  `showBir`       INT(1)           NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `userID` (`userID`),
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS `achie` (
@@ -67,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `achie` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 
-INSERT INTO `users` (name, email, pass) VALUES ('Kristine', 'kristine@cadox8.me', 'MTIz');
+INSERT INTO `users` (name, email, pass, gender) VALUES ('Kristine', 'kristine@cadox8.me', 'MTIz', 1);
 
 INSERT INTO `cat` (title, `desc`) VALUES ('General', 'Default category');
 INSERT INTO `forum` (title, `desc`, cat) VALUES ('First Forum', 'Default Forum', 1);

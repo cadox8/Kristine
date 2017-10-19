@@ -1,15 +1,19 @@
 <?php
 require "data/init.php";
 require 'utils/ranks.php';
+require "lang/lang.php";
 
-if (isset($_GET['userName']) && is_string($_GET['userName'])) {
+if (isset($_GET['userName']) && is_string($_GET['userName']) && isset($_SESSION['name'])) {
     $aid = $_GET['userName'];
+    $tried = $_SESSION['name'];
 } else {
     header("Location: index.php");
 }
 
 $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `name` = '$aid'");
 $user = $usersQuery->fetch_object();
+
+$adminQuery = $mysql->query("SELECT * FROM `users` WHERE `name` = '$tried'");
 
 $headerTag = $aid.' - '.forumName;
 ?>
@@ -90,8 +94,13 @@ $headerTag = $aid.' - '.forumName;
                                                 </a>
                                             </li>
                                             <?php
-                                                if(hash_equals($_SESSION['name'], $user->name)) {
-                                                    echo '<li><a href="user/editProfile.php"><span class="icon is-small"><i class="fa fa-cogs"></i></span>';
+                                                if ($adminQuery->fetch_object()->rank == 5 && !hash_equals($_SESSION['name'], $user->name)) {
+                                                    echo '<li><a href="user/account.php?username='.$user->name.'"><span class="icon is-small"><i class="fa fa-cogs"></i></span>';
+                                                    echo '<span>'.$lang['PROF_EDIT'].'</span>';
+                                                    echo '</a></li>';
+                                                }
+                                                if (hash_equals($_SESSION['name'], $user->name)) {
+                                                    echo '<li><a href="user/account.php?username='.$user->name.'"><span class="icon is-small"><i class="fa fa-cogs"></i></span>';
                                                     echo '<span>'.$lang['PROF_SETTINGS'].'</span>';
                                                     echo '</a></li>';
                                                 }

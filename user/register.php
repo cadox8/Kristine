@@ -1,5 +1,6 @@
 <?php
 require "../data/init.php";
+require "../lang/lang.php";
 
 $fol = false;
 

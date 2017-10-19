@@ -5,7 +5,7 @@ define('forumName', 'Kristine');
 define('private', false);
 
 define('author', 'cadox8');
-define('version', '0.0.6 Alpha');
+define('version', '0.0.7 Alpha');
 
 $installed = true;
 

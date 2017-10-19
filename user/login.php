@@ -1,5 +1,6 @@
 <?php
 require "../data/init.php";
+require "../lang/lang.php";
 $fol = false;
 
 if (isset($_GET['msg'])) $msg = $_GET['msg'];

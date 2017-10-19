@@ -15,19 +15,15 @@
 <?php
     $bulmaCSS = "css/bulma.css";
     $kristineCSS = "css/kristine.css";
-    $langFolder = 'lang/lang.php';
     $imgFolder = 'img/';
     if (!$fol) {
         $bulmaCSS = "../css/bulma.css";
         $kristineCSS = "../css/kristine.css";
-        $langFolder = '../lang/lang.php';
         $imgFolder = '../img/';
     }
     echo '<link rel="icon" type="image/x-icon" href="'.$imgFolder.'favicon.ico"/>';
     echo '<link href="'.$kristineCSS.'" rel="stylesheet">';
     echo '<link href="'.$bulmaCSS.'" rel="stylesheet">';
-
-    require $langFolder;
 ?>
 
 <!-- Fonts -->

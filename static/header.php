@@ -22,6 +22,12 @@
             $def = "";
             if (!$fol) $def = "../";
             echo '<a class="navbar-item is-active" href="'.$def.'index.php">'.$lang['MENU_HOME'].'</a>';
+            if (isset($_SESSION['name'])) {
+                $username = $_SESSION['name'];
+                if ($mysql->query("SELECT `rank` FROM `users` WHERE `name`='$username'")->fetch_object()->rank == 5) {
+                    echo '<a class="navbar-item" href="'.$def.'admin/admin.php">'.$lang['MENU_ADMIN'].'</a>';
+                }
+            }
         ?>
         <div class="navbar-burger burger" data-target="navMenu">
             <span></span>

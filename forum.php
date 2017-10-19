@@ -1,5 +1,6 @@
 <?php
 require "data/init.php";
+require "lang/lang.php";
 
 if (isset($_GET['forumID']) && isset($_GET['catName'])) {
     $aid = $_GET['forumID'];

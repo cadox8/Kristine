@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// File from @chintanbanugaria
+function setfilename(val){
+  document.getElementById("filename").value = val;
+}
+
+
 // ClipBoard
 function copyToClipboard(element) {
     var $temp = $("<input>");

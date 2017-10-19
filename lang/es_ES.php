@@ -9,11 +9,23 @@ $lang = array();
 
 // Menu
 $lang['MENU_HOME'] = 'Inicio';
+$lang['MENU_ADMIN'] = 'Admin';
 $lang['LOG_IN'] = 'Entrar';
 $lang['SIGN_UP'] = 'Registrarse';
 $lang['PROFILE'] = 'Perfil';
 $lang['PROF_DETAILS'] = 'Detalles';
+
+// Settings
+$lang['PROF_EDIT'] = 'Editar Usuario';
 $lang['PROF_SETTINGS'] = 'Opciones';
+$lang['SET_AC'] = 'Detalles Personales';
+$lang['SET_SECURITY'] = 'Seguridad';
+$lang['SET_PREFERENCES'] = 'Preferencias';
+$lang['SET_SIGNATURE'] = 'Firma';
+
+// Edit
+$lang['CHANGE'] = 'Cambiar';
+$lang['E_PIC'] = $lang['CHANGE'].' Foto';
 
 // Login/Register
 $lang['USERNAME'] = 'Usuario';
@@ -34,6 +46,9 @@ $lang['SUCCESS'] = 'Usuario creado.<br>Ya puedes Entrar.';
 $lang['PLEASE'] = 'Por favor';
 $lang['QUEST_END'] = '?';
 $lang['QUEST_START'] = '¿';
+$lang['NEW'] = 'Nuevo';
+$lang['USER'] = 'Usuario';
+$lang['PREVIEW'] = 'Preview';
 
 //Ranks
 $lang['GUEST'] = 'Invitado';

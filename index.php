@@ -1,4 +1,7 @@
-<?php require "data/init.php"; ?>
+<?php
+require "data/init.php";
+require "lang/lang.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,13 +23,14 @@
 
                     while($cat = $catQuery->fetch_array()) {
                         $catID = $cat['id'];
-                        echo '<nav class="level" style="background-color: rgba(255,118,82,0.16)" id="cat.'.$catID.'">';
+                        echo '<nav class="level has-borders" style="background-color: #FF9797" id="cat.'.$catID.'">';
                         echo '<div class="level-left">';
                         echo '<div class="level-item">';
-                        echo '<a href="#cat.'.$catID.'"><span class="icon"><i class="fa fa-folder-open-o"></i></span> ' . $cat['title'].'</a>';
+                        echo '<a class="has-text-weight-bold has-text-black is-size-5 underline" style="padding: 10px;" href="#cat.'.$catID.'"><span class="icon"><i class="fa fa-folder-open-o"></i></span> ' . $cat['title'].'</a>';
                         echo '</div></div><div class="level-right">';
-                        echo '<p class="level-item has-text-centered">Latest</p></div>';
+                        echo '<p class="level-item has-text-centered has-text-weight-bold has-text-black is-size-5" style="padding-right: 10px;">Latest</p></div>';
                         echo '</nav>';
+                        echo '<hr class="is-cat">';
 
                         $forumQuery = $mysql->query("SELECT * FROM `forum` WHERE `cat`= $catID");
 
@@ -35,30 +39,15 @@
                             echo '<nav class="level"><div class="level-left"><div class="level-item"><div>';
                             echo '<a href="forum.php?forumID='.$forum['id'].'&catName='.$cat['title'].'">' . $forum['title'] . '</a><p class="heading">Forums: '.$forumQuery->num_rows.'</p></div></div></div>';
                             echo '<div class="level-right"><p class="level-item">asdasdasdsadasdasdsadsadsadsadsadasdsad</p></nav>';
-
-                            /* $forumID = $forum['id'];
-                           $postQuery = $mysql->query("SELECT * FROM `posts` WHERE `forum`= $forumID");
-
-                            while ($posts = $postQuery->fetch_array()) {
-                                $author = $posts['author'];
-                                $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `id`= $author");
-                                $user = $usersQuery->fetch_object();
-
-                                echo $posts['title'] . ' by ' . $user->name;
-                                echo '<hr>';
-                            }
-                            $postQuery->free(); */
                         }
                         $forumQuery->free();
-                        echo '</tbody>';
-                        echo '</table>';
                     }
                     $catQuery->free();
                     ?>
                 </div>
 
                 <div class="column"> <!-- Info -->
-                    h
+                    TODO: User tab
                 </div>
             </div>
         </div>
