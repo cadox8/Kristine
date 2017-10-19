@@ -43,8 +43,7 @@ $headerTag = $lang['SIGN_UP'].' - '.forumName;
                                 if(isset($msg)) {
                                     if ($msg == -1) {
                                         echo '<div class="notification is-success">'.$lang['SUCCESS'].'</div>';
-                                    } else {
-                                        if ($msg == 0) {
+                                    } elseif ($msg == 0) {
                                             echo '<div class="notification is-info">Please, fill all fields.</div>';
                                         } else {
                                             echo '<div class="notification is-danger">';
@@ -65,7 +64,6 @@ $headerTag = $lang['SIGN_UP'].' - '.forumName;
                                             echo '</div>';
                                         }
                                     }
-                                }
                             ?>
 
                             <div class="field">
@@ -139,7 +137,7 @@ $headerTag = $lang['SIGN_UP'].' - '.forumName;
                                 <div class="control">
                                     <button class="button is-primary" type="submit">Register</button>
                                 </div>
-                                <label class="label"><?php echo $lang['QUEST_START'].$lang['NOT_NEW_USER'].$lang['QUEST_END'].' <a href="register.php">'.$lang['JOIN_SITE'].'</a>'; ?>.</label>
+                                <label class="label"><?php echo $lang['QUEST_START'].$lang['NOT_NEW_USER'].$lang['QUEST_END'].' <a href="login.php">'.$lang['JOIN_SITE'].'</a>'; ?>.</label>
                             </div>
                         </form>
                     </div>

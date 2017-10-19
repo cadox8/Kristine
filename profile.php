@@ -68,7 +68,7 @@ $headerTag = $aid.' - '.forumName;
                                         }
 
                                         $loc = '';
-                                        if ($user->loc != '') $loc = ', from <a style="color: black" href="https://www.google.es/maps?q='.str_replace(" ", "+", $user->loc).'" target="_blank">'.$user->loc.'</a>';
+                                        if ($user->location != '') $loc = ', from <a style="color: black" href="https://www.google.es/maps?q='.str_replace(" ", "+", $user->location).'" target="_blank">'.$user->location.'</a>';
 
                                         echo $gender.$age.$loc;
                                     ?>

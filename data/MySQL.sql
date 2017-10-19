@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `author`      INT(11)              NOT NULL DEFAULT 1,
   `likes`       INT(11)              NOT NULL DEFAULT 0,
   `forum`       INT(11)              NOT NULL DEFAULT 1,
+  `date`        TIMESTAMP            NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE INDEX (`id`),
   UNIQUE INDEX (`title`)
@@ -51,19 +52,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   `points`        INT(11)          NOT NULL DEFAULT 0,
   `icon`          VARCHAR(50)      NOT NULL DEFAULT '',
   `signature`     VARCHAR(5000)    NOT NULL DEFAULT '',
+  `showOnline`    INT(2)           NOT NULL DEFAULT 0,
+  `showBirt`      INT(2)           NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name` (`name`),
   UNIQUE INDEX `email` (`email`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8;
-
-/* For all: 0 = true, 1 = false */
-CREATE TABLE IF NOT EXISTS `users_settings` (
-  `id`            INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `userID`        INT(11)          NOT NULL DEFAULT '',
-  `showOnline`    INT(1)           NOT NULL DEFAULT 0,
-  `showBir`       INT(1)           NOT NULL DEFAULT 1,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `userID` (`userID`),
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS `achie` (

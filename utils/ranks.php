@@ -3,7 +3,7 @@
 class Ranks {
 
     static function getRank($lang, $rank, $withTag = true) {
-        $tag = '<span  class="tag is-small ';
+        $tag = '<span class="tag is-small ';
         switch ($rank) {
             case 0:
                 $tag = '';
