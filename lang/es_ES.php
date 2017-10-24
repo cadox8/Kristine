@@ -23,6 +23,8 @@ $lang['SET_SECURITY'] = 'Seguridad';
 $lang['SET_PREFERENCES'] = 'Preferencias';
 $lang['SET_SIGNATURE'] = 'Firma';
 
+$lang['NEW_POST'] = 'Nuevo Post';
+
 // Edit
 $lang['CHANGE'] = 'Cambiar';
 $lang['E_PIC'] = $lang['CHANGE'].' Foto';

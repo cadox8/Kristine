@@ -10,7 +10,7 @@ if (isset($_GET['forumID']) && isset($_SESSION['name'])) {
     header("Location: index.php");
 }
 
-$headerTag = $lang['MENU_HOME'].' - '.forumName;
+$headerTag = $lang['NEW_POST'].' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ $headerTag = $lang['MENU_HOME'].' - '.forumName;
     <section class="section">
         <div class="container">
             <div class="container">
-                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo $lang['SET_AC']; ?></h2>
+                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo $lang['NEW_POST']; ?></h2>
                 <hr style="margin-bottom: 0">
 
                 <div class="columns">

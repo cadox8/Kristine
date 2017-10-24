@@ -1,5 +1,6 @@
 /* Our Database */
 CREATE DATABASE kristine;
+USE kristine;
 
 /* Forum Tables */
 CREATE TABLE IF NOT EXISTS `cat` (

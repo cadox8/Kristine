@@ -31,16 +31,21 @@ div .ajust-right {
 }
 
 footer {
-    background-color: #505050;
+    background-color: #363636;
 }
 
 p.copyright {
     color: white;
-    margin: 10px 0 0;
+    font-size: 12px;
 }
 
-.navbar.is-coloured {
-    background-color: #525451;
+a.copyright {
+    color: whitesmoke;
+    font-size: 12px;
+}
+
+a.copyright:hover {
+    color: purple;
 }
 
 .loadTime {

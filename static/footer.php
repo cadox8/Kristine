@@ -1,13 +1,15 @@
 <!-- Footer -->
 <footer>
     <div class="container">
-        <div class="column is-12">
-            <p class="copyright">Copyright &copy; Kristine 2017.
-                <span class="icon is-small"><i style="color: #090909" class="fa fa-code"></i></span> with
-                <span class="icon is-small"><i style="color: purple" class="fa fa-heart"></i></span> by
-                <a class="copyright" style="color:yellow;" target="_blank" href="http://cadox8.me">Cadox8</a>.
-            </p>
-            <time class="loadTime" style="color: white" id="loadTime"> Getting time...</time>
+        <div class="columns">
+            <div class="column is-10">
+                <p class="copyright">Made with
+                    <a class="copyright" target="_blank" href="http://cadox8.me/Kristine">Kristine</a>.
+                </p>
+            </div>
+            <div class="column">
+                <time class="loadTime" style="color: white" id="loadTime"> Getting time...</time>
+            </div>
         </div>
     </div>
 </footer>

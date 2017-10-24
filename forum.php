@@ -10,6 +10,10 @@ if (isset($_GET['forumID']) && isset($_GET['catName'])) {
     header("Location: index.php");
 }
 
+if ($mysql->query("SELECT * FROM `forum` WHERE `id` = $aid")->num_rows == 0) {
+    header("Location: index.php");
+}
+
 $postsQuery = $mysql->query("SELECT * FROM `posts` WHERE `forum` = $aid");
 
 $headerTag = $cat.' - '.forumName;
@@ -30,7 +34,13 @@ $headerTag = $cat.' - '.forumName;
         <div class="container">
             <div class="columns">
                 <div class="column is-10">
-                    <h1 class="subtitle is-4"><?php echo $cat.'<a href="new.php?forumID='.$aid.'" class="button is-info right">Create new</a>'; ?></h1><hr>
+                    <h1 class="subtitle is-4"><?php
+                        if (isset($_SESSION['name'])) {
+                            echo $cat.'<a href="new.php?forumID='.$aid.'" class="button is-info right">Create new</a>';
+                        } else {
+                            echo $cat;
+                        }
+                     ?></h1><hr>
                     <ul>
                     <?php
                     while ($post = $postsQuery->fetch_array()) {
@@ -67,7 +77,7 @@ $headerTag = $cat.' - '.forumName;
                     ?>
                     </ul>
                 </div>
-                <div class="column">
+                <div class="column is-hidden-mobile">
                     <?php
                         if (!isset($_SESSION['name'])) {
                             echo '<center><a class="button is-danger" href="user/register.php">'.$lang['SIGN_UP'].'</a><br><br>';

@@ -1,3 +1,5 @@
+<!-- Kristine. Made by @Cadox8 (http://cadox8.me) -->
+
 <?php
 require "data/init.php";
 require "lang/lang.php";
@@ -46,7 +48,7 @@ require 'utils/ranks.php';
                     ?>
                 </div>
 
-                <div class="column"> <!-- Info -->
+                <div class="column is-hidden-mobile"> <!-- Info -->
                     <?php
                         if (!isset($_SESSION['name'])) {
                             echo '<center><a class="button is-danger" href="user/register.php">'.$lang['SIGN_UP'].'</a><br><br>';
@@ -67,6 +69,8 @@ require 'utils/ranks.php';
                             echo '</center>';
                             echo '<center><span class="tag is-info">'.$user->name.'</span>';
                             echo '</center>';
+                            $totUsers = $mysql->query("SELECT * FROM `users`")->num_rows;
+                            echo '<span class="has-text-left">Users</span><span class="has-text-right">'.$totUsers.'</span>';
                         }
                     ?>
                     <hr style="margin-bottom: 6px; margin-top: 6px">
