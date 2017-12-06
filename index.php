@@ -19,7 +19,7 @@ require 'utils/ranks.php';
     <!-- Page -->
     <section class="section">
         <div class="container">
-            <div class="columns">
+            <div class="columns has-text-left">
                 <div class="column is-10"> <!-- Forum -->
                     <?php
                     $catQuery = $mysql->query("SELECT * FROM `cat`");

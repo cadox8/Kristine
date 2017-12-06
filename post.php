@@ -38,7 +38,8 @@ $headerTag = $posts->title.' - '.forumName;
             <div class="columns">
                 <div class="column is-2">
                     <?php
-                    $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `id` = '$posts->author'");
+                    $aID = $posts->author;
+                    $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `id`='$aID'");
                     $user = $usersQuery->fetch_object();
                     echo '<center><figure class="image is-profile is-128x128">';
                     if (hash_equals($user->icon, "")) {

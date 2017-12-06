@@ -32,7 +32,7 @@ $headerTag = $cat.' - '.forumName;
 
     <section class="section">
         <div class="container">
-            <div class="columns">
+            <div class="columns has-text-left">
                 <div class="column is-10">
                     <h1 class="subtitle is-4"><?php
                         if (isset($_SESSION['name'])) {
@@ -43,6 +43,17 @@ $headerTag = $cat.' - '.forumName;
                      ?></h1><hr>
                     <ul>
                     <?php
+                    echo '<nav class="level has-borders" style="background-color: rgb(196, 84, 84)">';
+                    echo '<div class="level-left">';
+                    echo '<div class="level-item ajust-left is-bar">';
+                    echo '<p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">Title</p>';
+                    echo '</div></div>';
+
+                    echo '<div class="level-right"><div class="level-item ajust-right">';
+                    echo '<p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">By</p></div>';
+                    echo '<div class="level-item ajust-right"><p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">At</p></div>';
+                    echo '</div></nav>';
+                    echo '<hr style="border-style: solid; border-width: 3px; margin-top: -24px;">';
                     while ($post = $postsQuery->fetch_array()) {
                         $author = $post['author'];
                         $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `id` = '$author'");
@@ -53,25 +64,12 @@ $headerTag = $cat.' - '.forumName;
                         } else {
                             $icon = 'img/profiles/'.$users->icon.'';
                         }
-
-                        echo '<nav class="level has-borders" style="background-color: rgb(196, 84, 84)">';
-                        echo '<div class="level-left">';
-                        echo '<div class="level-item ajust-left is-bar">';
-                        echo '<p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">Title</p>';
-                        echo '</div></div>';
-
-                        echo '<div class="level-right"><div class="level-item ajust-right">';
-                        echo '<p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">By</p></div>';
-                        echo '<div class="level-item ajust-right"><p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">At</p></div>';
-                        echo '</div></nav>';
-                        echo '<hr style="border-style: solid; border-width: 3px; margin-top: -24px;">';
-
                         echo '<li><nav class="level">';
                         echo '<div class="level-left"><div class="level-item ajust-left"><figure class="image is-48x48"><img src="'.$icon.'"></figure>';
                         echo '<a style="padding: 5px" href="post.php?id='.$post['id'].'">' . $post['title'] . '</a></div></div>';
                         echo '<div class="label-right"><div class="level-item ajust-left"><p>'.$users->name.'</p></div>';
                         echo '<div class="level-item ajust-left"><p>'.$date.'</p></div>';
-                        echo '</div></nav></li>';
+                        echo '</div></nav></li><br>';
                     }
                     $postsQuery->free();
                     ?>
