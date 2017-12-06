@@ -1,6 +1,6 @@
 # Kristine
 Kristine is a simple discussion forum you can easily customize to make as unique as your community<br>
- 
+
 ## Installation
 <ul>
     <li>Download all files</li>
@@ -26,5 +26,6 @@ This project isn't finished yet, so if you find any bug, please, post it on [Iss
  <li>Show profile details</li>
  <li>Some internal changes</li>
  <li>Better code</li>
+ <li>Post page</li>
  <li>A lot of things more, it's only v0.0.8 Alpha</li>
 </ul>

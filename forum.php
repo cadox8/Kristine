@@ -68,7 +68,7 @@ $headerTag = $cat.' - '.forumName;
 
                         echo '<li><nav class="level">';
                         echo '<div class="level-left"><div class="level-item ajust-left"><figure class="image is-48x48"><img src="'.$icon.'"></figure>';
-                        echo '<a style="padding: 5px" href="posts.php?id='.$post['id'].'">' . $post['title'] . '</a></div></div>';
+                        echo '<a style="padding: 5px" href="post.php?id='.$post['id'].'">' . $post['title'] . '</a></div></div>';
                         echo '<div class="label-right"><div class="level-item ajust-left"><p>'.$users->name.'</p></div>';
                         echo '<div class="level-item ajust-left"><p>'.$date.'</p></div>';
                         echo '</div></nav></li>';

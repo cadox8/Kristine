@@ -35,12 +35,13 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                         <aside class="menu">
                             <p class="menu-label"><?php echo 'Admin'; ?></p>
                             <ul class="menu-list">
-                                <li><a href="nodes.php"><?php echo 'Nodes'; ?></a></li>
+                                <li><a href="" class="is-active"><?php echo 'Nodes'; ?></a></li>
                                 <li><a href=""><?php echo 'Users'; ?></a></li>
                             </ul>
                         </aside>
                     </div>
                     <div class="column is-6">
+                        
                     </div>
                 </div>
             </div>

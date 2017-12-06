@@ -36,10 +36,17 @@ $headerTag = $lang['NEW_POST'].' - '.forumName;
                     <div class="column is-2"></div>
                     <div class="column is-8">
                         <br>
-                        <form class="is-form" method="POST" action="">
+                        <form class="is-form" method="POST" action="core/new_post.php">
+                            <div class="field">
+                                <label class="label">Title</label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="My new post" name="title">
+                                </div>
+                            </div>
+
                             <div class="field">
                                 <div class="control">
-                                    <textarea class="textarea" name="post" placeholder="Write Something" rows="8"></textarea>
+                                    <textarea class="textarea" name="content" placeholder="Write Something" rows="8"></textarea>
                                 </div>
                             </div>
                             <button class="button is-info" type="submit">Create</button>
