@@ -22,10 +22,10 @@ This project isn't finished yet, so if you find any bug, please, post it on [Iss
  <li>Make it customizable</li>
  <li>Finish BBCode support</li>
  <li>Prevent Bots</li>
- <li>Add more fields to users</li>
- <li>Show profile details</li>
+ <li>~~Add more fields to users~~</li>
+ <li>~~Show profile details~~</li>
  <li>Some internal changes</li>
  <li>Better code</li>
  <li>Post page</li>
- <li>A lot of things more, it's only v0.0.8 Alpha</li>
+ <li>A lot of things more, it's only v0.0.9 Alpha</li>
 </ul>
