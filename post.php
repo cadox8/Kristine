@@ -14,7 +14,7 @@ if ($mysql->query("SELECT * FROM `posts` WHERE `id` = $aid")->num_rows == 0) {
     header("Location: index.php");
 }
 
-$postsQuery = $mysql->query("SELECT * FROM `posts` WHERE `forum` = $aid");
+$postsQuery = $mysql->query("SELECT * FROM `posts` WHERE `id` = $aid");
 $posts = $postsQuery->fetch_object();
 
 $headerTag = $posts->title.' - '.forumName;
@@ -38,14 +38,14 @@ $headerTag = $posts->title.' - '.forumName;
             <div class="columns">
                 <div class="column is-2">
                     <?php
-                    $aID = $posts->author;
-                    $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `id`='$aID'");
+                    $uID = $posts->author;
+                    $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `id`='$uID'");
                     $user = $usersQuery->fetch_object();
-                    echo '<center><figure class="image is-profile is-128x128">';
+                    echo '<center><figure class="image is-128x128 is-profile">';
                     if (hash_equals($user->icon, "")) {
                         echo '<img src="img/user.png" alt="avatar">';
                     } else {
-                        echo '<img src="img/profiles/'.$user->icon.'" alt="'.$aid.'">';
+                        echo '<img src="img/profiles/'.$user->icon.'" alt="'.$uID.'">';
                     }
                     echo '</figure>';
                     Ranks::getRank($lang, $user->rank, true);

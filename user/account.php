@@ -53,7 +53,7 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                                 echo '<div class="notification ';
                                 switch ($msg) {
                                     case 1:
-                                        echo 'is-success">Email updated';
+                                        echo 'is-success">'.$lang['CONTACT'].' '.$lang['UPD'];
                                         break;
                                     case 2:
                                         echo 'is-success">Profile Picture updated';
@@ -63,6 +63,9 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                                         break;
                                     case 4:
                                         echo 'is-danger">File size must be excately 2 MB';
+                                        break;
+                                    case 5:
+                                        echo 'is-success">'.$lang['CONTACT'].' '.$lang['UPD'];
                                         break;
 
                                     default:
@@ -133,6 +136,41 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                                 </div>
                             </div>
                         </form>
+
+                        <br>
+
+                        <form class="is-form" method="POST" action="../core/update_contact.php">
+                            <label class="label"><?php echo $lang['UPD'].' '.$lang['CONTACT']; ?></label>
+                            <div class="field has-addons">
+                                <p class="control">
+                                    <a class="button is-static"><span class="icon is-small is-left"><i class="fa fa-twitter"></i></span> <span>@<?php if ($user->twitter != '') echo $user->twitter; ?></span></a>
+                                </p>
+                                <div class="control is-expanded">
+                                    <input class="input" type="text" name="twitter" placeholder="e.g. @cadox8"></input>
+                                </div>
+                            </div>
+                            <div class="field has-addons">
+                                <p class="control">
+                                    <a class="button is-static"><span class="icon is-small is-left"><i class="fa fa-facebook"></i></span> <span><?php if ($user->facebook != '') echo $user->facebook; ?></span></a>
+                                </p>
+                                <div class="control is-expanded">
+                                    <input class="input" type="text" name="face" placeholder="e.g. cadox8"></input>
+                                </div>
+                            </div>
+                            <div class="field has-addons">
+                                <p class="control">
+                                    <a class="button is-static"><span class="icon is-small is-left"><i class="fa fa-skype"></i></span> <span><?php if ($user->skype != '') echo $user->skype; ?></span></a>
+                                </p>
+                                <div class="control is-expanded">
+                                    <input class="input" type="text" name="skype" placeholder="e.g. cadox8"></input>
+                                </div>
+                            </div>
+
+                            <div class="control">
+                                <button class="button is-info" type="submit">Update</button>
+                            </div>
+                        </form>
+
                     </div>
                     <div class="column"></div>
                 </div>

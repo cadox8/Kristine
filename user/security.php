@@ -85,7 +85,7 @@ $headerTag = $lang['SET_SECURITY'].' - '.forumName;
                             <label class="label"><?php echo $lang['NEW'].' '.$lang['PASSWORD']; ?></label>
                             <div class="field has-addons">
                                 <div class="control has-icons-left is-expanded">
-                                    <input class="input" type="password" name="password" placeholder="**************"></input>
+                                    <input class="input" type="password" name="pass" placeholder="*********">
                                     <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
                                 </div>
                                 <div class="control">

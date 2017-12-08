@@ -50,6 +50,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `location`      VARCHAR(5000)    NULL,
   `firstJoin`     TIMESTAMP        NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `twitter`       VARCHAR(50)      NOT NULL DEFAULT '',
+  `facebook`      VARCHAR(50)      NOT NULL DEFAULT '',
+  `skype`         VARCHAR(50)      NOT NULL DEFAULT '',
   `points`        INT(11)          NOT NULL DEFAULT 0,
   `icon`          VARCHAR(50)      NOT NULL DEFAULT '',
   `signature`     VARCHAR(5000)    NOT NULL DEFAULT '',

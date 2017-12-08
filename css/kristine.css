@@ -1,7 +1,11 @@
-/* Kristine CSS */
-
+/* Kristine CSS v0.0.5 */
 .showInfo {
     font-size: 14px;
+}
+
+.details {
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .is-head {
@@ -30,7 +34,7 @@ div .ajust-right {
     padding-right: 100px
 }
 
-footer {
+footer.dark {
     background-color: #363636;
 }
 
@@ -55,6 +59,10 @@ a.copyright:hover {
 .image.is-profile img {
     border-radius: 50%; !important;
     margin-bottom: 5px; !important;
+}
+
+.image.is-circle img {
+    border-radius: 50%; !important;
 }
 
 /* Utils */

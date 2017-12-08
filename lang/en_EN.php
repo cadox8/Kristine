@@ -22,6 +22,7 @@ $lang['SET_AC'] = 'Account Details';
 $lang['SET_SECURITY'] = 'Security';
 $lang['SET_PREFERENCES'] = 'Preferences';
 $lang['SET_SIGNATURE'] = 'Signature';
+$lang['CONTACT'] = 'Contact';
 
 $lang['NEW_POST'] = 'New Post';
 
@@ -51,6 +52,7 @@ $lang['QUEST_START'] = '';
 $lang['NEW'] = 'New';
 $lang['USER'] = 'User';
 $lang['PREVIEW'] = 'Preview';
+$lang['UPD'] = 'Update';
 
 //Ranks
 $lang['GUEST'] = 'Guest';
