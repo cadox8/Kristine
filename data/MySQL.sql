@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS `cat` (
   `title`       VARCHAR(36)      NOT NULL DEFAULT '',
   `desc`        VARCHAR(500)     NOT NULL DEFAULT '',
   `access`      INT(8)           NOT NULL DEFAULT 0,
+  `priority`    INT(2)           NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   UNIQUE INDEX (`id`),
   UNIQUE INDEX (`title`)
@@ -19,6 +20,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
   `desc`        VARCHAR(500)     NOT NULL DEFAULT '',
   `cat`         INT(11)          NOT NULL DEFAULT 1,
   `access`      INT(8)           NOT NULL DEFAULT 0,
+  `priority`    INT(2)           NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   UNIQUE INDEX (`id`),
   UNIQUE INDEX (`title`)
