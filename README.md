@@ -1,4 +1,4 @@
-<center>![Kristine](https://github.com/cadox8/Kristine/blob/master/img/kristine.jpg)</center>
+![Kristine](https://github.com/cadox8/Kristine/blob/master/img/kristine.jpg)
 
 # Kristine
 Kristine is a simple discussion forum you can easily customize to make as unique as your community<br>
