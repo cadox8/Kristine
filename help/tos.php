@@ -32,7 +32,7 @@ $fol = false;
                 </div>
                 <div class="column">
                     <center><figure class="image is-128x128">
-                      <img src="https://github.com/cadox8/Kristine/blob/master/img/kristine.jpg">
+                      <img src="https://raw.githubusercontent.com/cadox8/Kristine/master/img/kristine.jpg">
                     </figure></center>
                     <strong>Privacy</strong><br>
                     At certain points in the <?php echo '<strong>'.forumName.'</strong>'; ?> website navigation, you may be asked to share your email address or other personal identifying information with us. As provided in these Terms and Conditions, such information will never be distributed to a third party and it will never be publicly visible without your express written consent.<br>
