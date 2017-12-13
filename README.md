@@ -1,6 +1,9 @@
 # Kristine
 Kristine is a simple discussion forum you can easily customize to make as unique as your community<br>
 
+## Demo
+You can check the demo [here](http://dev.projectalpha.es/kristine).
+
 ## Installation
 - Download all files
 - Import MySQL.sql on PHPMyAdmin
@@ -25,6 +28,7 @@ This project isn't finished yet, so if you find any bug, please, post it on [Iss
 - Better code
 - <s>Post page</s>
 - Installation script
+- Verify account
 - Comments
 - Profile messages
 - Lang files to JSON (?)
