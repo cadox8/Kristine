@@ -1,5 +1,6 @@
 <?php
 require "../data/init.php";
+require "../lang/lang.php";
 
 $fol = false;
 ?>
@@ -30,6 +31,9 @@ $fol = false;
                     </aside>
                 </div>
                 <div class="column">
+                    <center><figure class="image is-128x128">
+                      <img src="https://github.com/cadox8/Kristine/blob/master/img/kristine.jpg">
+                    </figure></center>
                     <strong>Privacy</strong><br>
                     At certain points in the <?php echo '<strong>'.forumName.'</strong>'; ?> website navigation, you may be asked to share your email address or other personal identifying information with us. As provided in these Terms and Conditions, such information will never be distributed to a third party and it will never be publicly visible without your express written consent.<br>
                     Your email address will only be used to send you the <?php echo '<strong>'.forumName.'</strong>'; ?> newsletter and/or to alert you to any information that you have specifically requested you be notified about.<br><br>

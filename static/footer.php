@@ -8,7 +8,11 @@
                 </p>
             </div>
             <div class="column">
-                <time class="loadTime" style="color: white" id="loadTime"> Getting time...</time>
+                <?php
+                    $tosLoc = "help/";
+                    if (!$fol) $tosLoc = "../help/";
+                    echo '<a class="copyright" target="_blank" href="'.$tosLoc.'tos.php">Help</a>.';
+                ?>
             </div>
         </div>
     </div>

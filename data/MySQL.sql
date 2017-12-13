@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name`          VARCHAR(50)      NOT NULL DEFAULT '',
   `email`         VARCHAR(100)     NOT NULL,
   `pass`          VARCHAR(500)     NOT NULL,
+  `hash`          VARCHAR( 32 )    NOT NULL ,
   `rank`          INT(8)           NOT NULL DEFAULT 0,
   `lang`          VARCHAR(5)       NOT NULL DEFAULT 'en_EN',
   `birthday`      TIMESTAMP        NULL,
@@ -59,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `signature`     VARCHAR(5000)    NOT NULL DEFAULT '',
   `showOnline`    INT(2)           NOT NULL DEFAULT 0,
   `showBirt`      INT(2)           NOT NULL DEFAULT 1,
+  `active`        INT(1)           NOT NULL DEFAULT 0, /* 0 -> No, 1 -> Yes */
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name` (`name`),
   UNIQUE INDEX `email` (`email`)
@@ -76,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `achie` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 
-INSERT INTO `users` (name, email, pass, gender) VALUES ('Kristine', 'kristine@cadox8.me', 'MTIz', 1);
+INSERT INTO `users` (name, email, pass, gender, active) VALUES ('Kristine', 'kristine@cadox8.me', 'MTIz', 1, 1);
 
 INSERT INTO `cat` (title, `desc`) VALUES ('General', 'Default category');
 INSERT INTO `forum` (title, `desc`, cat) VALUES ('First Forum', 'Default Forum', 1);

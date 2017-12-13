@@ -31,7 +31,3 @@ function copyToClipboard(element) {
     document.execCommand("copy");
     $temp.remove();
 }
-
-// Page Time
-seconds = ((new Date()).getTime()-beforeload) / 1000;
-document.getElementById("loadTime").innerHTML = '<span class="icon is-small"><i class="fa fa-clock-o"></i></span> Page loaded in ' + seconds + ' seconds';

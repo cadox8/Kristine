@@ -1,5 +1,6 @@
 <?php
 define('forumName', 'Kristine');
+define('forumDomain', '.com');
 
 //Do not touch
 define('private', false);
