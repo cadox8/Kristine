@@ -26,22 +26,20 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
     <!-- Page -->
     <section class="section">
         <div class="container">
-            <div class="container">
-                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo 'Admin'; ?></h2>
-                <hr style="margin-bottom: 0"><br>
+            <h2 class="title is-3" style="margin-bottom: -10px"><?php echo 'Admin'; ?></h2>
+            <hr style="margin-bottom: 0"><br>
 
-                <div class="columns">
-                    <div class="column is-3">
-                        <aside class="menu">
-                            <p class="menu-label"><?php echo 'Admin'; ?></p>
-                            <ul class="menu-list">
-                                <li><a href="nodes.php"><?php echo 'Nodes'; ?></a></li>
-                                <li><a href=""><?php echo 'Users'; ?></a></li>
-                            </ul>
-                        </aside>
-                    </div>
-                    <div class="column is-6">
-                    </div>
+            <div class="columns">
+                <div class="column is-3">
+                    <aside class="menu">
+                        <p class="menu-label"><?php echo 'Admin'; ?></p>
+                        <ul class="menu-list">
+                            <li><a href="nodes.php"><?php echo 'Nodes'; ?></a></li>
+                            <li><a href=""><?php echo 'Users'; ?></a></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div class="column is-6">
                 </div>
             </div>
         </div>

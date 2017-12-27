@@ -8,7 +8,7 @@ define('private', false);
 define('author', 'cadox8');
 define('version', '0.0.9 Alpha');
 
-$installed = true;
+define('installed', false);
 $headerTag = forumName;
 
 //CSS Fix

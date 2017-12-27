@@ -26,24 +26,23 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
     <!-- Page -->
     <section class="section">
         <div class="container">
-            <div class="container">
-                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo 'Admin'; ?></h2>
-                <hr style="margin-bottom: 0"><br>
+            <h2 class="title is-3" style="margin-bottom: -10px"><?php echo 'Admin'; ?></h2>
+            <hr style="margin-bottom: 0"><br>
 
-                <div class="columns">
-                    <div class="column is-3">
-                        <aside class="menu">
-                            <p class="menu-label"><?php echo 'Admin'; ?></p>
-                            <ul class="menu-list">
-                                <li><a href="" class="is-active"><?php echo 'Nodes'; ?></a></li>
-                                <li><a href=""><?php echo 'Users'; ?></a></li>
-                            </ul>
-                        </aside>
-                    </div>
-                    <div class="column is-8">
-                        <table class="table is-striped is-fullwidth">
+            <div class="columns">
+                <div class="column is-3">
+                    <aside class="menu">
+                        <p class="menu-label"><?php echo 'Admin'; ?></p>
+                        <ul class="menu-list">
+                            <li><a href="" class="is-active"><?php echo 'Nodes'; ?></a></li>
+                            <li><a href=""><?php echo 'Users'; ?></a></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div class="column is-8">
+                    <table class="table is-striped is-fullwidth">
 
-                            <tbody>
+                        <tbody>
                         <?php
                             $catQuery = $mysql->query("SELECT * FROM `cat`");
                             while($cat = $catQuery->fetch_array()) {
@@ -61,7 +60,6 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                             }
                         ?>
                         </tbody></table>
-                    </div>
                 </div>
             </div>
         </div>
