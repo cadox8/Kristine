@@ -8,7 +8,7 @@
 Kristine is a simple discussion forum you can easily customize to make as unique as your community<br>
 
 ## Demo
-You can check the demo [here](http://dev.projectalpha.es/kristine).
+You can check the demo [here](http://kristine.ml).
 
 ## Installation
 - Download all files
