@@ -7,35 +7,32 @@ CREATE TABLE IF NOT EXISTS `cat` (
   `id`          INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title`       VARCHAR(36)      NOT NULL DEFAULT '',
   `desc`        VARCHAR(500)     NOT NULL DEFAULT '',
-  `access`      INT(8)           NOT NULL DEFAULT 0,
+  `access`      INT(2)           NOT NULL DEFAULT 0,
   `priority`    INT(2)           NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX (`id`),
   UNIQUE INDEX (`title`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS `forum` (
   `id`          INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title`       VARCHAR(500)     NOT NULL DEFAULT '',
-  `desc`        VARCHAR(500)     NOT NULL DEFAULT '',
+  `title`       VARCHAR(100)     NOT NULL DEFAULT '',
+  `desc`        VARCHAR(100)     NOT NULL DEFAULT '',
   `cat`         INT(11)          NOT NULL DEFAULT 1,
-  `access`      INT(8)           NOT NULL DEFAULT 0,
+  `access`      INT(2)           NOT NULL DEFAULT 0,
   `priority`    INT(2)           NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX (`id`),
   UNIQUE INDEX (`title`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS `posts` (
   `id`          INT(11)     UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title`       VARCHAR(500)         NOT NULL DEFAULT '',
+  `title`       VARCHAR(100)         NOT NULL DEFAULT '',
   `content`     LONGTEXT             NOT NULL DEFAULT '',
   `author`      INT(11)              NOT NULL DEFAULT 1,
   `likes`       INT(11)              NOT NULL DEFAULT 0,
   `forum`       INT(11)              NOT NULL DEFAULT 1,
   `date`        TIMESTAMP            NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX (`id`),
   UNIQUE INDEX (`title`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
@@ -44,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id`            INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name`          VARCHAR(50)      NOT NULL DEFAULT '',
   `email`         VARCHAR(100)     NOT NULL,
-  `pass`          VARCHAR(500)     NOT NULL,
+  `pass`          VARCHAR(100)     NOT NULL,
   `hash`          VARCHAR( 32 )    NOT NULL ,
   `rank`          INT(8)           NOT NULL DEFAULT 0,
   `lang`          VARCHAR(5)       NOT NULL DEFAULT 'en_EN',
@@ -68,12 +65,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 CREATE TABLE IF NOT EXISTS `achie` (
   `id`          INT(11)     UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title`       VARCHAR(500)         NOT NULL DEFAULT '',
-  `desc`        VARCHAR(500)         NOT NULL DEFAULT '',
+  `title`       VARCHAR(100)         NOT NULL DEFAULT '',
+  `desc`        VARCHAR(100)         NOT NULL DEFAULT '',
   `user`        INT(11)              NOT NULL DEFAULT 1,
   `points`      INT(11)              NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX (`id`),
   UNIQUE INDEX (`title`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 

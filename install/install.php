@@ -3,9 +3,24 @@ require "../data/init.php";
 require "../lang/lang.php";
 $fol = false;
 
-if ($installed) header("Location: index.php");
+if (installed) header("Location: index.php");
 
-if ($_GET[''])
+$error = 0;
+
+if (isset($_POST['host']) && isset($_POST['name']) && isset($_POST['user']) && isset($_POST['pass'])) {
+    $host = $_POST['host'];
+    $name = $_POST['name'];
+    $user = $_POST['user'];
+    $pass = $_POST['$pass'];
+
+    $connect = mysql_connect($host, $user, $pass, $name);
+
+    if (mysqli_connect_error()) {
+        $error = 1;
+    } else {
+        $error = 2;
+    }
+}
 
 $headerTag = $lang['NEW_POST'].' - '.forumName;
 ?>
@@ -32,8 +47,20 @@ $headerTag = $lang['NEW_POST'].' - '.forumName;
                 <div class="columns">
                     <div class="column is-2"></div>
                     <div class="column is-8">
+                        <?php
+                            if(isset($error)) {
+                                switch ($error) {
+                                    case 1:
+                                        echo '<div class="notification is-danger">Could not connect to MySQL server</div>';
+                                        break;
+                                    case 2:
+                                        echo '<div class="notification is-success">Done :D</div>';
+                                        break;
+                                }
+                            }
+                        ?>
                         <br>
-                        <form class="is-form" method="POST" action="">
+                        <form class="is-form" method="POST" action="install.php">
                             <div class="field">
                                 <label class="label">DB Host</label>
                                 <div class="control">

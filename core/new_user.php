@@ -40,7 +40,7 @@ if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) &&
                     ------------------------
 
                     Please click this link to activate your account:
-                    http://www.'forumName.forumDomain'/verify.php?email='.$email.'&hash='.$hash.'
+                    http://www.'.forumName.forumDomain.'/verify.php?email='.$email.'&hash='.$hash.'
                     ';
 
                     if(!mail($email, $subject, $message)) {
