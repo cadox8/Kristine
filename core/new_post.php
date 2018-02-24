@@ -15,4 +15,6 @@ if (isset($_POST['title']) && isset($_POST['content'])){
 
     $id = $mysql->query("SELECT * FROM `posts`")->num_rows;
     header("Location: ../post.php?id='$id'");
+} else {
+    header("Location: ../new.php");
 }

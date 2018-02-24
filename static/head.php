@@ -13,20 +13,18 @@
 
 <!-- CSS & Favicon -->
 <?php
-    $bulmaCSS = "css/bulma.css";
     $kristineCSS = "css/kristine.css";
     $imgFolder = 'img/';
     if (!$fol) {
-        $bulmaCSS = "../css/bulma.css";
         $kristineCSS = "../css/kristine.css";
         $imgFolder = '../img/';
     }
     echo '<link rel="icon" type="image/x-icon" href="'.$imgFolder.'favicon.ico"/>';
     echo '<link href="'.$kristineCSS.'" rel="stylesheet">';
-    echo '<link href="'.$bulmaCSS.'" rel="stylesheet">';
 ?>
 
 <!-- Fonts -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
