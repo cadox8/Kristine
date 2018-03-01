@@ -10,6 +10,8 @@ Kristine is a simple discussion forum you can easily customize to make as unique
 ## Demo
 You can check the demo [here](http://kristine.ml).
 
+**WARNING:** Demo can be outdated, I apologize for that.
+
 ## Installation
 - Download all files
 - Import MySQL.sql on PHPMyAdmin
