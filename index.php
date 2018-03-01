@@ -29,7 +29,7 @@ require 'utils/ranks.php';
                         echo '<nav class="level has-borders" style="background-color: rgb(196, 84, 84)" id="cat.'.$catID.'">';
                         echo '<div class="level-left">';
                         echo '<div class="level-item">';
-                        echo '<a class="has-text-weight-bold is-size-5" style="padding: 10px; color: white;" href="#cat.'.$catID.'"><span class="icon has-text-warning"><i class="fa fa-folder-open-o"></i></span> <span>' . $cat['title'].'</span></a>';
+                        echo '<a class="has-text-weight-bold is-size-5" style="padding: 10px; color: white;" href="#cat.'.$catID.'"><span class="icon has-text-warning"><i class="far fa-folder-open"></i></span> <span>' . $cat['title'].'</span></a>';
                         echo '</div></div></nav>';
                         echo '<hr style="border-style: solid; border-width: 3px; margin-top: -24px;">';
 
@@ -37,7 +37,7 @@ require 'utils/ranks.php';
 
                         //Forums
                         while ($forum = $forumQuery->fetch_array()) {
-                            echo '<nav class="level"><div class="level-left"><div class="level-item"><span class="icon is-large has-text-gray" style="margin-right: 5px"><i class="fa fa-3x fa-comments-o"></i></span><div>';
+                            echo '<nav class="level"><div class="level-left"><div class="level-item"><span class="icon is-large has-text-gray" style="margin-right: 5px"><i class="far fa-2x fa-comments"></i></span><div>';
                             echo '<a class="is-cat" href="forum.php?forumID='.$forum['id'].'&catName='.$cat['title'].'"> ' . $forum['title'] . '</a><p class="heading"> Forums: '.$forumQuery->num_rows.'</p></div></div></div>';
                             //echo '<div class="level-right"><p class="level-item">asdasdasdsadasdasdsadsadsadsadsadasdsad</p>';
                             echo '</nav>';

@@ -83,24 +83,24 @@ $headerTag = $aid.' - '.forumName;
                                         <ul>
                                             <li class="is-active">
                                                 <a>
-                                                    <span class="icon is-small"><i class="fa fa-user-o"></i></span>
+                                                    <span class="icon is-small"><i class="far fa-user"></i></span>
                                                     <span><?php echo $lang['PROFILE']; ?></span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a <?php echo 'href="user/details.php?username='.$user->name.'";' ?>>
-                                                    <span class="icon is-small"><i class="fa fa-info"></i></span>
+                                                    <span class="icon is-small"><i class="fas fa-info"></i></span>
                                                     <span><?php echo $lang['PROF_DETAILS']; ?></span>
                                                 </a>
                                             </li>
                                             <?php
                                                 if ($adminQuery->fetch_object()->rank == 5 && !hash_equals($_SESSION['name'], $user->name)) {
-                                                    echo '<li><a href="user/account.php?username='.$user->name.'"><span class="icon is-small"><i class="fa fa-cogs"></i></span>';
+                                                    echo '<li><a href="user/account.php?username='.$user->name.'"><span class="icon is-small"><i class="fas fa-cogs"></i></span>';
                                                     echo '<span>'.$lang['PROF_EDIT'].'</span>';
                                                     echo '</a></li>';
                                                 }
                                                 if (hash_equals($_SESSION['name'], $user->name)) {
-                                                    echo '<li><a href="user/account.php?username='.$user->name.'"><span class="icon is-small"><i class="fa fa-cogs"></i></span>';
+                                                    echo '<li><a href="user/account.php?username='.$user->name.'"><span class="icon is-small"><i class="fas fa-cogs"></i></span>';
                                                     echo '<span>'.$lang['PROF_SETTINGS'].'</span>';
                                                     echo '</a></li>';
                                                 }

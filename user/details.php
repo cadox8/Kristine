@@ -82,7 +82,7 @@ $headerTag = $aid.' - '.forumName;
                                         <ul>
                                             <li>
                                                 <a <?php echo 'href="../profile.php?userName='.$user->name.'";' ?>>
-                                                    <span class="icon is-small"><i class="fa fa-user-o"></i></span>
+                                                    <span class="icon is-small"><i class="far fa-user"></i></span>
                                                     <span><?php echo $lang['PROFILE']; ?></span>
                                                 </a>
                                             </li>

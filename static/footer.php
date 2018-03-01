@@ -4,7 +4,7 @@
         <div class="columns">
             <div class="column is-10">
                 <p class="copyright">Made with
-                    <a class="copyright" target="_blank" href="http://cadox8.me/Kristine">Kristine</a>.
+                    <a class="copyright" target="_blank" href="http://bulma.io">Bulma</a>.
                 </p>
             </div>
             <div class="column">
@@ -19,7 +19,8 @@
 </footer>
 
 <!-- JavaScript -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <?php
     $jsFolder = "js/";
     if (!$fol) $jsFolder = "../js/";

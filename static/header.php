@@ -6,7 +6,7 @@
                 <div class="columns">
                     <div class="column is-3"><?php echo '<a class="is-head left">'.forumName.'</a>' ?></div>
                     <div class="column is-8 is-hidden-mobile"></div>
-                    <div class="column is-1 is-hidden-mobile"><a href="https://twitter.com/cadox8" target="_blank"><span class="icon is-large right"><i class="fa fa-twitter"></i></span></a></div>
+                    <div class="column is-1 is-hidden-mobile"><a href="https://twitter.com/cadox8" target="_blank"><span class="icon is-large right"><i class="fab fa-twitter"></i></span></a></div>
                 </div>
             </h1>
         </div>
@@ -48,8 +48,8 @@
             if (!isset($_SESSION['name'])) {
                 echo '<div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">'.$lang['LOG_IN'].' / '.$lang['SIGN_UP'].'</a><div class="navbar-dropdown"><a class="navbar-item" href="'.$userFolder.'login.php">'.$lang['LOG_IN'].'</a><a class="navbar-item" href="'.$userFolder.'register.php">'.$lang['SIGN_UP'].'</a><hr class="navbar-divider"><div class="navbar-item">Version '.version.'</div></div></div>';
             } else {
-                echo '<a class="navbar-item" href="'.$def.'profile.php?userName='.$_SESSION['name'].'"><span class="icon is-medium"><i class="fa fa-user-o"></i></span> '.$_SESSION['name'].'</a>';
-                echo '<a class="navbar-item" href="'.$userFolder.'logout.php"><span class="icon is-medium"><i class="fa fa-sign-out"></i></span></a>';
+                echo '<a class="navbar-item" href="'.$def.'profile.php?userName='.$_SESSION['name'].'"><span class="icon is-medium"><i class="far fa-user"></i></span> '.$_SESSION['name'].'</a>';
+                echo '<a class="navbar-item" href="'.$userFolder.'logout.php"><span class="icon is-medium"><i class="fas fa-sign-out-alt"></i></span></a>';
             }
             ?>
             <p class="navbar-item is-hidden-mobile"></p>

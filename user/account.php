@@ -143,7 +143,7 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                             <label class="label"><?php echo $lang['UPD'].' '.$lang['CONTACT']; ?></label>
                             <div class="field has-addons">
                                 <p class="control">
-                                    <a class="button is-static"><span class="icon is-small is-left"><i class="fa fa-twitter"></i></span> <span>@<?php if ($user->twitter != '') echo $user->twitter; ?></span></a>
+                                    <a class="button is-static"><span class="icon is-small is-left"><i class="fab fa-twitter"></i></span> <span>@<?php if ($user->twitter != '') echo $user->twitter; ?></span></a>
                                 </p>
                                 <div class="control is-expanded">
                                     <input class="input" type="text" name="twitter" placeholder="e.g. @cadox8"></input>
@@ -151,7 +151,7 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                             </div>
                             <div class="field has-addons">
                                 <p class="control">
-                                    <a class="button is-static"><span class="icon is-small is-left"><i class="fa fa-facebook"></i></span> <span><?php if ($user->facebook != '') echo $user->facebook; ?></span></a>
+                                    <a class="button is-static"><span class="icon is-small is-left"><i class="fab fa-facebook-f"></i></span> <span><?php if ($user->facebook != '') echo $user->facebook; ?></span></a>
                                 </p>
                                 <div class="control is-expanded">
                                     <input class="input" type="text" name="face" placeholder="e.g. cadox8"></input>
@@ -159,10 +159,18 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                             </div>
                             <div class="field has-addons">
                                 <p class="control">
-                                    <a class="button is-static"><span class="icon is-small is-left"><i class="fa fa-skype"></i></span> <span><?php if ($user->skype != '') echo $user->skype; ?></span></a>
+                                    <a class="button is-static"><span class="icon is-small is-left"><i class="fab fa-skype"></i></span> <span><?php if ($user->skype != '') echo $user->skype; ?></span></a>
                                 </p>
                                 <div class="control is-expanded">
                                     <input class="input" type="text" name="skype" placeholder="e.g. cadox8"></input>
+                                </div>
+                            </div>
+                            <div class="field has-addons">
+                                <p class="control">
+                                    <a class="button is-static"><span class="icon is-small is-left"><i class="fab fa-discord"></i></span> <span><?php if ($user->skype != '') echo $user->skype; ?></span></a>
+                                </p>
+                                <div class="control is-expanded">
+                                    <input class="input" type="text" name="discord" placeholder="e.g. cadox8#5249"></input>
                                 </div>
                             </div>
 
