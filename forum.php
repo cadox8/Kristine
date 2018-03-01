@@ -51,7 +51,6 @@ $headerTag = $cat.' - '.forumName;
 
                     echo '<div class="level-right"><div class="level-item ajust-right">';
                     echo '<p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">By</p></div>';
-                    echo '<div class="level-item ajust-right"><p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">At</p></div>';
                     echo '</div></nav>';
                     echo '<hr style="border-style: solid; border-width: 3px; margin-top: -24px;">';
                     while ($post = $postsQuery->fetch_array()) {
@@ -65,10 +64,10 @@ $headerTag = $cat.' - '.forumName;
                             $icon = 'img/profiles/'.$users->icon.'';
                         }
                         echo '<li><nav class="level">';
-                        echo '<div class="level-left"><div class="level-item ajust-left"><figure class="image is-48x48"><img src="'.$icon.'"></figure>';
+                        echo '<div class="level-left"><div class="level-item ajust-left"><figure class="image is-circle is-48x48"><img src="'.$icon.'"></figure>';
                         echo '<a style="padding: 5px" href="post.php?id='.$post['id'].'">' . $post['title'] . '</a></div></div>';
-                        echo '<div class="label-right"><div class="level-item ajust-left"><p>'.$users->name.'</p></div>';
-                        echo '<div class="level-item ajust-left"><p>'.$date.'</p></div>';
+                        echo '<div class="label-right"><div class="level-item ajust-left"><p><small>'.$users->name.'</small></p></div>';
+                        echo '<div class="level-item ajust-left"><p><small>'.$date.'</small></p></div>';
                         echo '</div></nav></li><br>';
                     }
                     $postsQuery->free();

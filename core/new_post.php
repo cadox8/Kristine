@@ -13,7 +13,6 @@ if (isset($_POST['title']) && isset($_POST['content'])){
 
     $result = $mysql->query("INSERT INTO `posts` (`title`, `content`, `author`) VALUES ('$title', '$content', '$users->id')");
 
-    //$id = $mysql->query("SELECT * FROM `posts`")->fetch_object()->forum;
     $id = $mysql->insert_id;
 
     header("Location: ../post.php?id='$id'");
