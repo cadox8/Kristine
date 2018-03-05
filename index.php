@@ -39,7 +39,6 @@ require 'utils/ranks.php';
                         while ($forum = $forumQuery->fetch_array()) {
                             echo '<nav class="level"><div class="level-left"><div class="level-item"><span class="icon is-large has-text-gray" style="margin-right: 5px"><i class="far fa-2x fa-comments"></i></span><div>';
                             echo '<a class="is-cat" href="forum.php?forumID='.$forum['id'].'&catName='.$cat['title'].'"> ' . $forum['title'] . '</a><p class="heading"> Forums: '.$forumQuery->num_rows.'</p></div></div></div>';
-                            //echo '<div class="level-right"><p class="level-item">asdasdasdsadasdasdsadsadsadsadsadasdsad</p>';
                             echo '</nav>';
                         }
                         $forumQuery->free();
@@ -68,9 +67,10 @@ require 'utils/ranks.php';
                             Ranks::getRank($lang, $user->rank, true);
                             echo '</center>';
                             echo '<center><span class="tag is-info">'.$user->name.'</span>';
-                            echo '</center>';
+                            echo '</center><hr>';
                             $totUsers = $mysql->query("SELECT * FROM `users`")->num_rows;
-                            echo '<span class="has-text-left">Users</span><span class="has-text-right">'.$totUsers.'</span>';
+                            echo '<center><small>Stats</small></center>';
+                            echo 'Users '.$totUsers;
                         }
                     ?>
                     <hr style="margin-bottom: 6px; margin-top: 6px">

@@ -55,7 +55,7 @@ $headerTag = $posts->title.' - '.forumName;
                      ?>
                 </div>
                 <div class="column">
-                    <?php echo $posts->content; ?>
+                    <?php echo $posts->content ?>
                 </div>
             </div>
         </div>

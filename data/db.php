@@ -13,6 +13,7 @@ if (mysqli_connect_error()) {
         case 'user':
         case 'help':
         case 'core':
+        case 'admin':
             header("Location: ../utils/error.php?id=1");
             break;
         default:

@@ -13,7 +13,7 @@ if (isset($_POST['host']) && isset($_POST['name']) && isset($_POST['user']) && i
     $user = $_POST['user'];
     $pass = $_POST['$pass'];
 
-    $connect = mysql_connect($host, $user, $pass, $name);
+    $connect = mysqli_connect($host, $user, $pass, $name);
 
     if (mysqli_connect_error()) {
         $error = 1;
@@ -35,7 +35,6 @@ $headerTag = $lang['NEW_POST'].' - '.forumName;
 <body>
 
     <?php include "../static/header.php"; ?>
-
 
     <!-- Page -->
     <section class="section">
@@ -97,8 +96,6 @@ $headerTag = $lang['NEW_POST'].' - '.forumName;
             </div>
         </div>
     </section>
-
     <?php include "../static/footer.php"; ?>
-
 </body>
 </html>
