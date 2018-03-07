@@ -35,13 +35,12 @@ I'm (cadox8) working all I can to have finished this, so, until we leave the alp
 - Prevent Bots
 - <s>Add more fields to users</s>
 - <s>Show profile details</s>
-- Some internal changes
+- <s>Some internal changes</s>
 - Better code
 - <s>Post page</s>
 - Installation script
-- <s>Verify account</s>
+- <s>Verify account</s>(?)
 - Comments
 - Profile messages
-- Lang files to JSON (?)
 
 A lot of things more, it's only an Alpha.
