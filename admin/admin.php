@@ -8,7 +8,16 @@ if (!isset($_SESSION['name'])) {
     header("Location: ../index.php");
 }
 
-$headerTag = $lang['SET_AC'].' - '.forumName;
+$username = $_SESSION['name'];
+
+$result = $mysql->query("SELECT * FROM `users` WHERE `name` = '$username'");
+$user = $result->fetch_object();
+
+if ($user->rank != 5) {
+    header("Location: ../user/security.php?username=$username&msg=0");
+}
+
+$headerTag = $lang['MENU_ADMIN'].' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -32,10 +41,10 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
             <div class="columns">
                 <div class="column is-3">
                     <aside class="menu">
-                        <p class="menu-label"><?php echo 'Admin'; ?></p>
+                        <p class="menu-label"><?php echo $lang['MENU_ADMIN']; ?></p>
                         <ul class="menu-list">
-                            <li><a href="nodes.php"><?php echo 'Nodes'; ?></a></li>
-                            <li><a href=""><?php echo 'Users'; ?></a></li>
+                            <li><a href="nodes.php"><?php echo $lang['NODES']; ?></a></li>
+                            <li><a href=""><?php echo $lang['USERS']; ?></a></li>
                         </ul>
                     </aside>
                 </div>

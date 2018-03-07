@@ -4,6 +4,8 @@ require "../lang/lang.php";
 $fol = false;
 
 if (isset($_GET['msg'])) $msg = $_GET['msg'];
+
+$headerTag = $lang['LOG_IN'].' - '.forumName;
 ?>
 
 <!DOCTYPE html>

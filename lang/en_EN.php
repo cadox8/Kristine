@@ -14,6 +14,8 @@ $lang['LOG_IN'] = 'Log In';
 $lang['SIGN_UP'] = 'Sign Up';
 $lang['PROFILE'] = 'Profile';
 $lang['PROF_DETAILS'] = 'Details';
+$lang['NODES'] = 'Nodes';
+$lang['USERS'] = 'Users';
 
 // Settings
 $lang['PROF_EDIT'] = 'Edit User';
@@ -27,6 +29,7 @@ $lang['CONTACT'] = 'Contact';
 $lang['NEW_POST'] = 'New Post';
 
 // Edit
+$lang['EDIT'] = 'Edit';
 $lang['CHANGE'] = 'Change';
 $lang['E_PIC'] = $lang['CHANGE'].' Picture';
 
@@ -45,6 +48,9 @@ $lang['NM'] = ' does not match.';
 $lang['UR_ERROR'] = 'Failed to complete registration.';
 $lang['SUCCESS'] = 'User Created Successfully.<br>Now you can Log In.';
 
+// Admin
+$lang['EDIT_NODE'] = $lang['EDIT'].' '.$lang['NODES'];
+
 // Utils
 $lang['PLEASE'] = 'Please';
 $lang['QUEST_END'] = '?';
@@ -53,6 +59,10 @@ $lang['NEW'] = 'New';
 $lang['USER'] = 'User';
 $lang['PREVIEW'] = 'Preview';
 $lang['UPD'] = 'Update';
+$lang['NAME'] = 'Name';
+$lang['TITLE'] = 'Title';
+$lang['MALE'] = 'Male';
+$lang['FEMALE'] = 'Female';
 
 //Ranks
 $lang['GUEST'] = 'Guest';

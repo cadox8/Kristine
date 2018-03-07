@@ -6,9 +6,16 @@ $fol = false;
 
 if (!isset($_SESSION['name'])) header("Location: ../index.php");
 
+$username = $_SESSION['name'];
 
+$result = $mysql->query("SELECT * FROM `users` WHERE `name` = '$username'");
+$user = $result->fetch_object();
 
-$headerTag = $lang['SET_AC'].' - '.forumName;
+if ($user->rank != 5) {
+    header("Location: ../user/security.php?username=$username&msg=0");
+}
+
+$headerTag = $lang['NODES'].' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -32,10 +39,10 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
             <div class="columns">
                 <div class="column is-3">
                     <aside class="menu">
-                        <p class="menu-label"><?php echo 'Admin'; ?></p>
+                        <p class="menu-label"><?php echo $lang['MENU_ADMIN']; ?></p>
                         <ul class="menu-list">
-                            <li><a href="" class="is-active"><?php echo 'Nodes'; ?></a></li>
-                            <li><a href=""><?php echo 'Users'; ?></a></li>
+                            <li><a href="nodes.php"><?php echo $lang['NODES']; ?></a></li>
+                            <li><a href=""><?php echo $lang['USERS']; ?></a></li>
                         </ul>
                     </aside>
                 </div>
@@ -49,13 +56,13 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                                 $catID = $cat['id'];
                                 echo '<tr><td>'.$cat['title'].'<span class="is-type"> Category</span></td>';
                                 echo '<td></td>';
-                                echo '<td><a href="node.php?node='.$cat['title'].'">Edit</a></td></tr>';
+                                echo '<td><a href="node.php?node='.$cat['title'].'&type=cat">'.$lang['EDIT'].'</a></td></tr>';
 
                                 $forumQuery = $mysql->query("SELECT * FROM `forum` WHERE `cat`= $catID");
                                 while ($forum = $forumQuery->fetch_array()) {
                                     echo '<tr><td class="is-forum">'.$forum['title'].'<span class="is-type"> Forum</span></td>';
                                     echo '<td> </td>';
-                                    echo '<td><a href="node.php?node='.$forum['title'].'">Edit</a></td></tr>';
+                                    echo '<td><a href="node.php?node='.$forum['title'].'&type=forum">'.$lang['EDIT'].'</a></td></tr>';
                                 }
                             }
                         ?>

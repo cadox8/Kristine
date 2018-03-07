@@ -38,7 +38,7 @@ $headerTag = $lang['NEW_POST'].' - '.forumName;
                         <br>
                         <form class="is-form" method="POST" action="core/new_post.php">
                             <div class="field">
-                                <label class="label">Title</label>
+                                <label class="label"><?php echo $lang['TITLE']; ?></label>
                                 <div class="control">
                                     <input class="input" type="text" placeholder="My new post" name="title">
                                 </div>

@@ -72,7 +72,7 @@ $headerTag = $lang['SET_SIGNATURE'].' - '.forumName;
                             <ul class="menu-list">
                                 <li><a href="account.php?username=<?php echo $username; ?>"><?php echo $lang['SET_AC']; ?></a></li>
                                 <li><a href="security.php?username=<?php echo $username; ?>"><?php echo $lang['SET_SECURITY']; ?></a></li>
-                                <li><a><?php echo $lang['SET_PREFERENCES']; ?></a></li>
+                                <li><a href="preferences.php?username=<?php echo $username; ?>"><?php echo $lang['SET_PREFERENCES']; ?></a></li>
                                 <li><a href="" class="is-active"><?php echo $lang['SET_SIGNATURE']; ?></a></li>
                             </ul>
                         </aside>
@@ -88,7 +88,7 @@ $headerTag = $lang['SET_SIGNATURE'].' - '.forumName;
                                     <textarea class="textarea" name="signature"><?php if ($user->signature != '') echo $user->signature; ?></textarea>
                                 </div>
                             </div>
-                            <button class="button is-info" type="submit">Update</button>
+                            <button class="button is-info" type="submit"><?php echo $lang['UPD'] ?></button>
                         </form>
 
                         <br>

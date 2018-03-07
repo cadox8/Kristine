@@ -105,12 +105,10 @@ $headerTag = $lang['SIGN_UP'].' - '.forumName;
                                 <label class="label">I'm </label>
                                 <div class="control">
                                     <label class="radio">
-                                        <input type="radio" name="gender">
-                                        Male
+                                        <input type="radio" name="gender"><?php echo $lang['MALE'] ?>
                                     </label>
                                     <label class="radio">
-                                        <input type="radio" name="gender">
-                                        Female
+                                        <input type="radio" name="gender"><?php echo $lang['FEMALE'] ?>
                                     </label>
                                 </div>
                             </div>

@@ -58,8 +58,8 @@ $headerTag = $aid.' - '.forumName;
                                     <h2 class="title is-3" style="margin-bottom: -3px"><?php echo $user->name; ?></h2>
                                     <p class="showInfo" style="margin-bottom: -16px">
                                     <?php
-                                        $gender = 'Male';
-                                        if ($user->gender == 1) $gender = 'Female';
+                                    $gender = $lang['MALE'];
+                                    if ($user->gender == 1) $gender = $lang['FEMALE'];
 
                                         $age = '';
                                         if ($user->birthday != '') {
@@ -118,8 +118,8 @@ $headerTag = $aid.' - '.forumName;
                             <p class="details">Skype:</p>
                         </div>
                         <div class="column">
-                            <p class="details">@<span><?php echo $user->twitter; ?></span></p>
-                            <p class="details"><span><?php echo $user->facebook; ?></span></p>
+                            <p class="details"><span><a target="_blank" href="https://twitter.com/<?php echo $user->twitter; ?>">@<?php echo $user->twitter; ?></a></span></p>
+                            <p class="details"><span><a target="_blank" href="https://facebook.com/<?php echo $user->twitter; ?>"><?php echo $user->facebook; ?></a></span></p>
                             <p class="details"><span><?php echo $user->skype; ?></span></p>
                         </div>
                     </div>

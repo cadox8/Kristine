@@ -58,19 +58,19 @@ $headerTag = $aid.' - '.forumName;
                                     <h2 class="title is-3" style="margin-bottom: -3px"><?php echo $user->name; ?></h2>
                                     <p class="showInfo" style="margin-bottom: -16px">
                                     <?php
-                                        $gender = 'Male';
-                                        if ($user->gender == 1) $gender = 'Female';
+                                        $gender = $lang['MALE'];
+                                        if ($user->gender == 1) $gender = $lang['FEMALE'];
 
                                         $age = '';
                                         if ($user->birthday != '') {
                                             $birthDate = explode("/", date("dd/mm/YYYY", $user->birthday));
-                                            $age = ', '.(date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md") ? ((date("Y") - $birthDate[2]) - 1) : (date("Y") - $birthDate[2])).', ';
+                                            $age = ', '.(date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md") ? ((date("Y") - $birthDate[2]) - 1) : (date("Y") - $birthDate[2]));
                                         }
 
                                         $loc = '';
-                                        if ($user->location != '') $loc = ', from <a style="color: black" href="https://www.google.es/maps?q='.str_replace(" ", "+", $user->location).'" target="_blank">'.$user->location.'</a>';
+                                        if ($user->location != '') $loc = '<a style="color: black" href="https://www.google.es/maps?q='.str_replace(" ", "+", $user->location).'" target="_blank">'.$user->location.'</a>';
 
-                                        echo $gender.$age.$loc;
+                                        echo $gender.$age.', from <u>'.$loc.'</u>';
                                     ?>
                                     </p>
                                 </div>

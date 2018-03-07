@@ -3,7 +3,7 @@
     <div class="container has-text-centered">
         <div class="columns">
             <div class="column is-10">
-                <p class="copyright">Made with <a class="copyright" target="_blank" href="http://bulma.io"><u>Bulma</u></a> by
+                <p class="copyright has-text-white">Made with <a class="copyright" target="_blank" href="http://bulma.io"><u>Bulma</u></a> by
                     <a class="copyright" target="_blank" href="http://cadox8.me"><u>cadox8</u></a>.</p>
             </div>
             <div class="column">
