@@ -6,7 +6,7 @@
                 <div class="columns">
                     <div class="column is-3"><?php echo '<a class="is-head left">'.forumName.'</a>' ?></div>
                     <div class="column is-8 is-hidden-mobile"></div>
-                    <div class="column is-1 is-hidden-mobile"><a href="https://twitter.com/cadox8" target="_blank"><span class="icon is-large right"><i class="fab fa-twitter"></i></span></a></div>
+                    <div class="column is-1 is-hidden-mobile"><a href="https://twitter.com/<?php echo forumTwitter; ?>" target="_blank"><span class="icon is-large right"><i class="fab fa-twitter"></i></span></a></div>
                 </div>
             </h1>
         </div>

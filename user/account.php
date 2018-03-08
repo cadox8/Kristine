@@ -56,20 +56,20 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                                         echo 'is-success">'.$lang['CONTACT'].' '.$lang['UPD'];
                                         break;
                                     case 2:
-                                        echo 'is-success">Profile Picture updated';
+                                        echo 'is-success">'.$lang['U_PIC'];
                                         break;
                                     case 3:
-                                        echo 'is-danger">Extension not allowed, please choose a JPEG or PNG file.';
+                                        echo 'is-danger">'.$lang['FILE_EXT'];
                                         break;
                                     case 4:
-                                        echo 'is-danger">File size must be excately 2 MB';
+                                        echo 'is-danger">'.$lang['FILE_SIZE'];
                                         break;
                                     case 5:
                                         echo 'is-success">'.$lang['CONTACT'].' '.$lang['UPD'];
                                         break;
 
                                     default:
-                                        echo 'is-danger">'.$lang['UR_ERROR'].'';
+                                        echo 'is-danger">'.$lang['ERROR'].'';
                                         break;
                                 }
                                 echo '</div>';

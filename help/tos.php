@@ -32,7 +32,7 @@ $fol = false;
                 </div>
                 <div class="column">
                     <center><figure class="image is-128x128">
-                      <img src="https://raw.githubusercontent.com/cadox8/Kristine/master/img/kristine.jpg">
+                      <img src="../img/kristine.jpg">
                     </figure></center>
 
                     <p>The providers ("we", "us", "our") of the service provided by this web site ("Service") are not responsible for any user-generated content and accounts. Content submitted express the views of their author only.</p><br>

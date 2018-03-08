@@ -35,10 +35,10 @@ $headerTag = $lang['LOG_IN'].' - '.forumName;
                                 if(isset($msg)) {
                                     switch ($msg) {
                                         case 1:
-                                            echo '<div class="notification is-danger">There is an error. Please, try again in some minutes.</div>';
+                                            echo '<div class="notification is-danger">'.$lang['LOG_IN'].'</div>';
                                             break;
                                         case 2:
-                                            echo '<div class="notification is-danger">Wrong username or password</div>';
+                                            echo '<div class="notification is-danger">'.$lang['W_PASS'].'</div>';
                                             break;
                                     }
                                 }

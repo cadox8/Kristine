@@ -55,14 +55,11 @@ $headerTag = $lang['SET_PREFERENCES'].' - '.forumName;
                                 echo '<div class="notification ';
                                 switch ($msg) {
                                     case 1:
-                                        echo 'is-success">'.$lang['CONTACT'].' '.$lang['UPD'];
-                                        break;
-                                    case 2:
-                                        echo 'is-success">Profile Picture updated';
+                                        echo 'is-success">'.$lang['SET_PREFERENCES'].' '.$lang['UPD'];
                                         break;
 
                                     default:
-                                        echo 'is-danger">'.$lang['UR_ERROR'].'';
+                                        echo 'is-danger">'.$lang['ERROR'].'';
                                         break;
                                 }
                                 echo '</div>';
@@ -84,7 +81,7 @@ $headerTag = $lang['SET_PREFERENCES'].' - '.forumName;
                     </div>
                     <div class="column is-6">
                         <form class="is-form" method="POST" action="../core/change_lang.php">
-                            <label class="label">Language</label>
+                            <label class="label"><?php echo $lang['LANGUAGE'] ?></label>
                             <div class="field has-addons">
                                 <div class="control has-icons-left">
                                     <div class="select is-primary">

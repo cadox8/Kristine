@@ -43,7 +43,7 @@ $headerTag = $lang['SET_SECURITY'].' - '.forumName;
     <section class="section">
         <div class="container">
             <div class="container">
-                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo $lang['SET_AC']; ?></h2>
+                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo $lang['SET_SECURITY']; ?></h2>
                 <hr style="margin-bottom: 0">
 
                 <div class="columns">
@@ -53,11 +53,11 @@ $headerTag = $lang['SET_SECURITY'].' - '.forumName;
                                 echo '<div class="notification ';
                                 switch ($msg) {
                                     case 1:
-                                        echo 'is-success">Password Changed';
+                                        echo 'is-success">'.$lang['PASS_C'];
                                         break;
 
                                     default:
-                                        echo 'is-danger">'.$lang['UR_ERROR'].'';
+                                        echo 'is-danger">'.$lang['PASS_E'];
                                         break;
                                 }
                                 echo '</div>';
