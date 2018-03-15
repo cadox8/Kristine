@@ -43,33 +43,39 @@ $headerTag = $cat.' - '.forumName;
                      ?></h1><hr>
                     <ul>
                     <?php
-                    echo '<nav class="level has-borders" style="background-color: rgb(196, 84, 84)">';
-                    echo '<div class="level-left">';
-                    echo '<div class="level-item ajust-left is-bar">';
-                    echo '<p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">Title</p>';
-                    echo '</div></div>';
+                    echo '<table class="table is-fullwidth is-striped"><thead><tr>';
+                    echo '<th class="is-hidden-mobile"></th> <th>Title</th> <th>By</th>  <th>Votes</th>  </tr></thead><tbody>';
 
-                    echo '<div class="level-right"><div class="level-item ajust-right">';
-                    echo '<p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">By</p></div>';
-                    echo '</div></nav>';
-                    echo '<hr style="border-style: solid; border-width: 3px; margin-top: -24px;">';
+                    // echo '<nav class="level has-borders" style="background-color: rgb(196, 84, 84)">';
+                    // echo '<div class="level-left">';
+                    // echo '<div class="level-item ajust-left is-bar">';
+                    // echo '<p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">Title</p>';
+                    // echo '</div></div>';
+                    //
+                    // echo '<div class="level-right"><div class="level-item ajust-right">';
+                    // echo '<p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">By</p></div>';
+                    // echo '</div></nav>';
+                    // echo '<hr style="border-style: solid; border-width: 3px; margin-top: -24px;">';
                     while ($post = $postsQuery->fetch_array()) {
                         $author = $post['author'];
                         $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `id` = '$author'");
                         $users = $usersQuery->fetch_object();
                         $date = date("d-m-y", strtotime($post['date']));
-                        if (hash_equals($users->icon, "")) {
-                            $icon = 'img/user.png';
-                        } else {
-                            $icon = 'img/profiles/'.$users->icon.'';
-                        }
-                        echo '<li><nav class="level">';
-                        echo '<div class="level-left"><div class="level-item ajust-left"><figure class="image is-circle is-48x48"><img src="'.$icon.'"></figure>';
-                        echo '<a style="padding: 5px" href="post.php?id='.$post['id'].'">' . $post['title'] . '</a></div></div>';
-                        echo '<div class="label-right"><div class="level-item ajust-left"><p><small>'.$users->name.'</small></p></div>';
-                        echo '<div class="level-item ajust-left"><p><small>'.$date.'</small></p></div>';
-                        echo '</div></nav></li><br>';
+                        $title = (strlen($post['title']) >= 46 ? $title = substr($post['title'], 0, 46).'...' : $title = $post['title']);
+                        $icon = (hash_equals($users->icon, "") ? $icon = 'img/user.png' : $icon = 'img/profiles/'.$users->icon);
+
+                        echo '<tr><th class="is-hidden-mobile"><figure class="image is-circle is-48x48"><img src="'.$icon.'"></figure></th>';
+                        echo '<td><a href="post.php?id='.$post['id'].'">'.$title.'</a></td>';
+                        echo '<td><p><small>'.$users->name.'     '.$date.'</small></p></td>';
+                        echo '<td>'.$post['likes'].'</td></tr>';
+                        // echo '<li><nav class="level">';
+                        // echo '<div class="level-left"><div class="level-item ajust-left"><figure class="image is-circle is-48x48"><img src="'.$icon.'"></figure>';
+                        // echo '<a style="padding: 5px" href="post.php?id='.$post['id'].'">' . $post['title'] . '</a></div></div>';
+                        // echo '<div class="label-right"><div class="level-item ajust-left"><p><small>'.$users->name.'</small></p></div>';
+                        // echo '<div class="level-item ajust-left"><p><small>'.$date.'</small></p></div>';
+                        // echo '</div></nav></li><br>';
                     }
+                    echo '</tbody></table>';
                     $postsQuery->free();
                     ?>
                     </ul>
