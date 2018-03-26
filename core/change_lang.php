@@ -9,13 +9,13 @@ if (isset($_POST['lang'])) {
     $user = $result->fetch_object();
 
     if ($user->rank != 5) {
-        header("Location: ../user/security.php?username=$username&msg=0");
+        header("Location: ../user/preferences.php?username=$username&msg=0");
     }
 
-    if (!$result) header("Location: ../user/security.php?username=$username&msg=0");
+    if (!$result) header("Location: ../user/preferences.php?username=$username&msg=0");
 
     $mysql->query("UPDATE `users` SET `lang`='$lang' WHERE `name`='$username'");
-    header("Location: ../user/security.php?username=$username&msg=1");
+    header("Location: ../user/preferences.php?username=$username&msg=1");
 } else {
-    header("Location: ../user/security.php?username=$username&msg=0");
+    header("Location: ../user/preferences.php?username=$username&msg=0");
 }

@@ -78,4 +78,4 @@ INSERT INTO `users` (name, email, pass, gender, active) VALUES ('Kristine', 'kri
 
 INSERT INTO `cat` (title, `desc`) VALUES ('General', 'Default category');
 INSERT INTO `forum` (title, `desc`, cat) VALUES ('First Forum', 'Default Forum', 1);
-INSERT INTO `posts` (title, content, author, likes, forum) VALUES ('My First Post', 'Congrats, you have just installed Kristine! :D', 1, 0, 1)
+INSERT INTO `posts` (title, content, author, likes, forum) VALUES ('My First Post', 'Congrats, you have just installed Kristine! :D', 1, 0, 1);

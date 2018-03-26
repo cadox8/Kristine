@@ -1,8 +1,9 @@
 ![Kristine](https://github.com/cadox8/Kristine/blob/master/img/kristine.jpg)
 
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
-[![forthebadge](http://forthebadge.com/images/badges/validated-html5.svg)](http://forthebadge.com)
-[![forthebadge](http://forthebadge.com/images/badges/contains-cat-gifs.svg)](http://forthebadge.com)
+[![built](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
+[![cat](http://forthebadge.com/images/badges/contains-cat-gifs.svg)](http://forthebadge.com)
+
+![version](https://img.shields.io/badge/version-0.1.1%20Alpha-ff69b4.svg?longCache=true&style=for-the-badge)
 
 # Kristine
 Kristine is a simple discussion forum you can easily customize to make as unique as your community<br>
@@ -28,8 +29,8 @@ I'm (cadox8) working all I can to have finished this, so, until we leave the alp
 ![Cat Gif!](http://bestanimations.com/Animals/Mammals/Cats/catgif/cute-cat-animated-gif-6.gif)
 
 ## TODO List
-- Admin System
-- Translate everything
+- Admin System <span style="color:blue">WIP</span>
+- Translate everything <span style="color:blue">WIP</span>
 - Make it customizable
 - Finish BBCode support
 - Prevent Bots
@@ -38,7 +39,7 @@ I'm (cadox8) working all I can to have finished this, so, until we leave the alp
 - <s>Some internal changes</s>
 - Better code
 - <s>Post page</s>
-- Installation script
+- <s>Installation script</s>
 - <s>Verify account</s>(?)
 - Comments
 - Profile messages

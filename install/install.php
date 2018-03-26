@@ -19,6 +19,10 @@ if (isset($_POST['host']) && isset($_POST['name']) && isset($_POST['user']) && i
         $error = 1;
     } else {
         $error = 2;
+        DBHOST = $host;
+        DBUSER = $user;
+        DBPASS = $pass;
+        DBNAME = $name;
     }
 }
 
