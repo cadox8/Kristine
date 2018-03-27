@@ -1,4 +1,5 @@
 ![Kristine](https://github.com/cadox8/Kristine/blob/master/img/kristine.jpg)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcadox8%2FKristine.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcadox8%2FKristine?ref=badge_shield)
 
 [![built](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 [![cat](http://forthebadge.com/images/badges/contains-cat-gifs.svg)](http://forthebadge.com)
@@ -31,6 +32,9 @@ And from my phone<br>
 
 ## License
 This project is released under [GNU LICENSE](https://github.com/cadox8/Kristine/blob/master/LICENSE).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcadox8%2FKristine.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcadox8%2FKristine?ref=badge_large)
 
 ## Notes
 This project isn't finished yet, so if you find any bug, please, post it on [Issues](https://github.com/cadox8/Kristine/issues).
