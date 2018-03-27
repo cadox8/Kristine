@@ -19,6 +19,16 @@ You can check the demo [here](http://kristine.ml).
 - Edit data/db.php and data/settings.php
 - Navigate to your forum folder and enjoy :D
 
+## Images
+Some images taken from my computer<br>
+![main](https://github.com/cadox8/Kristine/blob/gh-pages/img/main.png)<br>
+![posts](https://github.com/cadox8/Kristine/blob/gh-pages/img/posts.png)<br>
+![post](https://github.com/cadox8/Kristine/blob/gh-pages/img/post.png)<br>
+![nodes](https://github.com/cadox8/Kristine/blob/gh-pages/img/nodes.png)<br>
+![details](https://github.com/cadox8/Kristine/blob/gh-pages/img/details.png)<br>
+And from my phone<br>
+![mobile](https://github.com/cadox8/Kristine/blob/gh-pages/img/mobile.png)
+
 ## License
 This project is released under [GNU LICENSE](https://github.com/cadox8/Kristine/blob/master/LICENSE).
 
@@ -29,8 +39,8 @@ I'm (cadox8) working all I can to have finished this, so, until we leave the alp
 ![Cat Gif!](http://bestanimations.com/Animals/Mammals/Cats/catgif/cute-cat-animated-gif-6.gif)
 
 ## TODO List
-- Admin System <span style="color:blue">WIP</span>
-- Translate everything <span style="color:blue">WIP</span>
+- Admin System (WIP)
+- Translate everything (WIP)
 - Make it customizable
 - Finish BBCode support
 - Prevent Bots
