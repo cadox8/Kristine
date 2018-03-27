@@ -1,10 +1,10 @@
-![Kristine](https://github.com/cadox8/Kristine/blob/master/img/kristine.jpg)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcadox8%2FKristine.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcadox8%2FKristine?ref=badge_shield)
-
+![Kristine](https://github.com/cadox8/Kristine/blob/master/img/kristine.jpg)<br>
+<br>
 [![built](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 [![cat](http://forthebadge.com/images/badges/contains-cat-gifs.svg)](http://forthebadge.com)
-
+<br>
 ![version](https://img.shields.io/badge/version-0.1.1%20Alpha-ff69b4.svg?longCache=true&style=for-the-badge)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcadox8%2FKristine.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcadox8%2FKristine?ref=badge_shield)
 
 # Kristine
 Kristine is a simple discussion forum you can easily customize to make as unique as your community<br>
