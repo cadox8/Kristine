@@ -21,13 +21,13 @@ You can check the demo [here](http://kristine.ml).
 
 ## Images
 Some images taken from my computer<br>
-![main](https://github.com/cadox8/Kristine/blob/gh-pages/img/main.png)<br>
-![posts](https://github.com/cadox8/Kristine/blob/gh-pages/img/posts.png)<br>
-![post](https://github.com/cadox8/Kristine/blob/gh-pages/img/post.png)<br>
-![nodes](https://github.com/cadox8/Kristine/blob/gh-pages/img/nodes.png)<br>
-![details](https://github.com/cadox8/Kristine/blob/gh-pages/img/details.png)<br>
+![main](https://github.com/cadox8/Kristine/blob/master/docs/img/main.png)<br>
+![posts](https://github.com/cadox8/Kristine/blob/master/docs/img/posts.png)<br>
+![post](https://github.com/cadox8/Kristine/blob/master/docs/img/post.png)<br>
+![nodes](https://github.com/cadox8/Kristine/blob/master/docs/img/nodes.png)<br>
+![details](https://github.com/cadox8/Kristine/blob/master/docs/img/details.png)<br>
 And from my phone<br>
-![mobile](https://github.com/cadox8/Kristine/blob/gh-pages/img/mobile.png)
+![mobile](https://github.com/cadox8/Kristine/blob/master/docs/img/mobile.png)
 
 ## License
 This project is released under [GNU LICENSE](https://github.com/cadox8/Kristine/blob/master/LICENSE).
