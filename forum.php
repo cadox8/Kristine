@@ -43,8 +43,8 @@ $headerTag = $cat.' - '.forumName;
                      ?></h1><hr>
                     <ul>
                     <?php
-                    echo '<table class="table is-fullwidth is-striped"><thead><tr>';
-                    echo '<th class="is-hidden-mobile"></th> <th>Title</th> <th>By</th>  <th>Votes</th>  </tr></thead><tbody>';
+                    echo '<table class="table is-fullwidth is-striped"><thead><tr class="colored">';
+                    echo '<th class="is-hidden-mobile"></th> <th>Title</th> <th>By</th>  <th class="is-hidden-mobile">Votes</th>  </tr></thead><tbody>';
 
                     // echo '<nav class="level has-borders" style="background-color: rgb(196, 84, 84)">';
                     // echo '<div class="level-left">';
@@ -56,18 +56,23 @@ $headerTag = $cat.' - '.forumName;
                     // echo '<p class="has-text-weight-bold has-text-white is-size-5 has-text-centered">By</p></div>';
                     // echo '</div></nav>';
                     // echo '<hr style="border-style: solid; border-width: 3px; margin-top: -24px;">';
+
                     while ($post = $postsQuery->fetch_array()) {
+                        $fixed = 46;
+                        if($_COOKIE["size"] < 770) $fixed = 25;
+
                         $author = $post['author'];
                         $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `id` = '$author'");
                         $users = $usersQuery->fetch_object();
                         $date = date("d-m-y", strtotime($post['date']));
-                        $title = (strlen($post['title']) >= 46 ? $title = substr($post['title'], 0, 46).'...' : $title = $post['title']);
+                        $title = (strlen($post['title']) >= $fixed ? $title = substr($post['title'], 0, $fixed).'...' : $title = $post['title']);
                         $icon = (hash_equals($users->icon, "") ? $icon = 'img/user.png' : $icon = 'img/profiles/'.$users->icon);
 
                         echo '<tr><th class="is-hidden-mobile"><figure class="image is-circle is-48x48"><img src="'.$icon.'"></figure></th>';
                         echo '<td><a href="post.php?id='.$post['id'].'">'.$title.'</a></td>';
-                        echo '<td><p><small>'.$users->name.'     '.$date.'</small></p></td>';
-                        echo '<td>'.$post['likes'].'</td></tr>';
+                        echo '<td><p><small><strong>'.$users->name.'</strong>  on   '.$date.'</small></p></td>';
+                        echo '<td class="is-hidden-mobile">'.$post['likes'].'</td></tr>';
+
                         // echo '<li><nav class="level">';
                         // echo '<div class="level-left"><div class="level-item ajust-left"><figure class="image is-circle is-48x48"><img src="'.$icon.'"></figure>';
                         // echo '<a style="padding: 5px" href="post.php?id='.$post['id'].'">' . $post['title'] . '</a></div></div>';

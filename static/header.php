@@ -1,3 +1,9 @@
+<!-- Data -->
+<script type="text/javascript">
+  var c = document.cookie;
+  document.cookie = 'size=' + Math.max(screen.width, screen.height) + ';';
+</script>
+
 <!-- Info -->
 <section class="hero is-paddingless" style="margin-top: -13px">
     <div class="hero-body is-paddingless"><br>

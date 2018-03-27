@@ -1,7 +1,7 @@
 <?php
 require "../data/init.php";
 
-if (isset($_POST['twitter'])) {
+if (isset($_POST['twitter']) && $_POST['twitter'] != '') {
     $twitter = mysqli_real_escape_string($mysql, stripslashes($_POST['twitter']));
     $username = $_SESSION['name'];
 
@@ -12,7 +12,7 @@ if (isset($_POST['twitter'])) {
     $mysql->query("UPDATE `users` SET `twitter`='$twitter' WHERE `name`='$username'");
     header("Location: ../user/account.php?username=$username&msg=5");
 } else {
-    if (isset($_POST['skype'])) {
+    if (isset($_POST['skype']) && $_POST['skype'] != '') {
         $skype = mysqli_real_escape_string($mysql, stripslashes($_POST['skype']));
         $username = $_SESSION['name'];
 
@@ -23,7 +23,7 @@ if (isset($_POST['twitter'])) {
         $mysql->query("UPDATE `users` SET `skype`='$skype' WHERE `name`='$username'");
         header("Location: ../user/account.php?username=$username&msg=5");
     } else {
-        if (isset($_POST['face'])) {
+        if (isset($_POST['face']) && $_POST['face'] != '') {
             $face = mysqli_real_escape_string($mysql, stripslashes($_POST['twitter']));
             $username = $_SESSION['name'];
 

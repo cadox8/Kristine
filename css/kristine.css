@@ -14,6 +14,11 @@
     color: #ce5d43;
 }
 
+tr.colored {
+    background-color: rgb(196, 84, 84);
+    color: white; !important
+}
+
 .is-forum {
     padding-left: 10px;
 }
