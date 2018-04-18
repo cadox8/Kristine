@@ -56,7 +56,7 @@ $headerTag = $lang['NODES'].' - '.forumName;
                                 $catID = $cat['id'];
                                 echo '<tr><td>'.$cat['title'].'<span class="is-type"> Category</span></td>';
                                 echo '<td></td>';
-                                echo '<td><a href="node.php?node='.$cat['title'].'&type=cat">'.$lang['EDIT'].'</a></td></tr>';
+                                echo '<td><a href="node.php?node='.$cat['title'].'&type=cat">'.$lang['EDIT'].'</a></td>';
 
                                 $forumQuery = $mysql->query("SELECT * FROM `forum` WHERE `cat`= $catID");
                                 while ($forum = $forumQuery->fetch_array()) {
@@ -66,7 +66,8 @@ $headerTag = $lang['NODES'].' - '.forumName;
                                 }
                             }
                         ?>
-                        </tbody></table>
+                    </tbody></table>
+                    <a class="button is-success" href="createNode.php">Create Node</a>
                 </div>
             </div>
         </div>

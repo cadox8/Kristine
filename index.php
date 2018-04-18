@@ -37,8 +37,10 @@ require 'utils/ranks.php';
 
                         //Forums
                         while ($forum = $forumQuery->fetch_array()) {
+                            $t = $forum['id'];
+                            $postsQuery = $mysql->query("SELECT * FROM `posts` WHERE `forum` = $t");
                             echo '<nav class="level"><div class="level-left"><div class="level-item"><span class="icon is-large has-text-gray" style="margin-right: 5px"><i class="far fa-2x fa-comments"></i></span><div>';
-                            echo '<a class="is-cat" href="forum.php?forumID='.$forum['id'].'&catName='.$cat['title'].'"> ' . $forum['title'] . '</a><p class="heading"> Forums: '.$forumQuery->num_rows.'</p></div></div></div>';
+                            echo '<a class="is-cat" href="forum.php?forumID='.$forum['id'].'&catName='.$cat['title'].'"> ' . $forum['title'] . '</a><p class="heading"> Posts: '.$postsQuery->num_rows.'</p></div></div></div>';
                             echo '</nav>';
                         }
                         $forumQuery->free();

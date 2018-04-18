@@ -92,7 +92,7 @@ $headerTag = $lang['NEW_POST'].' - '.forumName;
                                 </div>
                             </div>
 
-                            <button class="button is-info" type="submit">Conect</button>
+                            <button class="button is-info" type="submit">Test Connection</button>
                         </form>
                     </div>
                     <div class="column"></div>

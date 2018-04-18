@@ -2,7 +2,6 @@
 require "data/init.php";
 require "lang/lang.php";
 require 'utils/ranks.php';
-require 'utils/BBCodeParser.php';
 
 if (isset($_GET['id'])) {
     $aid = $_GET['id'];
