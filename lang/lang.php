@@ -2,6 +2,9 @@
 //Lang
 $lang = "en_EN";
 
+$file = file_get_contents("lang.json");
+$json = json_decode($file, true);
+
 if (isset($_SESSION['name'])) {
     $usersQueryLang = $mysql->query("SELECT * FROM `users`");
     while ($userLang = $usersQueryLang->fetch_array()) {
