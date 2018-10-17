@@ -1,0 +1,15 @@
+extends ../layout
+
+block block
+    section.hero.is-bold
+        .hero-body
+            .container
+                h1.title.has-text-centered #{siteName} - Help
+                h2.subtitle.has-text-centered We are here to help you
+    section.section
+        .container
+            .columns
+                .column.is-2
+                    include menu
+                .column.has-text-justified
+                    block help

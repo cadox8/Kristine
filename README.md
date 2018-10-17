@@ -1,4 +1,4 @@
-![Kristine](https://github.com/cadox8/Kristine/blob/master/img/kristine.jpg)<br>
+![Kristine](https://github.com/cadox8/Kristine/blob/master/docs/img/kristine.jpg)<br>
 <br>
 [![built](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 [![cat](http://forthebadge.com/images/badges/contains-cat-gifs.svg)](http://forthebadge.com)

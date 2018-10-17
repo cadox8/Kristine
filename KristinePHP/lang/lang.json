@@ -1,0 +1,73 @@
+{
+    "menu": {
+        "home": "Home",
+        "admin": "Admin",
+        "log_in": "Log In",
+        "sign_up": "Sign Up",
+        "user_profile": "Profile",
+        "user_details": "Details",
+        "admin_nodes": "Nodes",
+        "admin_users": "Users"
+    },
+
+    "settings": {
+        "edit_user": "Edit user",
+        "user_settings": "Settings",
+        "account_details": "Acount Details",
+        "account_security": "Security",
+        "account_preferences": "Preferences",
+        "account_signature": "Signature",
+        "contact": "Contact",
+        "edit_picture": "Edit Profile Picture"
+    },
+
+    "user": {
+        "username": "Username",
+        "Password": "Password",
+        "email": "Email",
+        "new_account": "New Account",
+        "new_user": "New User",
+        "have_account": "Have an account",
+        "go_log_in": "Go to Log In",
+        "gender": "Gender"
+    },
+
+    "details": {
+        "signature_changed": "Signature Changed",
+        "pass_updated": "Password updated",
+        "pic_updated": "Profile Picture updated"
+    },
+
+    "misc": {
+        "new_post": "New Post",
+        "tos": "Clicking on Register, you will accept the %terms and conditions%.",
+        "edit": "Edit",
+        "change": "Change"
+    },
+
+    "error": {
+        "uknown": "Uknown error, please contact with the administration",
+        "all_fields": "Please, fill all fields.",
+        "user_exists": "Username already exists",
+        "pass_not_match": "Passwords doesn't match",
+        "user_pass": "Wrong username or password",
+        "signature_e": "You signature could not be changed at the moment, sorry",
+        "pass_e": "Error while updating your password",
+        "file_ext": "Extension not allowed, please choose a JPEG or PNG file.",
+        "file_size": "File size must be less than 2 Mb"
+    },
+
+    "success": {
+        "registration": "User Created Successfully.<br>Now you can Log In."
+    },
+
+
+    "ranks": {
+        "guest": "Guest",
+        "member": "Member",
+        "vip": "VIP",
+        "moderator": "Moderator",
+        "developer": "Developer",
+        "administrator": "Administrator"
+    }
+}
