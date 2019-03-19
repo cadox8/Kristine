@@ -103,23 +103,8 @@ $headerTag = getMessage('menu', 'sign_up').' - '.forumName;
                                     </label>
                                 </div>
                             </div>
-<!--
-                            <div class="field">
-                                <label class="label"><?php echo $lang['LANGUAGE'] ?></label>
-                                <div class="control has-icons-left">
-                                    <div class="select is-primary">
-                                        <select name="lang">
-                                            <option value="en_EN" selected>English</option>
-                                            <option value="es_ES">Español</option>
-                                        </select>
-                                        <span class="icon is-small is-left"><i class="fa fa-language"></i></span>
-                                    </div>
-                                </div>
-                            </div> -->
 
-
-                            <label class="label"><small><?php echo getMessage('misc', 'tos') ?></small></label>
-
+                            <label class="label"><small><?php echo getMessageArgs('misc', 'tos', '%tos%', '<a href="../help/tos.php">'.getMessage('menu', 'tos').'</a>') ?></small></label>
                             <br>
 
                             <div class="field is-grouped">

@@ -34,6 +34,7 @@ if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) &&
 
                     ------------------------
                     Username: '.$username.'
+                    Email: '.$email.'
                     ------------------------
 
                     Please click this link to activate your account:

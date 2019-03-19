@@ -6,3 +6,14 @@ function getMessage($type, $msg) {
   if ($msgResult == "") $msgResult = "Error!";
   return $msgResult;
 }
+
+
+function getMessageArgs($type, $msg, $replace, $for) {
+  $json = json_decode(file_get_contents(__DIR__.'/lang.json'), true);
+  $msgResult = $json[$type][$msg];
+
+  if ($msgResult == "") $msgResult = "Error!";
+
+  $msgResult = str_replace($replace, $for, $msgResult);
+  return $msgResult;
+}

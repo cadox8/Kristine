@@ -7,7 +7,8 @@
         "user_profile": "Profile",
         "user_details": "Details",
         "admin_nodes": "Nodes",
-        "admin_users": "Users"
+        "admin_users": "Users",
+        "tos": "Terms and Conditions"
     },
 
     "settings": {
@@ -43,7 +44,7 @@
 
     "misc": {
         "new_post": "New Post",
-        "tos": "Clicking on Register, you will accept the %terms and conditions%.",
+        "tos": "Clicking on Register, you will accept the %tos%.",
         "edit": "Edit",
         "change": "Change",
         "please": "Please",
