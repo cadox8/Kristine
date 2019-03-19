@@ -4,9 +4,6 @@ require "../data/init.php";
 if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['email'])){
     $username = mysqli_real_escape_string($mysql, stripslashes($_POST['name']));
     $email = mysqli_real_escape_string($mysql, stripslashes($_POST['email']));
-    $selectedLang = $_POST['lang'];
-
-    if ($selectedLang == '' || $selectedLang == null) $selectedLang = 'en_EN';
 
     //All Queries
     $checkUserQuery = $mysql->query("SELECT * FROM `users` WHERE `name`= '$username'");
@@ -27,7 +24,7 @@ if (isset($_POST['name']) && isset($_POST['pass1']) && isset($_POST['pass2']) &&
                     header('Location: ../user/register.php?msg=3');
                 } else {
                     $hash = md5(rand(0,1000));
-                    $result = $mysql->query("INSERT INTO `users` (`name`, `email`, `pass`, `lang`, `hash`) VALUES ('$username', '$email', '$password', '$selectedLang', '$hash')");
+                    $result = $mysql->query("INSERT INTO `users` (`name`, `email`, `pass`, `hash`) VALUES ('$username', '$email', '$password', '$hash')");
                     header('Location: ../user/register.php?msg=-1');
 
                     $subject = 'Activate your account - Kristine';

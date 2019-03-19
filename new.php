@@ -10,7 +10,7 @@ if (isset($_GET['forumID']) && isset($_SESSION['name'])) {
     header("Location: index.php");
 }
 
-$headerTag = $lang['NEW_POST'].' - '.forumName;
+$headerTag = getMessage('misc', 'new_post').' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -29,16 +29,15 @@ $headerTag = $lang['NEW_POST'].' - '.forumName;
     <section class="section">
         <div class="container">
             <div class="container">
-                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo $lang['NEW_POST']; ?></h2>
+                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo getMessage('misc', 'new_post'); ?></h2>
                 <hr style="margin-bottom: 0">
-
                 <div class="columns">
                     <div class="column is-2"></div>
                     <div class="column is-8">
                         <br>
                         <form class="is-form" method="POST" action="core/new_post.php">
                             <div class="field">
-                                <label class="label"><?php echo $lang['TITLE']; ?></label>
+                                <label class="label"><?php echo getMessage('misc', 'title'); ?></label>
                                 <div class="control">
                                     <input class="input" type="text" placeholder="My new post" name="title">
                                 </div>
@@ -49,7 +48,7 @@ $headerTag = $lang['NEW_POST'].' - '.forumName;
                                     <textarea class="textarea" name="content" placeholder="Write Something" rows="8"></textarea>
                                 </div>
                             </div>
-                            <button class="button is-info" type="submit">Create</button>
+                            <button class="button is-info" type="submit"><?php echo getMessage('misc', 'create'); ?></button>
                         </form>
                     </div>
                     <div class="column"></div>

@@ -7,7 +7,7 @@ define('forumTwitter', 'cadox8');
 define('private', false);
 
 define('author', 'cadox8');
-define('version', '0.1.1 Alpha');
+define('version', '0.1.2 Alpha');
 
 define('installed', false);
 $headerTag = forumName;

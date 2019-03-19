@@ -44,7 +44,7 @@ $headerTag = $aid.' - '.forumName;
                     </figure>
                     <?php
                     echo '<center>';
-                    Ranks::getRank($lang, $user->rank, true);
+                    Ranks::getRank($user->rank, true);
                     echo '</center>';
                     ?>
                     <hr style="margin-bottom: 6px; margin-top: 6px">
@@ -58,8 +58,8 @@ $headerTag = $aid.' - '.forumName;
                                     <h2 class="title is-3" style="margin-bottom: -3px"><?php echo $user->name; ?></h2>
                                     <p class="showInfo" style="margin-bottom: -16px">
                                     <?php
-                                    $gender = $lang['MALE'];
-                                    if ($user->gender == 1) $gender = $lang['FEMALE'];
+                                    $gender = getMessage('user', 'male');
+                                    if ($user->gender == 1) $gender = getMessage('user', 'female');
 
                                         $age = '';
                                         if ($user->birthday != '') {
@@ -83,24 +83,24 @@ $headerTag = $aid.' - '.forumName;
                                             <li>
                                                 <a <?php echo 'href="../profile.php?userName='.$user->name.'";' ?>>
                                                     <span class="icon is-small"><i class="far fa-user"></i></span>
-                                                    <span><?php echo $lang['PROFILE']; ?></span>
+                                                    <span><?php echo getMessage('menu', 'user_profile'); ?></span>
                                                 </a>
                                             </li>
                                             <li class="is-active">
                                                 <a>
                                                     <span class="icon is-small"><i class="fa fa-info"></i></span>
-                                                    <span><?php echo $lang['PROF_DETAILS']; ?></span>
+                                                    <span><?php echo getMessage('menu', 'user_details'); ?></span>
                                                 </a>
                                             </li>
                                             <?php
                                                 if ($adminQuery->fetch_object()->rank == 5 && !hash_equals($_SESSION['name'], $user->name)) {
                                                     echo '<li><a href="account.php?userName='.$user->name.'"><span class="icon is-small"><i class="fa fa-cogs"></i></span>';
-                                                    echo '<span>'.$lang['PROF_EDIT'].'</span>';
+                                                    echo '<span>'.getMessage('settings', 'edit_user').'</span>';
                                                     echo '</a></li>';
                                                 }
                                                 if (hash_equals($_SESSION['name'], $user->name)) {
                                                     echo '<li><a href="account.php?username='.$user->name.'"><span class="icon is-small"><i class="fa fa-cogs"></i></span>';
-                                                    echo '<span>'.$lang['PROF_SETTINGS'].'</span>';
+                                                    echo '<span>'.getMessage('settings', 'account_preferences').'</span>';
                                                     echo '</a></li>';
                                                 }
                                             ?>

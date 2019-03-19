@@ -5,7 +5,7 @@ $fol = false;
 
 if (isset($_GET['msg'])) $msg = $_GET['msg'];
 
-$headerTag = $lang['LOG_IN'].' - '.forumName;
+$headerTag = getMessage('menu', 'log_in').' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -29,30 +29,30 @@ $headerTag = $lang['LOG_IN'].' - '.forumName;
                     </div>
                     <div class="column is-5">
                         <form class="is-form" method="POST" action="../core/sign_in.php">
-                            <h2 class="title"><?php echo $lang['PLEASE'].', '.$lang['LOG_IN'] ?></h2>
+                            <h2 class="title"><?php echo getMessage('misc', 'please').', '.getMessage('menu', 'log_in'); ?></h2>
 
                             <?php
                                 if(isset($msg)) {
                                     switch ($msg) {
                                         case 1:
-                                            echo '<div class="notification is-danger">'.$lang['LOG_IN'].'</div>';
+                                            echo '<div class="notification is-danger">'.getMessage('menu', 'log_in').'</div>';
                                             break;
                                         case 2:
-                                            echo '<div class="notification is-danger">'.$lang['W_PASS'].'</div>';
+                                            echo '<div class="notification is-danger">'.getMessage('error', 'user_pass').'</div>';
                                             break;
                                     }
                                 }
                             ?>
 
                             <div class="field">
-                                <label class="label"><?php echo $lang['USERNAME']; ?></label>
+                                <label class="label"><?php echo getMessage('user', 'username'); ?></label>
                                 <div class="control has-icons-left">
                                     <input class="input" type="text" name="name" placeholder="e.g. jonh01">
                                     <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
                                 </div>
                             </div>
 
-                            <label class="label"><?php echo $lang['PASSWORD']; ?></label>
+                            <label class="label"><?php echo getMessage('user', 'password'); ?></label>
                             <div class="field">
                                 <div class="control has-icons-left">
                                     <input class="input" type="password" name="pass" placeholder="*********">
@@ -62,9 +62,9 @@ $headerTag = $lang['LOG_IN'].' - '.forumName;
 
                             <div class="field is-grouped">
                                 <div class="control">
-                                    <button class="button is-primary" type="submit"><?php echo $lang['LOG_IN']; ?></button>
+                                    <button class="button is-primary" type="submit"><?php echo getMessage('menu', 'log_in'); ?></button>
                                 </div>
-                                <label class="label"><?php echo $lang['QUEST_START'].$lang['NEW_USER'].$lang['QUEST_END'].' <a href="register.php">'.$lang['NEW_ACCOUNT'].'</a>'; ?>.</label>
+                                <label class="label"><?php echo getMessage('user', 'new_user').' <a href="register.php">'.getMessage('user', 'new_account').'</a>'; ?>.</label>
                             </div>
                         </form>
                     </div>

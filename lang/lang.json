@@ -23,13 +23,16 @@
 
     "user": {
         "username": "Username",
-        "Password": "Password",
+        "password": "Password",
         "email": "Email",
-        "new_account": "New Account",
-        "new_user": "New User",
-        "have_account": "Have an account",
+        "new_account": "Create an account",
+        "new_user": "New User?",
+        "have_account": "Have an account?",
         "go_log_in": "Go to Log In",
-        "gender": "Gender"
+        "gender": "Gender",
+        "male": "Male",
+        "female": "Female",
+        "pic": "Profile Picture"
     },
 
     "details": {
@@ -42,17 +45,24 @@
         "new_post": "New Post",
         "tos": "Clicking on Register, you will accept the %terms and conditions%.",
         "edit": "Edit",
-        "change": "Change"
+        "change": "Change",
+        "please": "Please",
+        "update": "Update",
+        "new": "New",
+        "title": "Title",
+        "create": "Create"
     },
 
     "error": {
-        "uknown": "Uknown error, please contact with the administration",
+        "unknown": "Uknown error, please contact with the administration",
         "all_fields": "Please, fill all fields.",
         "user_exists": "Username already exists",
         "pass_not_match": "Passwords doesn't match",
         "user_pass": "Wrong username or password",
         "signature_e": "You signature could not be changed at the moment, sorry",
         "pass_e": "Error while updating your password",
+        "pic_u": "Error while updating your profile photo",
+        "email_e": "Error while updating your email",
         "file_ext": "Extension not allowed, please choose a JPEG or PNG file.",
         "file_size": "File size must be less than 2 Mb"
     },
@@ -60,7 +70,6 @@
     "success": {
         "registration": "User Created Successfully.<br>Now you can Log In."
     },
-
 
     "ranks": {
         "guest": "Guest",

@@ -7,7 +7,7 @@ $fol = false;
 $msg = -2;
 if (isset($_GET['msg'])) $msg = $_GET['msg'];
 
-$headerTag = $lang['SIGN_UP'].' - '.forumName;
+$headerTag = getMessage('menu', 'sign_up').' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -31,25 +31,25 @@ $headerTag = $lang['SIGN_UP'].' - '.forumName;
                     </div>
                     <div class="column is-5">
                         <form class="is-form" method="POST" action="../core/new_user.php">
-                            <h2 class="title"><?php echo $lang['PLEASE'].', '.$lang['SIGN_UP'] ?></h2>
+                            <h2 class="title"><?php echo getMessage('misc', 'please').', '.getMessage('menu', 'sign_up') ?></h2>
 
                             <?php
                                 if(isset($msg)) {
                                     switch ($msg) {
                                         case -1:
-                                            echo '<div class="notification is-success">'.$lang['SUCCESS'].'</div>';
+                                            echo '<div class="notification is-success">'.getMessage('success', 'registration').'</div>';
                                             break;
                                         case 0:
-                                            echo '<div class="notification is-info">'.$lang['ALL_FIELDS'].'</div>';
+                                            echo '<div class="notification is-info">'.getMessage('error', 'all_fields').'</div>';
                                             break;
                                         case 1:
-                                            echo $lang['PASSWORD'].$lang['NM'];
+                                            echo getMessage('error', 'pass_not_match');
                                             break;
                                         case 2:
-                                            echo $lang['USERNAME'].$lang['AE'];
+                                            echo getMessage('error', 'user_exists');
                                             break;
                                         case 3:
-                                            echo $lang['EMAIL'].$lang['AE'];
+                                            echo getMessage('error', 'email');
                                             break;
                                         default:
                                             break;
@@ -58,7 +58,7 @@ $headerTag = $lang['SIGN_UP'].' - '.forumName;
                             ?>
 
                             <div class="field">
-                                <label class="label"><?php echo $lang['USERNAME'] ?></label>
+                                <label class="label"><?php echo getMessage('user', 'username'); ?></label>
                                 <div class="control has-icons-left">
                                     <input class="input" type="text" name="name" placeholder="e.g. jonh01">
                                     <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
@@ -66,7 +66,7 @@ $headerTag = $lang['SIGN_UP'].' - '.forumName;
                             </div>
 
                             <div class="field">
-                                <label class="label"><?php echo $lang['EMAIL'] ?></label>
+                                <label class="label"><?php echo getMessage('user', 'email'); ?></label>
                                 <div class="control has-icons-left">
                                     <input class="input" type="email" name="email" placeholder="e.g. kristine@kristine.com">
                                     <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
@@ -76,14 +76,14 @@ $headerTag = $lang['SIGN_UP'].' - '.forumName;
                             <div class="field is-horizontal">
                                 <div class="field-body">
                                     <div class="field">
-                                        <label class="label"><?php echo $lang['PASSWORD'] ?></label>
+                                        <label class="label"><?php echo getMessage('user', 'password'); ?></label>
                                         <div class="control has-icons-left">
                                             <input class="input" type="password" name="pass1" placeholder="*********">
                                             <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
                                         </div>
                                     </div>
                                     <div class="field">
-                                        <label class="label"><?php echo $lang['REPEAT'].' '.$lang['PASSWORD'] ?></label>
+                                        <label class="label"><?php echo getMessage('user', 'password'); ?></label>
                                         <div class="control has-icons-left">
                                             <input class="input" type="password" name="pass2" placeholder="*********">
                                             <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
@@ -93,17 +93,17 @@ $headerTag = $lang['SIGN_UP'].' - '.forumName;
                             </div>
 
                             <div class="field">
-                                <label class="label"><?php echo $lang['IM'] ?> </label>
+                                <label class="label"><?php echo getMessage('user', 'gender'); ?> </label>
                                 <div class="control">
                                     <label class="radio">
-                                        <input type="radio" name="gender"><?php echo $lang['MALE'] ?>
+                                        <input type="radio" name="gender"><?php echo getMessage('user', 'male'); ?>
                                     </label>
                                     <label class="radio">
-                                        <input type="radio" name="gender"><?php echo $lang['FEMALE'] ?>
+                                        <input type="radio" name="gender"><?php echo getMessage('user', 'female'); ?>
                                     </label>
                                 </div>
                             </div>
-
+<!--
                             <div class="field">
                                 <label class="label"><?php echo $lang['LANGUAGE'] ?></label>
                                 <div class="control has-icons-left">
@@ -115,18 +115,18 @@ $headerTag = $lang['SIGN_UP'].' - '.forumName;
                                         <span class="icon is-small is-left"><i class="fa fa-language"></i></span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
 
-                            <label class="label"><small><?php echo $lang['REG_INFO'] ?></small></label>
+                            <label class="label"><small><?php echo getMessage('misc', 'tos') ?></small></label>
 
                             <br>
 
                             <div class="field is-grouped">
                                 <div class="control">
-                                    <button class="button is-primary" type="submit"><?php echo $lang['SIGN_UP'] ?></button>
+                                    <button class="button is-primary" type="submit"><?php echo getMessage('menu', 'sign_up'); ?></button>
                                 </div>
-                                <label class="label"><?php echo $lang['QUEST_START'].$lang['NOT_NEW_USER'].$lang['QUEST_END'].' <a href="login.php">'.$lang['JOIN_SITE'].'</a>'; ?>.</label>
+                                <label class="label"><?php echo getMessage('user', 'have_account').' <a href="login.php">'.getMessage('user', 'go_log_in').'</a>'; ?>.</label>
                             </div>
                         </form>
                     </div>

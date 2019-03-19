@@ -47,7 +47,7 @@ $headerTag = $posts->title.' - '.forumName;
                         echo '<img src="img/profiles/'.$user->icon.'" alt="'.$uID.'">';
                     }
                     echo '</figure>';
-                    Ranks::getRank($lang, $user->rank, true);
+                    Ranks::getRank($user->rank, true);
                     echo '</center>';
                     echo '<center><span class="tag is-info">'.$user->name.'</span>';
                     echo '</center>';

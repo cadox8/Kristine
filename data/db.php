@@ -11,6 +11,8 @@ $mysql = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 if (mysqli_connect_error()) {
     if (!installed) {
         switch (explode("/", $_SERVER['REQUEST_URI'])[2]) {
+            case 'install':
+                break;
             case 'user':
             case 'help':
             case 'core':

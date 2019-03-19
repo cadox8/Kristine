@@ -24,7 +24,7 @@ if (isset($_GET['msg'])) $msg = $_GET['msg'];
 $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `name` = '$username'");
 $user = $usersQuery->fetch_object();
 
-$headerTag = $lang['SET_AC'].' - '.forumName;
+$headerTag = getMessage('settings', 'account_details').' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
     <section class="section">
         <div class="container">
             <div class="container">
-                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo $lang['SET_AC']; ?></h2>
+                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo getMessage('settings', 'account_details'); ?></h2>
                 <hr style="margin-bottom: 0">
 
                 <div class="columns">
@@ -53,23 +53,23 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                                 echo '<div class="notification ';
                                 switch ($msg) {
                                     case 1:
-                                        echo 'is-success">'.$lang['CONTACT'].' '.$lang['UPD'];
+                                        echo 'is-success">'.getMessage('error', 'email_e');
                                         break;
                                     case 2:
-                                        echo 'is-success">'.$lang['U_PIC'];
+                                        echo 'is-success">'.getMessage('error', 'pic_u');
                                         break;
                                     case 3:
-                                        echo 'is-danger">'.$lang['FILE_EXT'];
+                                        echo 'is-danger">'.getMessage('error', 'file_ext');
                                         break;
                                     case 4:
-                                        echo 'is-danger">'.$lang['FILE_SIZE'];
+                                        echo 'is-danger">'.getMessage('error', 'file_size');
                                         break;
                                     case 5:
-                                        echo 'is-success">'.$lang['CONTACT'].' '.$lang['UPD'];
+                                        echo 'is-success">'.getMessage('error', 'email_e');
                                         break;
 
                                     default:
-                                        echo 'is-danger">'.$lang['ERROR'].'';
+                                        echo 'is-danger">'.getMessage('error', 'unknown').'';
                                         break;
                                 }
                                 echo '</div>';
@@ -80,21 +80,21 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                 <div class="columns">
                     <div class="column is-3">
                         <aside class="menu">
-                            <p class="menu-label"><?php echo $lang['PROF_SETTINGS']; ?></p>
+                            <p class="menu-label"><?php echo getMessage('settings', 'user_settings'); ?></p>
                             <ul class="menu-list">
-                                <li><a href="" class="is-active"><?php echo $lang['SET_AC']; ?></a></li>
-                                <li><a href="security.php?username=<?php echo $username; ?>"><?php echo $lang['SET_SECURITY']; ?></a></li>
-                                <li><a href="preferences.php?username=<?php echo $username; ?>"><?php echo $lang['SET_PREFERENCES']; ?></a></li>
-                                <li><a href="signature.php?username=<?php echo $username; ?>"><?php echo $lang['SET_SIGNATURE']; ?></a></li>
+                                <li><a href="" class="is-active"><?php echo getMessage('settings', 'account_details'); ?></a></li>
+                                <li><a href="security.php?username=<?php echo $username; ?>"><?php echo getMessage('settings', 'account_security'); ?></a></li>
+                                <li><a href="preferences.php?username=<?php echo $username; ?>"><?php echo getMessage('settings', 'account_preferences'); ?></a></li>
+                                <li><a href="signature.php?username=<?php echo $username; ?>"><?php echo getMessage('settings', 'account_signature'); ?></a></li>
                             </ul>
                         </aside>
                     </div>
                     <div class="column is-6">
-                        <label class="label"><?php echo $lang['USER'].': '.$username.'</label>';  ?>
-                        <label class="label"><?php Ranks::getRank($lang, $user->rank, true); ?></label><br>
+                        <label class="label"><?php echo getMessage('user', 'username').': '.$username.'</label>';  ?>
+                        <label class="label"><?php Ranks::getRank($user->rank, true); ?></label><br>
 
                         <form class="is-form" method="POST" action=<?php echo "../core/avatarUpdate.php?userName=$username"; ?> enctype="multipart/form-data">
-                            <label class="label"><?php echo $lang['E_PIC']; ?></label>
+                            <label class="label"><?php echo getMessage('user', 'pic'); ?></label>
                             <div class="field is-horizontal">
                                 <div class="field-label">
                                     <figure class="image is-128x128 is-profile">
@@ -115,7 +115,7 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                                         </div>
                                         <div class="field">
                                             <div class="control">
-                                                <button class="button is-info" type="submit"><?php echo $lang['UPD'] ?></button>
+                                                <button class="button is-info" type="submit"><?php echo getMessage('misc', 'update'); ?></button>
                                             </div>
                                         </div>
                                     </div>
@@ -125,14 +125,14 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                         <br>
 
                         <form class="is-form" method="POST" action="../core/update_mail.php">
-                            <label class="label"><?php echo $lang['NEW'].' '.$lang['EMAIL']; ?></label>
+                            <label class="label"><?php echo getMessage('misc', 'new').' '.getMessage('user', 'email'); ?></label>
                             <div class="field has-addons">
                                 <div class="control has-icons-left is-expanded">
                                     <input class="input" type="text" name="email" placeholder="e.g. kristine@kristine.com"></input>
                                     <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
                                 </div>
                                 <div class="control">
-                                    <button class="button is-info" type="submit"><?php echo $lang['UPD'] ?></button>
+                                    <button class="button is-info" type="submit"><?php echo getMessage('misc', 'update'); ?></button>
                                 </div>
                             </div>
                         </form>
@@ -140,7 +140,7 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                         <br>
 
                         <form class="is-form" method="POST" action="../core/update_contact.php">
-                            <label class="label"><?php echo $lang['UPD'].' '.$lang['CONTACT']; ?></label>
+                            <label class="label"><?php echo getMessage('misc', 'update').' '.getMessage('settings', 'contact'); ?></label>
                             <div class="field has-addons">
                                 <p class="control">
                                     <a class="button is-static"><span class="icon is-small is-left"><i class="fab fa-twitter"></i></span> <span>@<?php if ($user->twitter != '') echo $user->twitter; ?></span></a>
@@ -175,7 +175,7 @@ $headerTag = $lang['SET_AC'].' - '.forumName;
                             </div>
 
                             <div class="control">
-                                <button class="button is-info" type="submit"><?php echo $lang['UPD'] ?></button>
+                                <button class="button is-info" type="submit"><?php echo getMessage('misc', 'update') ?></button>
                             </div>
                         </form>
 

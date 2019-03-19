@@ -52,8 +52,8 @@ require_once 'utils/ranks.php';
                 <div class="column is-hidden-mobile"> <!-- Info -->
                     <?php
                         if (!isset($_SESSION['name'])) {
-                            echo '<center><a class="button is-danger" href="user/register.php">'.$lang['SIGN_UP'].'</a><br><br>';
-                            echo '<a class="button is-info" href="user/login.php">'.$lang['LOG_IN'].'</a></center>';
+                            echo '<center><a class="button is-danger" href="user/register.php">'.getMessage('menu', 'sign_up').'</a><br><br>';
+                            echo '<a class="button is-info" href="user/login.php">'.getMessage('menu', 'log_in').'</a></center>';
                         } else {
                             $aid = $_SESSION['name'];
                             $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `name` = '$aid'");
@@ -66,7 +66,7 @@ require_once 'utils/ranks.php';
                                 echo '<img src="img/profiles/'.$user->icon.'" alt="'.$aid.'">';
                             }
                             echo '</figure>';
-                            Ranks::getRank($lang, $user->rank, true);
+                            Ranks::getRank($user->rank, true);
                             echo '</center>';
                             echo '<center><span class="tag is-info">'.$user->name.'</span>';
                             echo '</center><hr>';

@@ -10,8 +10,8 @@
         <div class="container">
             <h1 class="title is-3">
                 <div class="columns">
-                    <div class="column is-3"><?php echo '<a class="is-head left">'.forumName.'</a>' ?></div>
-                    <div class="column is-8 is-hidden-mobile"></div>
+                    <div class="column is-2"><?php echo '<a class="is-head left">'.forumName.'</a>' ?></div>
+                    <div class="column is-9 is-hidden-mobile"></div>
                     <div class="column is-1 is-hidden-mobile"><a href="https://twitter.com/<?php echo forumTwitter; ?>" target="_blank"><span class="icon is-large right"><i class="fab fa-twitter"></i></span></a></div>
                 </div>
             </h1>
@@ -31,7 +31,7 @@
             if (isset($_SESSION['name'])) {
                 $username = $_SESSION['name'];
                 if ($mysql->query("SELECT `rank` FROM `users` WHERE `name`='$username'")->fetch_object()->rank == 5) {
-                    echo '<a class="navbar-item" href="'.$def.'admin/admin.php">'.getMessage('menu', 'admin')..'</a>';
+                    echo '<a class="navbar-item" href="'.$def.'admin/admin.php">'.getMessage('menu', 'admin').'</a>';
                 }
             }
         ?>
@@ -52,7 +52,7 @@
             if (!$fol) $userFolder = "../user/";
 
             if (!isset($_SESSION['name'])) {
-                echo '<div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">'.$lang['LOG_IN'].' / '.$lang['SIGN_UP'].'</a><div class="navbar-dropdown"><a class="navbar-item" href="'.$userFolder.'login.php">'.$lang['LOG_IN'].'</a><a class="navbar-item" href="'.$userFolder.'register.php">'.$lang['SIGN_UP'].'</a><hr class="navbar-divider"><div class="navbar-item">Version '.version.'</div></div></div>';
+                echo '<div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">'.getMessage('menu', 'log_in').' / '.getMessage('menu', 'sign_up').'</a><div class="navbar-dropdown"><a class="navbar-item" href="'.$userFolder.'login.php">'.getMessage('menu', 'log_in').'</a><a class="navbar-item" href="'.$userFolder.'register.php">'.getMessage('menu', 'sign_up').'</a><hr class="navbar-divider"><div class="navbar-item">Version '.version.'</div></div></div>';
             } else {
                 echo '<a class="navbar-item" href="'.$def.'profile.php?userName='.$_SESSION['name'].'"><span class="icon is-medium"><i class="far fa-user"></i></span> '.$_SESSION['name'].'</a>';
                 echo '<a class="navbar-item" href="'.$userFolder.'logout.php"><span class="icon is-medium"><i class="fas fa-sign-out-alt"></i></span></a>';
