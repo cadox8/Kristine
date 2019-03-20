@@ -11,6 +11,11 @@
         "tos": "Terms and Conditions"
     },
 
+    "admin": {
+        "edit_node": "Edit Node",
+        "node": "Node"
+    },
+
     "settings": {
         "edit_user": "Edit user",
         "user_settings": "Settings",
@@ -19,7 +24,8 @@
         "account_preferences": "Preferences",
         "account_signature": "Signature",
         "contact": "Contact",
-        "edit_picture": "Edit Profile Picture"
+        "edit_picture": "Edit Profile Picture",
+        "no_signature": "You don't have any signature"
     },
 
     "user": {
@@ -51,7 +57,9 @@
         "update": "Update",
         "new": "New",
         "title": "Title",
-        "create": "Create"
+        "create": "Create",
+        "name": "Name",
+        "preview": "Preview"
     },
 
     "error": {
@@ -69,7 +77,9 @@
     },
 
     "success": {
-        "registration": "User Created Successfully.<br>Now you can Log In."
+        "registration": "User Created Successfully.<br>Now you can Log In.",
+        "password": "Password changed Successfully",
+        "signature": "Your signature has been changed"
     },
 
     "ranks": {

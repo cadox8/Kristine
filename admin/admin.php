@@ -17,7 +17,7 @@ if ($user->rank != 5) {
     header("Location: ../user/security.php?username=$username&msg=0");
 }
 
-$headerTag = $lang['MENU_ADMIN'].' - '.forumName;
+$headerTag = getMessage('menu', 'admin').' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -35,16 +35,16 @@ $headerTag = $lang['MENU_ADMIN'].' - '.forumName;
     <!-- Page -->
     <section class="section">
         <div class="container">
-            <h2 class="title is-3" style="margin-bottom: -10px"><?php echo 'Admin'; ?></h2>
+            <h2 class="title is-3" style="margin-bottom: -10px"><?php echo getMessage('menu', 'admin'); ?></h2>
             <hr style="margin-bottom: 0"><br>
 
             <div class="columns">
                 <div class="column is-3">
                     <aside class="menu">
-                        <p class="menu-label"><?php echo $lang['MENU_ADMIN']; ?></p>
+                        <p class="menu-label"><?php echo getMessage('menu', 'admin'); ?></p>
                         <ul class="menu-list">
-                            <li><a href="nodes.php"><?php echo $lang['NODES']; ?></a></li>
-                            <li><a href=""><?php echo $lang['USERS']; ?></a></li>
+                            <li><a href="nodes.php"><?php echo getMessage('menu', 'admin_nodes'); ?></a></li>
+                            <li><a href=""><?php echo getMessage('menu', 'admin_users'); ?></a></li>
                         </ul>
                     </aside>
                 </div>

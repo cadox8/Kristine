@@ -24,7 +24,7 @@ if (isset($_GET['msg'])) $msg = $_GET['msg'];
 $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `name` = '$username'");
 $user = $usersQuery->fetch_object();
 
-$headerTag = $lang['SET_SECURITY'].' - '.forumName;
+$headerTag = getMessage('settings', 'account_security').' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ $headerTag = $lang['SET_SECURITY'].' - '.forumName;
     <section class="section">
         <div class="container">
             <div class="container">
-                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo $lang['SET_SECURITY']; ?></h2>
+                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo getMessage('settings', 'account_security'); ?></h2>
                 <hr style="margin-bottom: 0">
 
                 <div class="columns">
@@ -53,11 +53,11 @@ $headerTag = $lang['SET_SECURITY'].' - '.forumName;
                                 echo '<div class="notification ';
                                 switch ($msg) {
                                     case 1:
-                                        echo 'is-success">'.$lang['PASS_C'];
+                                        echo 'is-success">'.getMessage('success', 'password');
                                         break;
 
                                     default:
-                                        echo 'is-danger">'.$lang['PASS_E'];
+                                        echo 'is-danger">'.getMessage('error', 'pass_e');
                                         break;
                                 }
                                 echo '</div>';
@@ -68,28 +68,28 @@ $headerTag = $lang['SET_SECURITY'].' - '.forumName;
                 <div class="columns">
                     <div class="column is-3">
                         <aside class="menu">
-                            <p class="menu-label"><?php echo $lang['PROF_SETTINGS']; ?></p>
+                            <p class="menu-label"><?php echo getMessage('settings', 'user_settings'); ?></p>
                             <ul class="menu-list">
-                                <li><a href="account.php?username=<?php echo $username; ?>"><?php echo $lang['SET_AC']; ?></a></li>
-                                <li><a href="" class="is-active"><?php echo $lang['SET_SECURITY']; ?></a></li>
-                                <li><a href="preferences.php?username=<?php echo $username; ?>"><?php echo $lang['SET_PREFERENCES']; ?></a></li>
-                                <li><a href="signature.php?username=<?php echo $username; ?>"><?php echo $lang['SET_SIGNATURE']; ?></a></li>
+                                <li><a href="account.php?username=<?php echo $username; ?>"><?php echo getMessage('settings', 'account_details'); ?></a></li>
+                                <li><a href="" class="is-active"><?php echo getMessage('settings', 'account_security'); ?></a></li>
+                                <li><a href="preferences.php?username=<?php echo $username; ?>"><?php echo getMessage('settings', 'account_preferences'); ?></a></li>
+                                <li><a href="signature.php?username=<?php echo $username; ?>"><?php echo getMessage('settings', 'account_signature'); ?></a></li>
                             </ul>
                         </aside>
                     </div>
                     <div class="column is-6">
-                        <label class="label"><?php echo $lang['USER'].': '.$username.'</label>';  ?>
-                        <label class="label"><?php Ranks::getRank($lang, $user->rank, true); ?></label><br>
+                        <label class="label"><?php echo getMessage('user', 'username').': '.$username.'</label>';  ?>
+                        <label class="label"><?php Ranks::getRank($user->rank, true); ?></label><br>
 
                         <form class="is-form" method="POST" action="../core/change_pass.php">
-                            <label class="label"><?php echo $lang['NEW'].' '.$lang['PASSWORD']; ?></label>
+                            <label class="label"><?php echo getMessage('misc', 'new').' '.getMessage('user', 'password'); ?></label>
                             <div class="field has-addons">
                                 <div class="control has-icons-left is-expanded">
                                     <input class="input" type="password" name="pass" placeholder="*********">
                                     <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
                                 </div>
                                 <div class="control">
-                                    <button class="button is-info" type="submit"><?php echo $lang['UPD'] ?></button>
+                                    <button class="button is-info" type="submit"><?php echo getMessage('misc', 'update'); ?></button>
                                 </div>
                             </div>
                         </form>

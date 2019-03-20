@@ -15,7 +15,7 @@ if ($user->rank != 5) {
     header("Location: ../user/security.php?username=$username&msg=0");
 }
 
-$headerTag = $lang['NODES'].' - '.forumName;
+$headerTag = getMessage('menu', 'admin_nodes').' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -39,11 +39,11 @@ $headerTag = $lang['NODES'].' - '.forumName;
             <div class="columns">
                 <div class="column is-3">
                     <aside class="menu">
-                        <p class="menu-label"><?php echo $lang['MENU_ADMIN']; ?></p>
-                        <ul class="menu-list">
-                            <li><a href="nodes.php"><?php echo $lang['NODES']; ?></a></li>
-                            <li><a href=""><?php echo $lang['USERS']; ?></a></li>
-                        </ul>
+                      <p class="menu-label"><?php echo getMessage('menu', 'admin'); ?></p>
+                      <ul class="menu-list">
+                          <li><a href="nodes.php"><?php echo getMessage('menu', 'admin_nodes'); ?></a></li>
+                          <li><a href=""><?php echo getMessage('menu', 'admin_users'); ?></a></li>
+                      </ul>
                     </aside>
                 </div>
                 <div class="column is-8">
@@ -56,13 +56,13 @@ $headerTag = $lang['NODES'].' - '.forumName;
                                 $catID = $cat['id'];
                                 echo '<tr><td>'.$cat['title'].'<span class="is-type"> Category</span></td>';
                                 echo '<td></td>';
-                                echo '<td><a href="node.php?node='.$cat['title'].'&type=cat">'.$lang['EDIT'].'</a></td>';
+                                echo '<td><a href="node.php?node='.$cat['title'].'&type=cat">'.getMessage('misc', 'edit').'</a></td>';
 
                                 $forumQuery = $mysql->query("SELECT * FROM `forum` WHERE `cat`= $catID");
                                 while ($forum = $forumQuery->fetch_array()) {
                                     echo '<tr><td class="is-forum">'.$forum['title'].'<span class="is-type"> Forum</span></td>';
                                     echo '<td> </td>';
-                                    echo '<td><a href="node.php?node='.$forum['title'].'&type=forum">'.$lang['EDIT'].'</a></td></tr>';
+                                    echo '<td><a href="node.php?node='.$forum['title'].'&type=forum">'.getMessage('misc', 'edit').'</a></td></tr>';
                                 }
                             }
                         ?>

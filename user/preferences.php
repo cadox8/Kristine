@@ -26,7 +26,7 @@ if (isset($_GET['msg'])) $msg = $_GET['msg'];
 $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `name` = '$username'");
 $user = $usersQuery->fetch_object();
 
-$headerTag = $lang['SET_PREFERENCES'].' - '.forumName;
+$headerTag = getMessage('settings', 'account_preferences').' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ $headerTag = $lang['SET_PREFERENCES'].' - '.forumName;
     <section class="section">
         <div class="container">
             <div class="container">
-                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo $lang['SET_PREFERENCES']; ?></h2>
+                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo getMessage('settings', 'account_preferences'); ?></h2>
                 <hr style="margin-bottom: 0">
 
                 <div class="columns">
@@ -55,11 +55,11 @@ $headerTag = $lang['SET_PREFERENCES'].' - '.forumName;
                                 echo '<div class="notification ';
                                 switch ($msg) {
                                     case 1:
-                                        echo 'is-success">'.$lang['SET_PREFERENCES'].' '.$lang['UPD'];
+                                        echo 'is-success">'.getMessage('settings', 'account_preferences').' '.$lang['UPD'];
                                         break;
 
                                     default:
-                                        echo 'is-danger">'.$lang['ERROR'].'';
+                                        echo 'is-danger">'.getMessage('error', 'unknown').'';
                                         break;
                                 }
                                 echo '</div>';
@@ -70,34 +70,17 @@ $headerTag = $lang['SET_PREFERENCES'].' - '.forumName;
                 <div class="columns">
                     <div class="column is-3">
                         <aside class="menu">
-                            <p class="menu-label"><?php echo $lang['PROF_SETTINGS']; ?></p>
+                            <p class="menu-label"><?php echo getMessage('settings', 'user_settings'); ?></p>
                             <ul class="menu-list">
-                                <li><a href="account.php?username=<?php echo $username; ?>"><?php echo $lang['SET_AC']; ?></a></li>
-                                <li><a href="security.php?username=<?php echo $username; ?>"><?php echo $lang['SET_SECURITY']; ?></a></li>
-                                <li><a href="" class="is-active"><?php echo $lang['SET_PREFERENCES']; ?></a></li>
-                                <li><a href="signature.php?username=<?php echo $username; ?>"><?php echo $lang['SET_SIGNATURE']; ?></a></li>
+                                <li><a href="account.php?username=<?php echo $username; ?>"><?php echo getMessage('settings', 'account_details'); ?></a></li>
+                                <li><a href="security.php?username=<?php echo $username; ?>"><?php echo getMessage('settings', 'account_security'); ?></a></li>
+                                <li><a href="" class="is-active"><?php echo getMessage('settings', 'account_preferences'); ?></a></li>
+                                <li><a href="signature.php?username=<?php echo $username; ?>"><?php echo getMessage('settings', 'account_signature'); ?></a></li>
                             </ul>
                         </aside>
                     </div>
                     <div class="column is-6">
-                        <form class="is-form" method="POST" action="../core/change_lang.php">
-                            <label class="label"><?php echo $lang['LANGUAGE'] ?></label>
-                            <div class="field has-addons">
-                                <div class="control has-icons-left">
-                                    <div class="select is-primary">
-                                        <select name="lang">
-                                            <option value="en_EN" <?php if ($selectedLang == "en_EN") echo 'selected'; ?>>English</option>
-                                            <option value="es_ES" <?php if ($selectedLang == "es_ES") echo 'selected'; ?>>Español</option>
-                                        </select>
-                                        <span class="icon is-small is-left"><i class="fa fa-language"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="control">
-                                <button class="button is-info" type="submit"><?php echo $lang['UPD'] ?></button>
-                            </div>
-                        </form>
-
+                      
                     </div>
                     <div class="column"></div>
                 </div>

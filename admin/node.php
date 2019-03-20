@@ -16,7 +16,7 @@ if ($user->rank != 5) {
     header("Location: ../user/security.php?username=$username&msg=0");
 }
 
-$headerTag = $lang['EDIT_NODE'].' - '.forumName;
+$headerTag = getMessage('admin', 'edit_node').' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ $headerTag = $lang['EDIT_NODE'].' - '.forumName;
     <!-- Page -->
     <section class="section">
         <div class="container">
-            <h2 class="title is-3" style="margin-bottom: -10px"><?php echo substr($lang['NODES'], 0, -1).': '.$node; ?></h2>
+            <h2 class="title is-3" style="margin-bottom: -10px"><?php echo substr(getMessage('admin', 'node'), 0, -1).': '.$node; ?></h2>
             <hr style="margin-bottom: 0"><br>
         </div>
 
@@ -43,13 +43,13 @@ $headerTag = $lang['EDIT_NODE'].' - '.forumName;
             <div class="column is-8">
                 <form class="is-form" method="POST" action="../core/update_node_name.php?type=<?php echo $type.'&old_node='.$node; ?>">
                     <div class="field">
-                      <label class="label"><?php echo $lang['NAME']; ?></label>
+                      <label class="label"><?php echo getMessage('misc', 'name'); ?></label>
                       <div class="control">
                         <input class="input" name="node" type="text" placeholder="Write the new name" value="<?php echo $node; ?>">
                       </div>
                       <p class="help">This will be the display name</p>
                     </div>
-                <button class="button is-info" type="submit"><?php echo $lang['UPD'] ?></button>
+                <button class="button is-info" type="submit"><?php echo getMessage('misc', 'update') ?></button>
                 </form>
             </div>
         </div>

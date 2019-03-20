@@ -24,7 +24,7 @@ if (isset($_GET['msg'])) $msg = $_GET['msg'];
 $usersQuery = $mysql->query("SELECT * FROM `users` WHERE `name` = '$username'");
 $user = $usersQuery->fetch_object();
 
-$headerTag = $lang['SET_SIGNATURE'].' - '.forumName;
+$headerTag = getMessage('settings', 'account_signature').' - '.forumName;
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ $headerTag = $lang['SET_SIGNATURE'].' - '.forumName;
     <section class="section">
         <div class="container">
             <div class="container">
-                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo $lang['SET_SIGNATURE']; ?></h2>
+                <h2 class="title is-3" style="margin-bottom: -10px"><?php echo getMessage('settings', 'account_signature'); ?></h2>
                 <hr style="margin-bottom: 0">
 
                 <div class="columns">
@@ -53,11 +53,11 @@ $headerTag = $lang['SET_SIGNATURE'].' - '.forumName;
                                 echo '<div class="notification ';
                                 switch ($msg) {
                                     case 1:
-                                        echo 'is-success">'.$lang['S_S'];
+                                        echo 'is-success">'.getMessage('success', 'signature');
                                         break;
 
                                     default:
-                                        echo 'is-danger">'.$lang['S_E'];
+                                        echo 'is-danger">'.getMessage('error', 'signature_e');
                                         break;
                                 }
                                 echo '</div>';
@@ -68,38 +68,38 @@ $headerTag = $lang['SET_SIGNATURE'].' - '.forumName;
                 <div class="columns">
                     <div class="column is-3">
                         <aside class="menu">
-                            <p class="menu-label"><?php echo $lang['PROF_SETTINGS']; ?></p>
+                            <p class="menu-label"><?php echo getMessage('settings', 'user_settings'); ?></p>
                             <ul class="menu-list">
-                                <li><a href="account.php?username=<?php echo $username; ?>"><?php echo $lang['SET_AC']; ?></a></li>
-                                <li><a href="security.php?username=<?php echo $username; ?>"><?php echo $lang['SET_SECURITY']; ?></a></li>
-                                <li><a href="preferences.php?username=<?php echo $username; ?>"><?php echo $lang['SET_PREFERENCES']; ?></a></li>
-                                <li><a href="" class="is-active"><?php echo $lang['SET_SIGNATURE']; ?></a></li>
+                                <li><a href="account.php?username=<?php echo $username; ?>"><?php echo getMessage('settings', 'account_details'); ?></a></li>
+                                <li><a href="security.php?username=<?php echo $username; ?>"><?php echo getMessage('settings', 'account_security'); ?></a></li>
+                                <li><a href="preferences.php?username=<?php echo $username; ?>"><?php echo getMessage('settings', 'account_preferences'); ?></a></li>
+                                <li><a href="" class="is-active"><?php echo getMessage('settings', 'account_signature'); ?></a></li>
                             </ul>
                         </aside>
                     </div>
                     <div class="column is-6">
-                        <label class="label"><?php echo $lang['USER'].': '.$username.'</label>';  ?></label>
-                        <label class="label"><?php Ranks::getRank($lang, $user->rank, true); ?></label><br>
+                        <label class="label"><?php echo getMessage('user', 'username').': '.$username.'</label>';  ?></label>
+                        <label class="label"><?php Ranks::getRank($user->rank, true); ?></label><br>
 
                         <form class="is-form" method="POST" action="../core/change_signature.php">
-                            <label class="label"><?php echo $lang['CHANGE'].' '.$lang['SET_SIGNATURE']; ?></label>
+                            <label class="label"><?php echo getMessage('misc', 'change').' '.getMessage('settings', 'account_signature'); ?></label>
                             <div class="field">
                                 <div class="control">
                                     <textarea class="textarea" name="signature"><?php if ($user->signature != '') echo $user->signature; ?></textarea>
                                 </div>
                             </div>
-                            <button class="button is-info" type="submit"><?php echo $lang['UPD'] ?></button>
+                            <button class="button is-info" type="submit"><?php echo getMessage('misc', 'update'); ?></button>
                         </form>
 
                         <br>
 
-                        <label class="label" style="margin-bottom: -20px"><?php echo $lang['PREVIEW']; ?></label>
+                        <label class="label" style="margin-bottom: -20px"><?php echo getMessage('misc', 'preview'); ?></label>
                         <hr style="margin-bottom: 7px">
                         <?php
                             $signature = $user->signature;
 
                             if ($signature == '') {
-                                echo 'No '.$lang['SET_SIGNATURE'];
+                                echo getMessage('settings', 'no_signature');
                                 return;
                             }
 
