@@ -3,14 +3,14 @@ require "data/init.php";
 require "lang/lang.php";
 
 if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
-    $email = mysql_escape_string($_GET['email']);
-    $hash = mysql_escape_string($_GET['hash']);
+    $email = mysqli_real_escape_string($_GET['email']);
+    $hash = mysqli_real_escape_string($_GET['hash']);
 
-    $search = $mysql->query("SELECT email, hash, active FROM users WHERE email='".$email."' AND hash='".$hash."' AND active='0'");
-    $match  = mysql_num_rows($search);
+    $search = $mysql->query("SELECT `email`, `hash`, `active` FROM `users` WHERE `email`='".$email."' AND `hash`='".$hash."' AND `active`='0'");
+    $match  = mysqli_num_rows($search);
 
     if($match > 0){
-        $mysql->query("UPDATE users SET active='1' WHERE email='".$email."' AND hash='".$hash."' AND active='0'"));
+        $mysql->query("UPDATE `users` SET `active`='1' WHERE `email`='".$email."' AND `hash`='".$hash."' AND `active`='0'");
         $msg = 1;
     }else{
         $msg = 2;
@@ -25,12 +25,12 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
 <html lang="en">
 
 <head>
-    <?php include "../static/head.php"; ?>
+    <?php include "static/head.php"; ?>
 </head>
 
 <body>
 
-    <?php include "../static/header.php"; ?>
+    <?php include "static/header.php"; ?>
 
     <!-- Page -->
     <section class="section">
@@ -64,7 +64,7 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
             </div>
         </div>
     </section>
-    <?php include "../static/footer.php"; ?>
+    <?php include "static/footer.php"; ?>
 </body>
 
 </html>

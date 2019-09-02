@@ -67,28 +67,28 @@ $headerTag = $lang['NEW_POST'].' - '.forumName;
                             <div class="field">
                                 <label class="label">DB Host</label>
                                 <div class="control">
-                                    <input class="input" type="text" value="localhost" placeholder="localhost" name="host"></input>
+                                    <input class="input" type="text" value="localhost" placeholder="localhost" name="host"/>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">DB Name</label>
                                 <div class="control">
-                                    <input class="input" type="text" value="kristine" placeholder="kristine" name="name"></input>
+                                    <input class="input" type="text" value="kristine" placeholder="kristine" name="name"/>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">DB User</label>
                                 <div class="control">
-                                    <input class="input" type="text" value="root" placeholder="root" name="user"></input>
+                                    <input class="input" type="text" value="root" placeholder="root" name="user"/>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">DB Password</label>
                                 <div class="control">
-                                    <input class="input" type="password" placeholder="********" name="pass"></input>
+                                    <input class="input" type="password" placeholder="********" name="pass"/>
                                 </div>
                             </div>
 
