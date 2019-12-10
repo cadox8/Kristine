@@ -2,13 +2,9 @@
 
 class Ranks {
 
-    static function getRank($rank, $withTag = true) {
+    public function getRank($rank, $withTag = true) {
         $tag = '<span class="tag is-small ';
         switch ($rank) {
-            case 0:
-                $tag = '';
-                $rankName = getMessage('ranks', 'guest');
-                break;
             case 1:
                 $tag = $tag.'is-light">';
                 $rankName = getMessage('ranks', 'member');

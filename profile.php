@@ -49,6 +49,11 @@ $headerTag = $aid.' - '.forumName;
                     ?>
                     <hr style="margin-bottom: 6px; margin-top: 6px">
                     <p class="showInfo">Points: <span class="right"><?php echo $user->points; ?></span></p>
+                    <?php
+                        $achi = $achievements->searchAchievement(0);
+
+                        echo '<img src="img/'.$achi->getIcon().'" />'
+                    ?>
                 </div>
                 <div class="column">
                     <nav class="level" style="margin-bottom: -26px">
@@ -59,16 +64,16 @@ $headerTag = $aid.' - '.forumName;
                                     <p class="showInfo" style="margin-bottom: -16px">
                                     <?php
                                         $gender = getMessage('user', 'male');
-                                        if ($user->gender == 1) $gender = getMessage('user', 'female');
+                                        if ($user->gender === 1) $gender = getMessage('user', 'female');
 
                                         $age = '';
-                                        if ($user->birthday != '') {
+                                        if ($user->birthday !== '') {
                                             $birthDate = explode("/", date("dd/mm/YYYY", $user->birthday));
                                             $age = ', '.(date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md") ? ((date("Y") - $birthDate[2]) - 1) : (date("Y") - $birthDate[2]));
                                         }
 
                                         $loc = '';
-                                        if ($user->location != '') $loc = '<a style="color: black" href="https://www.google.es/maps?q='.str_replace(" ", "+", $user->location).'" target="_blank">'.$user->location.'</a>';
+                                        if ($user->location !== '') $loc = '<a style="color: black" href="https://www.google.es/maps?q='.str_replace(" ", "+", $user->location).'" target="_blank">'.$user->location.'</a>';
 
                                         echo $gender.$age.', from <u>'.$loc.'</u>';
                                     ?>
@@ -95,7 +100,7 @@ $headerTag = $aid.' - '.forumName;
                                           </li>
                                           <?php
                                               echo '<li><a href="user/account.php?username='.$user->name.'"><span class="icon is-small"><i class="fa fa-cogs"></i></span>';
-                                              if ($adminQuery->fetch_object()->rank == 5 && !hash_equals($_SESSION['name'], $user->name)) {
+                                              if ($adminQuery->fetch_object()->rank === 5 && !hash_equals($_SESSION['name'], $user->name)) {
                                                   echo '<span>'.getMessage('settings', 'edit_user').'</span>';
                                               } else {
                                               echo '<span>'.getMessage('settings', 'account_preferences').'</span>';

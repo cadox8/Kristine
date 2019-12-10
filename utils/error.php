@@ -10,7 +10,6 @@ switch ($id) {
     case 1:
         echo 'Error while connecting with the database.';
         break;
-
     default:
         echo "Undefined error. Please, report it on Kristine's Github.";
         break;

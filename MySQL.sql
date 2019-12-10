@@ -55,9 +55,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `points`        INT(11)          NOT NULL DEFAULT 0,
   `icon`          VARCHAR(50)      NOT NULL DEFAULT '',
   `signature`     VARCHAR(5000)    NOT NULL DEFAULT '',
-  `showOnline`    INT(2)           NOT NULL DEFAULT 0,
-  `showBirt`      INT(2)           NOT NULL DEFAULT 1,
-  `active`        INT(1)           NOT NULL DEFAULT 0, /* 0 -> No, 1 -> Yes */
+  `showOnline`    INT(1)           NOT NULL DEFAULT 0, /* 0 -> No, 1 -> Yes */
+  `showBirth`     INT(1)           NOT NULL DEFAULT 1,
+  `active`        INT(1)           NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name` (`name`),
   UNIQUE INDEX `email` (`email`)
@@ -65,9 +65,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 CREATE TABLE IF NOT EXISTS `achie` (
   `id`          INT(11)     UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title`       VARCHAR(100)         NOT NULL DEFAULT '',
-  `desc`        VARCHAR(100)         NOT NULL DEFAULT '',
-  `user`        INT(11)              NOT NULL DEFAULT 1,
+  `title`       VARCHAR(100)         NOT NULL,
+  `desc`        VARCHAR(255)         NOT NULL,
+  `icon`        VARCHAR(255)         NOT NULL,
+  `user`        INT(11)              NOT NULL,
   `points`      INT(11)              NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE INDEX (`title`)
@@ -79,3 +80,5 @@ INSERT INTO `users` (name, email, pass, gender, active) VALUES ('Kristine', 'kri
 INSERT INTO `cat` (title, `desc`) VALUES ('General', 'Default category');
 INSERT INTO `forum` (title, `desc`, cat) VALUES ('First Forum', 'Default Forum', 1);
 INSERT INTO `posts` (title, content, author, likes, forum) VALUES ('My First Post', 'Congrats, you have just installed Kristine! :D', 1, 0, 1);
+
+INSERT INTO `achie` (title, `desc`, icon, user, points) VALUES ('Developer', 'You developed Kristine!', 'dev', 1, 5);

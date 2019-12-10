@@ -64,7 +64,7 @@ $headerTag = getMessage('menu', 'log_in').' - '.forumName;
                                 <div class="control">
                                     <button class="button is-primary" type="submit"><?php echo getMessage('menu', 'log_in'); ?></button>
                                 </div>
-                                <label class="label"><?php echo getMessage('user', 'new_user').' <a href="register.php">'.getMessage('user', 'new_account').'</a>'; ?>.</label>
+                                <label class="label"><?php echo getMessage('user', 'new_user'). ' <a href="register.php">' .getMessage('user', 'new_account').'</a>'; ?>.</label>
                             </div>
                         </form>
                     </div>
