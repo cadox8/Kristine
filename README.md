@@ -1,34 +1,31 @@
-![Kristine](https://github.com/cadox8/Kristine/blob/master/docs/img/kristine.jpg)<br>
-<br>
-[![built](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
-[![cat](http://forthebadge.com/images/badges/contains-cat-gifs.svg)](http://forthebadge.com)
-<br>
-![version](https://img.shields.io/badge/version-0.1.1%20Alpha-ff69b4.svg?longCache=true&style=for-the-badge)
+![Kristine](docs/img/kristine.jpg)
+
+![version](https://img.shields.io/badge/version-0.2.0%20Beta-ff69b4.svg?longCache=true&style=for-the-badge)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcadox8%2FKristine.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcadox8%2FKristine?ref=badge_shield)
 
 # Kristine
-Kristine is a simple discussion forum you can easily customize to make as unique as your community<br>
+Kristine is a simple discussion forum you can easily customize to make as unique as your community
+
+## Table Of Content
+- [Demo](#demo)
+- [Installation](#installation)
+- [Images](#images)
+- [License](#license)
+- [Notes](#notes)
+- [ToDo List](#todo-list)
+- [PHP Version](#php-version)
 
 ## Demo
-You can check the demo [here](http://kristine.ml).
-
-**WARNING:** Demo can be outdated, I apologize for that.
+You can check the demo [here](#) (Not yet).
 
 ## Installation
 - Download all files
-- Import MySQL.sql on PHPMyAdmin
-- Edit data/db.php and data/settings.php
+- Import [MySQL.sql](MySQL.sql) on a MySQL Database
+- Edit [config.json](config.json)
 - Navigate to your forum folder and enjoy :D
 
 ## Images
-Some images taken from my computer<br>
-![main](https://github.com/cadox8/Kristine/blob/master/docs/img/main.png)<br>
-![posts](https://github.com/cadox8/Kristine/blob/master/docs/img/posts.png)<br>
-![post](https://github.com/cadox8/Kristine/blob/master/docs/img/post.png)<br>
-![nodes](https://github.com/cadox8/Kristine/blob/master/docs/img/nodes.png)<br>
-![details](https://github.com/cadox8/Kristine/blob/master/docs/img/details.png)<br>
-And from my phone<br>
-![mobile](https://github.com/cadox8/Kristine/blob/master/docs/img/mobile.png)
+Not yet
 
 ## License
 This project is released under [GNU LICENSE](https://github.com/cadox8/Kristine/blob/master/LICENSE).
@@ -42,20 +39,24 @@ This project isn't finished yet, so if you find any bug, please, post it on [Iss
 I'm (cadox8) working all I can to have finished this, so, until we leave the alpha, here you have :blush:<br>
 ![Cat Gif!](http://bestanimations.com/Animals/Mammals/Cats/catgif/cute-cat-animated-gif-6.gif)
 
-## TODO List
-- Admin System (WIP)
-- Translate everything (WIP)
+## ToDo List
+- Admin System
+- Translate everything
 - Make it customizable
 - Finish BBCode support
 - Prevent Bots
-- <s>Add more fields to users</s>
-- <s>Show profile details</s>
-- <s>Some internal changes</s>
+- Add more fields to users
+- Show profile details
+- Some internal changes
 - Better code
-- <s>Post page</s>
-- <s>Installation script</s>
-- <s>Verify account</s>(?)
+- Post page
+- Installation script
+- Verify account
 - Comments
 - Profile messages
 
-A lot of things more, it's only an Alpha.
+A lot of things more, it's only a Beta.
+
+### PHP Version
+An older version of this Forum made in PHP can be found [here](https://github.com/cadox8/Kristine/tree/master/old).
+The plan is continue developing it once the bases (this NodeJS version) are complete.

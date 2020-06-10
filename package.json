@@ -1,0 +1,27 @@
+{
+  "name": "kristine",
+  "version": "0.2.0",
+  "main": "app.ts",
+
+  "description": "Kristine is a simple discussion forum you can easily customize to make as unique as your community",
+
+  "author": {
+    "name": "cadox8",
+    "email": "cadox8@gmail.com",
+    "url": "https://cadox8.es"
+  },
+  "license": "GNU (https://github.com/cadox8/Kristine/blob/master/LICENSE)",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cadox8/Kristine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cadox8/Kristine/issues"
+  },
+  "homepage": "https://github.com/cadox8/Kristine#readme"
+}

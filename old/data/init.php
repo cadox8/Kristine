@@ -5,7 +5,13 @@ ob_start();
 require 'settings.php';
 require 'db.php';
 
-require_once './achie/AchievementsManager.php';
+if ($fol) {
+    require_once './achie/AchievementsManager.php';
+} else {
+    require_once '../achie/AchievementsManager.php';
+}
+
+
 $achievements = new AchievementsManager();
 $achievements->loadAchievements();
 
