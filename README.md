@@ -58,5 +58,6 @@ I'm (cadox8) working all I can to have finished this, so, until we leave the alp
 A lot of things more, it's only a Beta.
 
 ### PHP Version
-An older version of this Forum made in PHP can be found [here](https://github.com/cadox8/Kristine/tree/master/old).
+An older version of this Forum made in PHP can be found [here](https://github.com/cadox8/Kristine/tree/php).
+
 The plan is continue developing it once the bases (this NodeJS version) are complete.
