@@ -1,10 +1,11 @@
 ![Kristine](docs/img/kristine.jpg)
 
-![version](https://img.shields.io/badge/version-0.2.0%20Beta-ff69b4.svg?longCache=true&style=for-the-badge)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcadox8%2FKristine.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcadox8%2FKristine?ref=badge_shield)
+![version](https://img.shields.io/badge/version-0.0.3%20Alpha-ff69b4.svg?longCache=true&style=for-the-badge)
 
 # Kristine
-Kristine is a simple discussion forum you can easily customize to make as unique as your community
+Kristine is a simple discussion forum you can easily customize to make as unique as your community.
+
+Check the [Development Branch](https://github.com/cadox8/Kristine/tree/develop) or the [PHP Branch](https://github.com/cadox8/Kristine/tree/php)
 
 ## Table Of Content
 - [Demo](#demo)
@@ -29,9 +30,6 @@ Not yet
 
 ## License
 This project is released under [GNU LICENSE](https://github.com/cadox8/Kristine/blob/master/LICENSE).
-
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcadox8%2FKristine.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcadox8%2FKristine?ref=badge_large)
 
 ## Notes
 This project isn't finished yet, so if you find any bug, please, post it on [Issues](https://github.com/cadox8/Kristine/issues).
