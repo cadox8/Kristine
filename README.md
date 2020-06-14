@@ -9,6 +9,7 @@ Check the [Development Branch](https://github.com/cadox8/Kristine/tree/develop) 
 
 ## Table Of Content
 - [Demo](#demo)
+- [Download](https://github.com/cadox8/Kristine/releases)
 - [Installation](#installation)
 - [Images](#images)
 - [License](#license)
@@ -38,22 +39,23 @@ I'm (cadox8) working all I can to have finished this, so, until we leave the alp
 ![Cat Gif!](http://bestanimations.com/Animals/Mammals/Cats/catgif/cute-cat-animated-gif-6.gif)
 
 ## ToDo List
-- Admin System
-- Translate everything
-- Make it customizable
-- Finish BBCode support
-- Prevent Bots
-- Add more fields to users
-- Show profile details
-- Some internal changes
-- Better code
-- Post page
-- Installation script
-- Verify account
-- Comments
-- Profile messages
+- [ ] Admin System
+- [ ] Translations
+- [ ] Make it customizable
+- [ ] BBCode/Markdown/highlight.js support
+- [ ] Secure
+- [ ] User customization
+- [ ] Comments
+- [x] "Custom CSS" (Based on [BulmaCSS](https://bulma.io)
+- [ ] Installation script
+- [ ] Post page
+- [ ] Verify account
+- [ ] Comments
+- [ ] Profile messages
+- [ ] Addons Support
+- [ ] API
 
-A lot of things more, it's only a Beta.
+A lot of things more, it's only an Alpha.
 
 ### PHP Version
 An older version of this Forum made in PHP can be found [here](https://github.com/cadox8/Kristine/tree/php).
