@@ -1,0 +1,9 @@
+{
+  "menu": {
+    "index": "Index",
+    "login": "Log In",
+    "register": "Register",
+    "profile": "Profile",
+    "logout": "Log Out"
+  }
+}

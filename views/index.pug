@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    section.section
+        .container
+            .columns.has-text-left
+                .column.is-10
+                    if content.length > 0
+                        for cat in content
+                            nav.level.has-background-danger.is-rounded-top(id='cat.' + cat.id)
+                                .level-left
+                                    .level-item.is-colored
+                                        span.icon.is-medium.has-text-warning.ml-2
+                                            i.far.fa-lg.fa-folder-open
+                                        a.has-text-weight-bold.is-size-5.has-text-white.my-3.mx-3(href='#cat.' + cat.id) #{cat.title}
+                            hr.is-dark.is-marginless.with-level
+                            if cat.forums.length > 0
+                                for forum in cat.forums
+                                    nav.level.has-background-grey-lighter.is-rounded-bot
+                                        .level-left
+                                            .level-item
+                                                if forum.read
+                                                    span.icon.is-medium.has-text-grey.mx-2
+                                                        i.far.fa-lg.fa-comments
+                                                else
+                                                    span.icon.is-medium.has-text-primary.mx-2
+                                                        i.fas.fa-lg.fa-comments
+
+                                                span
+                                                    a.is-cat(href='/forum?forumID=' + forum.id + '&catName=' + cat.title)  #{forum.title}
+                                                    p.heading  Posts: #{forum.posts.length}

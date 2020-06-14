@@ -1,0 +1,23 @@
+html(lang='en')
+    head
+        title #{title} - #{data.siteName}
+
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+        meta(name="theme-color" content="#B21EC9")
+
+        link(rel='stylesheet' href='css/kristine.css')
+
+        link(rel='icon', type='image/x-icon', href='img/favicon.ico')
+        link(rel="icon" type="image/png" sizes="16x16" href="favicon.png")
+
+    body
+        block nav
+            include static/nav
+
+        block content
+                
+        block footer
+            include static/footer
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js")
