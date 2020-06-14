@@ -1,3 +1,17 @@
 {
-
+  "siteName": "Kristine",
+  "lang": "en_GB",
+  "ssl": false,
+  "options": {
+    "key": "",
+    "cert": "",
+    "ca": ""
+  },
+  "mysql": {
+    "host": "localhost",
+    "port": 3306,
+    "db": "kristine",
+    "user": "root",
+    "password": ""
+  }
 }

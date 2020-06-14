@@ -1,58 +1,63 @@
+/*
+ * Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ *
+ * This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ *
+ * Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ *
+ */
+
 /* Our Database */
-CREATE DATABASE kristine;
+CREATE DATABASE IF NOT EXISTS kristine;
 USE kristine;
 
-/* Forum Tables */
+/* Forum Table */
 CREATE TABLE IF NOT EXISTS `cat` (
-  `id`          INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title`       VARCHAR(36)      NOT NULL DEFAULT '',
-  `desc`        VARCHAR(500)     NOT NULL DEFAULT '',
-  `access`      INT(2)           NOT NULL DEFAULT 0,
-  `priority`    INT(2)           NOT NULL DEFAULT 1,
+  `id`          INT(100) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title`       VARCHAR(255)      NOT NULL DEFAULT '',
+  `desc`        VARCHAR(500)      NOT NULL DEFAULT '',
+  `access`      INT(8)            NOT NULL DEFAULT 0,
+  `hidden`      INT(1)            NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE INDEX (`title`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS `forum` (
-  `id`          INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title`       VARCHAR(100)     NOT NULL DEFAULT '',
-  `desc`        VARCHAR(100)     NOT NULL DEFAULT '',
-  `cat`         INT(11)          NOT NULL DEFAULT 1,
-  `access`      INT(2)           NOT NULL DEFAULT 0,
-  `priority`    INT(2)           NOT NULL DEFAULT 1,
+  `id`          INT(100) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title`       VARCHAR(255)      NOT NULL DEFAULT '',
+  `desc`        VARCHAR(255)      NOT NULL DEFAULT '',
+  `cat`         INT(100)          NOT NULL DEFAULT 1,
+  `access`      INT(8)            NOT NULL DEFAULT 0,
+  `hidden`      INT(1)            NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE INDEX (`title`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS `posts` (
-  `id`          INT(11)     UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id`          INT(100)     UNSIGNED NOT NULL AUTO_INCREMENT,
   `title`       VARCHAR(100)         NOT NULL DEFAULT '',
   `content`     LONGTEXT             NOT NULL DEFAULT '',
   `author`      INT(11)              NOT NULL DEFAULT 1,
   `likes`       INT(11)              NOT NULL DEFAULT 0,
-  `forum`       INT(11)              NOT NULL DEFAULT 1,
+  `forum`       INT(100)              NOT NULL DEFAULT 1,
   `date`        TIMESTAMP            NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE INDEX (`title`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
-/* User Tables */
+/* User Table */
 CREATE TABLE IF NOT EXISTS `users` (
-  `id`            INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id`            INT(100) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name`          VARCHAR(50)      NOT NULL DEFAULT '',
-  `email`         VARCHAR(100)     NOT NULL,
-  `pass`          VARCHAR(100)     NOT NULL,
-  `hash`          VARCHAR( 32 )    NOT NULL ,
+  `email`         VARCHAR(255)     NOT NULL,
+  `hash`          VARCHAR(255)     NOT NULL ,
   `rank`          INT(8)           NOT NULL DEFAULT 0,
   `lang`          VARCHAR(5)       NOT NULL DEFAULT 'en_EN',
   `birthday`      TIMESTAMP        NULL,
   `gender`        INT(1)           NOT NULL DEFAULT 0, /* 0 men, 1 women */
   `location`      VARCHAR(5000)    NULL,
   `firstJoin`     TIMESTAMP        NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `twitter`       VARCHAR(50)      NOT NULL DEFAULT '',
-  `facebook`      VARCHAR(50)      NOT NULL DEFAULT '',
-  `skype`         VARCHAR(50)      NOT NULL DEFAULT '',
-  `points`        INT(11)          NOT NULL DEFAULT 0,
+  `points`        INT(100)         NOT NULL DEFAULT 0,
   `icon`          VARCHAR(50)      NOT NULL DEFAULT '',
   `signature`     VARCHAR(5000)    NOT NULL DEFAULT '',
   `showOnline`    INT(1)           NOT NULL DEFAULT 0, /* 0 -> No, 1 -> Yes */
@@ -63,19 +68,32 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE INDEX `email` (`email`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
+/* Social Table */
+CREATE TABLE IF NOT EXISTS `social` (
+    `id`        INT(100)UNSIGNED NOT NULL AUTO_INCREMENT,
+    `user`      INT(100)         NOT NULL,
+    `twitter`   VARCHAR(255)     NOT NULL DEFAULT '',
+    `facebook`  VARCHAR(255)     NOT NULL DEFAULT '',
+    `skype`     VARCHAR(50)      NOT NULL DEFAULT '',
+    `github`    VARCHAR(255)     NOT NULL DEFAULT '',
+    `youtube`   VARCHAR(255)     NOT NULL DEFAULT '',
+    `twitch`    VARCHAR(50)      NOT NULL DEFAULT '',
+    PRIMARY KEY (`id`),
+    UNIQUE INDEX `user` (`user`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+/* Achievement Table */
 CREATE TABLE IF NOT EXISTS `achie` (
   `id`          INT(11)     UNSIGNED NOT NULL AUTO_INCREMENT,
   `title`       VARCHAR(100)         NOT NULL,
   `desc`        VARCHAR(255)         NOT NULL,
   `icon`        VARCHAR(255)         NOT NULL,
-  `user`        INT(11)              NOT NULL,
+  `user`        INT(100)             NOT NULL,
   `points`      INT(11)              NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE INDEX (`title`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
-
-INSERT INTO `users` (name, email, pass, gender, active) VALUES ('Kristine', 'kristine@cadox8.me', 'MTIz', 1, 1);
 
 INSERT INTO `cat` (title, `desc`) VALUES ('General', 'Default category');
 INSERT INTO `forum` (title, `desc`, cat) VALUES ('First Forum', 'Default Forum', 1);
