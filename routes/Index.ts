@@ -9,12 +9,12 @@
 
 import {Router} from "express";
 import {Database} from "../db/Database";
-import {Category} from "../utils/data/Category";
+import {Category} from "../forum/data/Category";
 import {Website} from "../Website";
 import {Lang} from "../lang/Lang";
-import {ForumData} from "../utils/data/ForumData";
-import {PostData} from "../utils/data/PostData";
-import {Author} from "../utils/data/Author";
+import {ForumData} from "../forum/data/ForumData";
+import {PostData} from "../forum/data/PostData";
+import {Author} from "../forum/data/Author";
 import {Utils} from "../utils/Utils";
 
 const router = Router();

@@ -7,7 +7,7 @@
  *
  */
 
-import {Config} from "../utils/Config";
+import {Config} from "../forum/Config";
 import {createPool, Pool, Query, queryCallback, QueryOptions} from "mysql";
 import {Log} from "../utils/Log";
 

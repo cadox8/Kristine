@@ -14,7 +14,7 @@ import {Server} from "net";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import {Log} from "../utils/Log";
-import {Config} from "../utils/Config";
+import {Config} from "../forum/Config";
 import bodyParser from "body-parser";
 
 export class ServerLoader {

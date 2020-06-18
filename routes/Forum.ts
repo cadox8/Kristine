@@ -11,8 +11,8 @@ import {Router} from "express";
 import {Database} from "../db/Database";
 import {Website} from "../Website";
 import {Lang} from "../lang/Lang";
-import {ForumData} from "../utils/data/ForumData";
-import {PostData} from "../utils/data/PostData";
+import {ForumData} from "../forum/data/ForumData";
+import {PostData} from "../forum/data/PostData";
 
 const router = Router();
 
