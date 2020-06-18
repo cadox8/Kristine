@@ -7,12 +7,18 @@ html(lang='en')
 
         meta(name="theme-color" content="#B21EC9")
 
-        link(rel='stylesheet' href='css/kristine.css')
+        link(rel='stylesheet' href='/css/kristine.css')
 
-        link(rel='icon', type='image/x-icon', href='img/favicon.ico')
-        link(rel="icon" type="image/png" sizes="16x16" href="favicon.png")
+        link(rel='icon', type='image/x-icon', href='/img/favicon/favicon.ico')
+        link(rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon.png")
+        link(rel='apple-touch-icon', sizes='152x152', href='/img/favicon/apple-touch-icon.png')
+        link(rel='icon', type='image/png', sizes='32x32', href='/img/favicon/favicon-32x32.png')
+        link(rel='icon', type='image/png', sizes='16x16', href='/img/favicon/favicon-16x16.png')
+        link(rel='manifest', href='/img/favicon/site.webmanifest')
+        meta(name='msapplication-TileColor', content='#da532c')
 
-    body
+
+    body.has-background-grey-lighter
         block nav
             include static/nav
 
@@ -21,3 +27,46 @@ html(lang='en')
         block footer
             include static/footer
             script(src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js")
+            script.
+                document.addEventListener('DOMContentLoaded', () => {
+                    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+                    if ($navbarBurgers.length > 0) {
+                        $navbarBurgers.forEach(el => {
+                            el.addEventListener('click', () => {
+                                const target = el.dataset.target;
+                                const $target = document.getElementById(target);
+
+                                el.classList.toggle('is-active');
+                                $target.classList.toggle('is-active');
+                            });
+                        });
+                    }
+                    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+                        const $notification = $delete.parentNode;
+                        $delete.addEventListener('click', () => $notification.parentNode.removeChild($notification));
+                    });
+                    const $dropdown = Array.prototype.slice.call(document.querySelectorAll('.dropdown'), 0);
+                    if ($dropdown.length > 0) {
+                        $dropdown.forEach(el => {
+                            el.addEventListener('click', () => {
+                                const target = el.dataset.target;
+                                const $target = document.getElementById(target);
+
+                                el.classList.toggle('is-active');
+                                $target.classList.toggle('is-active');
+                            });
+                        });
+                    }
+                    const $dropdown2 = Array.prototype.slice.call(document.querySelectorAll('.has-dropdown'), 0);
+                    if ($dropdown2.length > 0) {
+                        $dropdown2.forEach(el => {
+                            el.addEventListener('click', () => {
+                                const target = el.dataset.target;
+                                const $target = document.getElementById(target);
+
+                                el.classList.toggle('is-active');
+                                $target.classList.toggle('is-active');
+                            });
+                        });
+                    }
+                });

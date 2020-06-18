@@ -28,7 +28,7 @@ const logger = new Logger(options);
 
 export class Log {
 
-    public static debug(msg: string, tag: string = ''):void {
+    public static debug(msg: string, tag: string = ''): void {
         logger.debug(msg, tag);
     }
 

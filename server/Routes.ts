@@ -7,21 +7,23 @@
  *
  */
 
-import express from "express";
+import {Application} from "express";
 
 export class Routes {
 
     private readonly baseURL: string = '../routes/';
-    private readonly app: express.Application;
+    private readonly app: Application;
 
-    constructor(app: express.Application) {
+    constructor(app: Application) {
         this.app = app;
     }
 
     public loadURLs() {
         this.register('/', 'index');
+        this.register('/forum', 'forum')
 
-        this.register('/register', 'users/register')
+        this.register('/register', 'users/register');
+        this.register('/login', 'users/login');
     }
 
     private register(url: string, route: string): void {

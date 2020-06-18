@@ -7,10 +7,9 @@
  *
  */
 
-import {Post} from "./Post";
-import {Database} from "../../db/Database";
+import {PostData} from "./PostData";
 
-export class Forum {
+export class ForumData {
 
     private readonly _id: number;
     private _title: string;
@@ -23,7 +22,7 @@ export class Forum {
 
     private _read: boolean = false;
 
-    private _posts: Post[] = [];
+    private _posts: PostData[] = [];
 
     constructor(id: number) {
         this._id = id;
@@ -54,7 +53,7 @@ export class Forum {
         return this._hidden;
     }
 
-    get posts(): Post[] {
+    get posts(): PostData[] {
         return this._posts;
     }
 
@@ -86,7 +85,7 @@ export class Forum {
         this._hidden = value;
     }
 
-    set posts(value: Post[]) {
+    set posts(value: PostData[]) {
         this._posts = value;
     }
 }

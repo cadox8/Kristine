@@ -22,7 +22,7 @@ section.hero.is-dark
                                                 i.fas.fa-home
                                             span #{data.lang.getLang('menu.index')}
                         .navbar-end
-                            if session == null
+                            if session.name == null
                                 .navbar-item
                                     .field.has-addons
                                         p.control
@@ -38,9 +38,9 @@ section.hero.is-dark
                             else
                                 .navbar-item.has-dropdown.is-hoverable
                                     a.navbar-link
-                                        span.icon.has-text-warning
-                                            i.fas.fa-user
-                                        span ---
+                                        figure.image.is32x32.is-hidden-mobile.mr-2
+                                            img.is-rounded(src="/img/" + session.icon)
+                                        span.has-text-white #{session.name}
                                     .navbar-dropdown
                                         .navbar-item
                                             .field.is-grouped
@@ -53,4 +53,3 @@ section.hero.is-dark
                                                         span.icon.has-text-black
                                                             i.fas.fa-sign-out-alt
                                                         span.has-text-black #{data.lang.getLang('menu.logout')}
-                            p.navbar-item.is-hidden-mobile

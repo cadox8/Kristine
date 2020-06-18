@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ *
+ * This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ *
+ * Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ *
+ */
+
 /*! KristineCSS 0.0.1 | Based on Bulma.io (github.com/jgthms/bulma) */
 @keyframes spinAround {
   from {
@@ -331,6 +340,8 @@ hr {
 img {
   height: auto;
   max-width: 100%; }
+  img.is-rounded {
+    border-radius: 50%; }
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -1473,6 +1484,10 @@ a.box:active {
       border-radius: 290486px; }
   .image.is-fullwidth {
     width: 100%; }
+  .image.is-centered {
+    margin-left: auto;
+    margin-right: auto;
+    display: block; }
   .image.is-square img,
   .image.is-square .has-ratio, .image.is-1by1 img,
   .image.is-1by1 .has-ratio, .image.is-5by4 img,

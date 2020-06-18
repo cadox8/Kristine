@@ -8,10 +8,8 @@
  */
 
 import {Config} from "../utils/Config";
-import {createPool, FieldInfo, MysqlError, Pool, Query, queryCallback, QueryOptions} from "mysql";
+import {createPool, Pool, Query, queryCallback, QueryOptions} from "mysql";
 import {Log} from "../utils/Log";
-import {Category} from "../utils/data/Category";
-import {Forum} from "../utils/data/Forum";
 
 export class Database {
 

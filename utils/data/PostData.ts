@@ -7,9 +7,9 @@
  *
  */
 
-import {Database} from "../../db/Database";
+import {Author} from "./Author";
 
-export class Post {
+export class PostData {
 
     private readonly _id: number;
     private _title: string;
@@ -17,7 +17,7 @@ export class Post {
 
     private _forumId: number;
 
-    private _author: number;
+    private _author: Author;
     private _likes: number;
     private _date: Date;
 
@@ -42,7 +42,7 @@ export class Post {
         return this._forumId;
     }
 
-    get author(): number {
+    get author(): Author {
         return this._author;
     }
 
@@ -67,7 +67,7 @@ export class Post {
         this._forumId = value;
     }
 
-    set author(value: number) {
+    set author(value: Author) {
         this._author = value;
     }
 

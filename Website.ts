@@ -29,7 +29,6 @@ export class Website {
 
     private load() {
         this.routes = new Routes(this.server.app);
-
         this.routes.loadURLs();
 
         this.server.app.use((req, res, next) => {

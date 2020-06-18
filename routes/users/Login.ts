@@ -10,7 +10,7 @@
 import {Router} from "express";
 import {Website} from "../../Website";
 import {Lang} from "../../lang/Lang";
-import {hashSync} from "bcryptjs";
+import {compareSync} from "bcryptjs";
 import {Database} from "../../db/Database";
 
 const router = Router();
@@ -32,10 +32,10 @@ router.get('/', (req, res, next) => {
         errorCode: -1,
         errorMsg: ''
     }
-    res.render('users/register', { title: 'Index', data: data });
+    res.render('users/login', { title: 'Login', data: data });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/', (req, res) => {
     Database.hasConnection(connection => {
         if (connection) {
             res.render('errors/503');
@@ -54,22 +54,39 @@ router.post('/', (req, res, next) => {
     }
 
     const post = req.body;
-    const username = Database.escape(post.username);
-    const email = Database.escape(post.email);
+    const login = Database.escape(post.login);
     const pass = Database.escape(post.password);
-    const pass2 = Database.escape(post.password2);
-    const hash = hashSync(pass, 10);
-    const birth = post.birth;
+    let query: string;
 
-    if (pass !== pass2) {
-        data.errorCode = 2
-        data.errorMsg = 'Password does not match'
-        res.render('users/register', { title: 'Index', data: data });
-        return;
+    if (login.includes('@')) {
+        query = "`email`=" + login;
+    } else {
+        query = "`username`=" + login;
     }
 
-    // ToDo: Check for Username/Email
-    // ToDo: Save user in DB and redirect to to index/confirmation page
+    Database.query("SELECT `id`, `username`, `email`, `name`, `hash`, `rank`, `icon`, `name`, `lang` FROM `users` WHERE " + query, ((err, result) => {
+        if (err) {
+            data.errorCode = 1
+            data.errorMsg = 'This username/email does not exists on the site'
+            res.render('users/login', { title: 'Login', data: data });
+            return;
+        }
+        if (compareSync(pass, result[0].hash)) {
+            req.session.user = result[0].id;
+            req.session.username = result[0].username;
+            req.session.email = result[0].email;
+            req.session.rank = result[0].rank;
+            req.session.icon = result[0].icon;
+            req.session.name = result[0].name;
+            req.session.lang = result[0].lang;
+            res.redirect('/');
+        } else {
+            data.errorCode = 2;
+            data.errorMsg = 'Wrong username/email/password';
+            res.render('users/login', { title: 'Login', data: data });
+            return;
+        }
+    }));
 });
 
 module.exports = router;

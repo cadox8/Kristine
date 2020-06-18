@@ -13,17 +13,17 @@ block content
                                 if data.errorCode !== -1
                                     .notification.is-danger.has-text-black #{data.errorMsg}
 
-                                form(method="POST")
+                                form(action="" method="post" autocomplete='off')
                                     .field
                                         label.label Username
                                         .control.has-icons-left
-                                            input.input(type="text" placeholder="Username" name="username" required=)
+                                            input.input(type="text" placeholder="Username" name="username" id="username" required=)
                                             span.icon.is-small.is-left
                                                 i.fas.fa-envelope
                                     .field
                                         label.label Email
                                         .control.has-icons-left
-                                            input.input(type="email" placeholder="Email" name="email" required=)
+                                            input.input(type="email" placeholder="Email" name="email" id="email" required=)
                                             span.icon.is-small.is-left
                                                 i.fas.fa-envelope
                                     .field.is-horizontal
@@ -48,5 +48,17 @@ block content
                                                     input.input(type="date" placeholder="Date" name="birth")
                                                     span.icon.is-small.is-left
                                                         i.fas.fa-calendar
+                                    .field.is-grouped
+                                        .control
+                                            button.button.is-success Register
+                                        .control
+                                            a.button.is-success.is-light Log In
+                                    p.help
+                                        | By clicking on
+                                        strong  Register
+                                        |  you agree our
+                                        a  Terms and Conditions
+                                        | .
+
                 .column.is-3.has-text-centered
                     p Future Text :D

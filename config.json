@@ -7,11 +7,19 @@
     "cert": "",
     "ca": ""
   },
+  "ports": {
+    "insecure": 80,
+    "secure": 443
+  },
   "mysql": {
     "host": "localhost",
     "port": 3306,
     "db": "kristine",
     "user": "root",
     "password": ""
+  },
+  "debug": {
+    "database": false,
+    "data": true
   }
 }

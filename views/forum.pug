@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    section.section
+        .container.is-fluid
+            .columns.has-text-left
+                .column.is-10
+                    if content != null
+                        nav.level.has-background-danger.is-rounded-top
+                            .level-left
+                                .level-item.is-colored
+                                    span.icon.is-medium.has-text-warning.ml-2
+                                        i.far.fa-lg.fa-folder-open
+                                    p.has-text-weight-bold.is-size-5.has-text-white.my-3.mx-3 #{content.title}
+                        hr.is-dark.is-marginless.with-level
+                        if content.posts.length > 0
+                            for post in content.posts
+                                nav.level.has-background-white.is-rounded-bot
+                                    .level-left
+                                        .level-item.my-2
+                                            span.icon.is-large.has-text-primary.mx-2
+                                                i.fas.fa-2x.fa-comments
+                                            span
+                                                a.is-cat.mt-1.is-size-5(href='/post/' + post.id)  #{post.title}

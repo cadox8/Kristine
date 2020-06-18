@@ -8,7 +8,6 @@
  */
 
 import {LangFiles} from "./LangFiles";
-import {Log} from "../utils/Log";
 
 export class Lang {
 

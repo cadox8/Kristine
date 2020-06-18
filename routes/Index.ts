@@ -12,8 +12,10 @@ import {Database} from "../db/Database";
 import {Category} from "../utils/data/Category";
 import {Website} from "../Website";
 import {Lang} from "../lang/Lang";
-import {Forum} from "../utils/data/Forum";
-import {Post} from "../utils/data/Post";
+import {ForumData} from "../utils/data/ForumData";
+import {PostData} from "../utils/data/PostData";
+import {Author} from "../utils/data/Author";
+import {Utils} from "../utils/Utils";
 
 const router = Router();
 
@@ -28,14 +30,17 @@ router.get('/', (req, res, next) => {
     Database.query("SELECT * FROM `cat`", (error, categories) => {
         Database.query("SELECT * FROM `forum`", (error, forums) => {
             Database.query("SELECT * FROM `posts`", (error, posts) => {
-                const lang = req.session.name == null ? Website.config.lang : req.session.lang;
-                const data = {
-                    siteName: Website.config.siteName,
-                    lang: new Lang(lang)
-                }
-                const cats: { status: number, cats: Category[] } = loadData(categories, forums, posts);
-                if (cats.status === 0) return;
-                res.render('index', { title: 'Index', content: cats.cats, data: data });
+                Database.query("SELECT `id`, `name`, `icon` FROM `users`", (error, users) => {
+                    const lang = req.session.name == null ? Website.config.lang : req.session.lang;
+                    const data = {
+                        siteName: Website.config.siteName,
+                        lang: new Lang(lang),
+                        utils: new Utils()
+                    }
+                    const cats: { status: number, cats: Category[] } = loadData(categories, forums, posts, users);
+                    if (cats.status === 0) return;
+                    res.render('index', { title: 'Index', content: cats.cats, data: data });
+                });
             });
         })
     });
@@ -46,7 +51,7 @@ const parse = (data: string): any => {
     return JSON.parse(JSON.stringify(data));
 }
 
-const loadData = (categories, forums, posts): { status: number, cats: Category[] } => {
+const loadData = (categories, forums, posts, users): { status: number, cats: Category[] } => {
     let cat: Category[] = [];
 
     parse(categories).forEach(r => {
@@ -57,7 +62,7 @@ const loadData = (categories, forums, posts): { status: number, cats: Category[]
         category.hidden = r.hidden == 1;
 
         parse(forums).filter(f => f.cat === category.id).forEach(f => {
-            const forum: Forum = new Forum(f.id);
+            const forum: ForumData = new ForumData(f.id);
             forum.title = f.title;
             forum.description = f.desc;
             forum.access = f.access;
@@ -65,13 +70,19 @@ const loadData = (categories, forums, posts): { status: number, cats: Category[]
             forum.catId = f.cat;
 
             parse(posts).filter(p => p.forum === forum.id).forEach(p => {
-                const post: Post = new Post(p.id);
+                const post: PostData = new PostData(p.id);
                 post.title = p.title;
                 post.content = p.content;
-                post.author = p.author;
                 post.date = p.date;
                 post.likes = p.likes;
                 post.forumId = p.forum;
+
+                const authorData = parse(users).find(u => u.id === p.author);
+                if (authorData === null) {
+                    post.author = new Author(-1, '', 'null', 'user.png')
+                } else {
+                    post.author = new Author(authorData.id, '', authorData.name, authorData.icon);
+                }
 
                 forum.posts.push(post);
             })

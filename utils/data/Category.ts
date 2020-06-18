@@ -7,8 +7,7 @@
  *
  */
 
-import {Forum} from "./Forum";
-import {Database} from "../../db/Database";
+import {ForumData} from "./ForumData";
 
 export class Category {
 
@@ -19,7 +18,7 @@ export class Category {
     private _access: number = 0;
     private _hidden: boolean = false;
 
-    private _forums: Forum[] = [];
+    private _forums: ForumData[] = [];
 
     constructor(id: number) {
         this._id = id;
@@ -46,7 +45,7 @@ export class Category {
         return this._hidden;
     }
 
-    get forums(): Forum[] {
+    get forums(): ForumData[] {
         return this._forums;
     }
 
@@ -67,7 +66,7 @@ export class Category {
         this._hidden = value;
     }
 
-    set forums(value: Forum[]) {
+    set forums(value: ForumData[]) {
         this._forums = value;
     }
 }
