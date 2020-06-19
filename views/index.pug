@@ -56,4 +56,4 @@ block content
                             figure.image.is-64x64.is-centered
                                 img.is-rounded(src="/img/" + session.icon)
                             a.is-size-5(href='/user/' + session.user) #{session.name}
-                            p #{session.rank}
+                            p #{data.utils.getRankName(session.rank)}

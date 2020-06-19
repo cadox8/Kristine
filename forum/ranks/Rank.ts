@@ -64,5 +64,6 @@ export function defaultRanks(): Rank[] {
     admin.rank = 100;
     admin.permissions = [];
 
+    ranks.push(user, admin)
     return ranks;
 }

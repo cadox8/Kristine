@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email`         VARCHAR(255)     NOT NULL,
   `uuid`          VARCHAR(255)     NOT NULL DEFAULT '',
   `hash`          VARCHAR(255)     NOT NULL,
-  `rank`          INT(8)           NOT NULL DEFAULT 0,
+  `rank`          INT(8)           NOT NULL DEFAULT 1,
   `lang`          VARCHAR(5)       NOT NULL DEFAULT 'en_EN',
   `birthday`      TIMESTAMP        NULL,
   `gender`        INT(1)           NOT NULL DEFAULT 0, /* 0 men, 1 women */

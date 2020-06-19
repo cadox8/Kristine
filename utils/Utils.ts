@@ -7,6 +7,9 @@
  *
  */
 
+import {Website} from "../Website";
+import {defaultRanks, Rank} from "../forum/ranks/Rank";
+
 export class Utils {
 
    public parseTime(dat: Date): string {
@@ -16,5 +19,11 @@ export class Utils {
        let result = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' at ' + date.getHours() + ':' + date.getMinutes();
        if (today) result = 'Today at ' + date.getHours() + ':' + date.getMinutes();
        return result;
+   }
+
+   public getRankName(rank: number): string {
+       const r: Rank = Website.config.getRank(rank);
+       if (r === null) return Website.config.getRank(1).name;
+       return r.name;
    }
 }
