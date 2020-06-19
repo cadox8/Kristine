@@ -12,21 +12,22 @@ import {Routes} from './server/Routes';
 import {Config} from "./forum/Config";
 import {Database} from "./db/Database";
 import {defaultRanks, Rank} from "./forum/ranks/Rank";
+import {Forum} from "./forum/Forum";
 
 export class Website {
 
-    public static config: Config;
+    private readonly forum: Forum;
+
     private readonly database: Database;
     private readonly server: ServerLoader;
     private routes: Routes;
 
     constructor() {
-        Website.config = new Config();
-        this.database = new Database(Website.config);
-        this.server = new ServerLoader(Website.config);
+        this.forum = new Forum();
+        this.database = new Database(this.forum.config);
+        this.server = new ServerLoader(this.forum.config);
 
-        this.loadRanks();
-
+        this.forum.loader();
         this.load();
     }
 
@@ -44,23 +45,6 @@ export class Website {
             res.render('errors/503');
             console.log(err);
         });
-    }
-
-    private loadRanks() {
-        Database.query("SELECT * FROM `ranks`", (err, result) => {
-            if (err) { // Load default ranks
-                defaultRanks().forEach(r => Website.config.addRank(r));
-                return;
-            }
-            const ranks = JSON.parse(JSON.stringify(result));
-            ranks.forEach(r => {
-                const rank: Rank = new Rank(r.id);
-                rank.name = r.name;
-                rank.permissions = r.permissions;
-                rank.rank = r.rank;
-                Website.config.addRank(rank);
-            })
-        })
     }
 }
 

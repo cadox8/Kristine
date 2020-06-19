@@ -7,6 +7,8 @@
  *
  */
 
+import {Permissions} from "./Permissions";
+
 export class Rank {
 
     private readonly _id: number;
@@ -62,7 +64,7 @@ export function defaultRanks(): Rank[] {
     const admin: Rank = new Rank(4);
     admin.name = 'Admin';
     admin.rank = 100;
-    admin.permissions = [];
+    admin.permissions = [Permissions.ADMIN_PANEL];
 
     ranks.push(user, admin)
     return ranks;

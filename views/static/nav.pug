@@ -36,6 +36,17 @@ section.hero.is-dark
                                                     i.fas.fa-user
                                                 span #{data.lang.getLang('menu.register')}
                             else
+                                - var rank = data.utils.getRank(session.rank)
+
+                                if rank.permissions.includes(data.permissions.ADMIN_PANEL)
+                                    .navbar-item
+                                        .field.is-grouped
+                                            p.control
+                                                a.button.is-black(href="/")
+                                                    span.icon.has-text-primary
+                                                        i.fas.fa-pastafarianism
+                                                    span Admin
+
                                 .navbar-item.has-dropdown.is-hoverable
                                     a.navbar-link
                                         figure.image.is32x32.is-hidden-mobile.mr-2

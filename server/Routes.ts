@@ -20,7 +20,7 @@ export class Routes {
 
     public loadURLs() {
         this.register('/', 'index');
-        this.register('/forum', 'forum')
+        this.register('/forum', 'forums')
 
         this.register('/register', 'users/register');
         this.register('/login', 'users/login');

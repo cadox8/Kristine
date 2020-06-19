@@ -9,6 +9,7 @@
 
 import {Website} from "../Website";
 import {defaultRanks, Rank} from "../forum/ranks/Rank";
+import {Forum} from "../forum/Forum";
 
 export class Utils {
 
@@ -21,9 +22,13 @@ export class Utils {
        return result;
    }
 
+   public getRank(rank: number): Rank {
+       return Forum.instance.getRank(rank);
+   }
+
    public getRankName(rank: number): string {
-       const r: Rank = Website.config.getRank(rank);
-       if (r === null) return Website.config.getRank(1).name;
+       const r: Rank = Forum.instance.getRank(rank);
+       if (r === null) return Forum.instance.getRank(1).name;
        return r.name;
    }
 }

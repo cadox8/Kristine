@@ -12,6 +12,8 @@ import {Website} from "../../Website";
 import {Lang} from "../../lang/Lang";
 import {compareSync} from "bcryptjs";
 import {Database} from "../../db/Database";
+import {Forum} from "../../forum/Forum";
+import {Utils} from "../../utils/Utils";
 
 const router = Router();
 
@@ -26,9 +28,13 @@ router.get('/', (req, res, next) => {
         res.redirect('/');
         return;
     }
+    const forum: Forum = Forum.instance;
+
+    const lang = req.session.name == null ? forum.config.lang : req.session.lang;
     const data = {
-        siteName: Website.config.siteName,
-        lang: new Lang(Website.config.lang),
+        siteName: forum.config.siteName,
+        lang: new Lang(lang),
+        utils: new Utils(),
         errorCode: -1,
         errorMsg: ''
     }
@@ -46,9 +52,13 @@ router.post('/', (req, res) => {
         res.redirect('/');
         return;
     }
+    const forum: Forum = Forum.instance;
+
+    const lang = req.session.name == null ? forum.config.lang : req.session.lang;
     const data = {
-        siteName: Website.config.siteName,
-        lang: new Lang(Website.config.lang),
+        siteName: forum.config.siteName,
+        lang: new Lang(lang),
+        utils: new Utils(),
         errorCode: -1,
         errorMsg: ''
     }

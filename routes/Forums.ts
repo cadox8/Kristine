@@ -9,19 +9,17 @@
 
 import {Router} from "express";
 import {Database} from "../db/Database";
-import {Category} from "../forum/data/Category";
 import {Website} from "../Website";
 import {Lang} from "../lang/Lang";
 import {ForumData} from "../forum/data/ForumData";
 import {PostData} from "../forum/data/PostData";
-import {Author} from "../forum/data/Author";
 import {Utils} from "../utils/Utils";
 import {Permissions} from "../forum/ranks/Permissions";
 import {Forum} from "../forum/Forum";
 
 const router = Router();
 
-router.get('/', (req, res, next) => {
+router.get('/:id', (req, res, next) => {
     Database.hasConnection(connection => {
         if (connection) {
             res.render('errors/503');
@@ -29,7 +27,6 @@ router.get('/', (req, res, next) => {
         }
     });
     const forum: Forum = Forum.instance;
-
     const lang = req.session.name == null ? forum.config.lang : req.session.lang;
     const data = {
         siteName: forum.config.siteName,
@@ -37,7 +34,7 @@ router.get('/', (req, res, next) => {
         utils: new Utils(),
         permissions: Permissions
     }
-    res.render('index', { title: 'Index', content: forum.categories, data: data });
+    res.render('forum', { title: 'Forum', content: forum.getForums(Number(req.params.id)), data: data });
 });
 
 module.exports = router;

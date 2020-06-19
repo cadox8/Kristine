@@ -17,8 +17,11 @@ export enum Permissions {
     CREATE_THREAD,
     CREATE_COMMENT,
 
-    //EDIT
+    // EDIT
     EDIT_POST,
     EDIT_THREAD,
-    EDIT_COMMENT
+    EDIT_COMMENT,
+
+    // ADMIN
+    ADMIN_PANEL
 }
