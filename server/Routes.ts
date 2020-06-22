@@ -21,9 +21,11 @@ export class Routes {
     public loadURLs() {
         this.register('/', 'index');
         this.register('/forum', 'forums')
+        this.register('/post', 'post');
 
         this.register('/register', 'users/register');
         this.register('/login', 'users/login');
+        this.register('/profile', 'users/profile')
     }
 
     private register(url: string, route: string): void {

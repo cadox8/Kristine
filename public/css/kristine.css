@@ -1,4 +1,37 @@
-/*
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
+/*! KristineCSS 0.0.1 | Based on Bulma.io (github.com/jgthms/bulma) */
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
+/*!
  * Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
  *
  * This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
@@ -6,14 +39,36 @@
  * Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
  *
  */
-
-/*! KristineCSS 0.0.1 | Based on Bulma.io (github.com/jgthms/bulma) */
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
   to {
     transform: rotate(359deg); } }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .delete, .modal-close, .button, .file, .breadcrumb, .pagination-previous,
 .pagination-next,
 .pagination-link,
@@ -141,6 +196,14 @@
   right: 0;
   top: 0; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .button, .input, .textarea, .select select, .file-cta,
 .file-name, .pagination-previous,
 .pagination-next,
@@ -199,6 +262,22 @@
   fieldset[disabled] .pagination-ellipsis {
     cursor: not-allowed; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html,
 body,
@@ -269,6 +348,14 @@ th {
   th:not([align]) {
     text-align: inherit; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 html {
   background-color: #e3e3e3;
   font-size: 16px;
@@ -386,6 +473,22 @@ table th {
 table th {
   color: #363636; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .box {
   background-color: white;
   border-radius: 6px;
@@ -400,6 +503,14 @@ a.box:hover, a.box:focus {
 a.box:active {
   box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2), 0 0 0 1px #3273dc; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .button {
   background-color: white;
   border-color: #dbdbdb;
@@ -1286,6 +1397,14 @@ a.box:active {
       margin-left: 0.25rem;
       margin-right: 0.25rem; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .container {
   flex-grow: 1;
   margin: 0 auto;
@@ -1312,6 +1431,14 @@ a.box:active {
     .container {
       max-width: 1344px; } }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .content li + li {
   margin-top: 0.25em; }
 
@@ -1457,6 +1584,14 @@ a.box:active {
 .content.is-large {
   font-size: 1.5rem; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .icon {
   align-items: center;
   display: inline-flex;
@@ -1473,6 +1608,14 @@ a.box:active {
     height: 3rem;
     width: 3rem; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .image {
   display: block;
   position: relative; }
@@ -1559,6 +1702,14 @@ a.box:active {
     height: 128px;
     width: 128px; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .notification {
   background-color: whitesmoke;
   border-radius: 4px;
@@ -1631,6 +1782,14 @@ a.box:active {
       background-color: #feecf0;
       color: #cc0f35; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .progress {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -1757,6 +1916,14 @@ a.box:active {
   to {
     background-position: -200% 0; } }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .table {
   background-color: white;
   color: #363636; }
@@ -1889,6 +2056,14 @@ a.box:active {
   overflow-y: hidden;
   max-width: 100%; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .tags {
   align-items: center;
   display: flex;
@@ -2036,6 +2211,14 @@ a.box:active {
 a.tag:hover {
   text-decoration: underline; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .title,
 .subtitle {
   word-break: break-word; }
@@ -2106,6 +2289,14 @@ a.tag:hover {
   .subtitle.is-7 {
     font-size: 0.75rem; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .heading {
   display: block;
   font-size: 11px;
@@ -2136,6 +2327,22 @@ a.tag:hover {
   text-align: center;
   vertical-align: top; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .input, .textarea, .select select {
   background-color: white;
   border-color: #dbdbdb;
@@ -2188,6 +2395,14 @@ a.tag:hover {
     .select fieldset[disabled] select:-ms-input-placeholder {
       color: rgba(122, 122, 122, 0.3); }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .input, .textarea {
   box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, 0.05);
   max-width: 100%;
@@ -2274,6 +2489,14 @@ a.tag:hover {
   .textarea.has-fixed-size {
     resize: none; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .checkbox, .radio {
   cursor: pointer;
   display: inline-block;
@@ -2292,6 +2515,14 @@ a.tag:hover {
 .radio + .radio {
   margin-left: 0.5em; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .select {
   display: inline-block;
   max-width: 100%;
@@ -2432,6 +2663,14 @@ a.tag:hover {
   .select.is-loading.is-large:after {
     font-size: 1.5rem; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .file {
   align-items: stretch;
   display: flex;
@@ -2717,6 +2956,14 @@ a.tag:hover {
   .file-icon .fa {
     font-size: 14px; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .label {
   color: #363636;
   display: block;
@@ -2939,6 +3186,22 @@ a.tag:hover {
   .control.is-loading.is-large:after {
     font-size: 1.5rem; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .breadcrumb {
   font-size: 1rem;
   white-space: nowrap; }
@@ -2993,6 +3256,14 @@ a.tag:hover {
   .breadcrumb.has-succeeds-separator li + li::before {
     content: "\0227B"; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .card {
   background-color: white;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
@@ -3051,6 +3322,14 @@ a.tag:hover {
 .card .media:not(:last-child) {
   margin-bottom: 1.5rem; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .dropdown {
   display: inline-flex;
   position: relative;
@@ -3112,6 +3391,14 @@ button.dropdown-item {
   height: 1px;
   margin: 0.5rem 0; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .level {
   align-items: center;
   justify-content: space-between; }
@@ -3190,6 +3477,14 @@ button.dropdown-item {
     .level-right {
       display: flex; } }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .media {
   align-items: flex-start;
   display: flex;
@@ -3237,6 +3532,14 @@ button.dropdown-item {
   .media-content {
     overflow-x: auto; } }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .menu {
   font-size: 1rem; }
   .menu.is-small {
@@ -3274,6 +3577,14 @@ button.dropdown-item {
   .menu-label:not(:last-child) {
     margin-bottom: 1em; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .message {
   background-color: whitesmoke;
   border-radius: 4px;
@@ -3399,6 +3710,14 @@ button.dropdown-item {
   .message-body pre code {
     background-color: transparent; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .modal {
   align-items: center;
   display: none;
@@ -3479,6 +3798,14 @@ button.dropdown-item {
   overflow: auto;
   padding: 20px; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .navbar {
   background-color: white;
   min-height: 3.25rem;
@@ -4268,6 +4595,14 @@ a.navbar-item,
 .hero.is-fullheight-with-navbar {
   min-height: calc(100vh - 3.25rem); }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .pagination {
   font-size: 1rem;
   margin: -0.25rem; }
@@ -4387,6 +4722,14 @@ a.navbar-item,
       justify-content: flex-end;
       order: 3; } }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .panel {
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
@@ -4539,6 +4882,14 @@ label.panel-block {
     font-size: inherit;
     line-height: inherit; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .tabs {
   -webkit-overflow-scrolling: touch;
   align-items: stretch;
@@ -4647,6 +4998,22 @@ label.panel-block {
   .tabs.is-large {
     font-size: 1.5rem; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .column {
   display: block;
   flex-basis: 0;
@@ -5768,6 +6135,14 @@ label.panel-block {
     .columns.is-variable.is-8-fullhd {
       --columnGap: 2rem; } }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .tile {
   align-items: stretch;
   display: block;
@@ -5831,6 +6206,22 @@ label.panel-block {
       flex: none;
       width: 100%; } }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .has-text-white {
   color: white !important; }
 
@@ -6083,6 +6474,14 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .has-background-white-bis {
   background-color: #fafafa !important; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .is-clearfix::after {
   clear: both;
   content: " ";
@@ -6094,18 +6493,50 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .is-pulled-right {
   float: right !important; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .is-radiusless {
   border-radius: 0 !important; }
 
 .is-shadowless {
   box-shadow: none !important; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .is-clipped {
   overflow: hidden !important; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .is-relative {
   position: relative !important; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .is-marginless {
   margin: 0 !important; }
 
@@ -6392,6 +6823,14 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .is-size-1 {
   font-size: 3rem !important; }
 
@@ -6707,6 +7146,14 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .is-family-code {
   font-family: monospace !important; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .is-block {
   display: block !important; }
 
@@ -6990,6 +7437,22 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   .is-invisible-fullhd {
     visibility: hidden !important; } }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .hero {
   align-items: stretch;
   display: flex;
@@ -7497,6 +7960,14 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   flex-shrink: 0;
   padding: 3rem 1.5rem; }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .section {
   padding: 3rem 1.5rem; }
   @media screen and (min-width: 1024px) {
@@ -7505,6 +7976,14 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     .section.is-large {
       padding: 18rem 1.5rem; } }
 
+/*!
+ / Copyright (c) 2020. {cadox8} <{cadox8@gmail.com}>
+ /
+ / This file is part of {Kristine Forum (https://github.com/cadox8/Kristine)}
+ /
+ / Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
+ /
+ / */
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 4rem; }

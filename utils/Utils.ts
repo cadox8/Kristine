@@ -7,8 +7,7 @@
  *
  */
 
-import {Website} from "../Website";
-import {defaultRanks, Rank} from "../forum/ranks/Rank";
+import {Rank} from "../forum/ranks/Rank";
 import {Forum} from "../forum/Forum";
 
 export class Utils {

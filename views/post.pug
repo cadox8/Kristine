@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    section.section
+        .container.is-fluid
+            .columns.has-text-left
+                .column.is-1
+
+                .column.is-9
+                    nav.level.has-background-danger.is-rounded-top
+                        .level-left
+                            .level-item.is-colored
+                                span.icon.is-medium.has-text-warning.ml-2
+                                    i.far.fa-lg.fa-folder-open
+                                p.has-text-weight-bold.is-size-5.has-text-white.my-3.mx-3 #{post.title}
+                    hr.is-dark.is-marginless.with-level
+                    .columns
+                        .column.is-2
+                            .box
+                                figure.image.is-64x64.is-centered
+                                    img.is-rounded(src="/img/" + post.author.icon)
+                                a.is-size-5.has-text-centered(href='/profile/' + post.author.id) #{post.author.name}
+                        .column
+                            .box
+                                p #{post.content}

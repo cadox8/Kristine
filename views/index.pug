@@ -18,7 +18,7 @@ block content
                             hr.is-dark.is-marginless.with-level
                             if cat.forums.length > 0
                                 for forum in cat.forums
-                                    nav.level.is-rounded-bot.has-background-white
+                                    nav.level.has-background-white
                                         .level-left
                                             .level-item.my-2
                                                 if forum.read
@@ -48,12 +48,12 @@ block content
                                                     p
                                                         | #{data.utils.parseTime(lastPost.date)} by
                                                         |
-                                                        a(href='/user/' + lastPost.author.id) #{lastPost.author.name}
+                                                        a(href='/profile/' + lastPost.author.id) #{lastPost.author.name}
 
                 .column.is-hidden-mobile
                     if session.name
                         .box
                             figure.image.is-64x64.is-centered
                                 img.is-rounded(src="/img/" + session.icon)
-                            a.is-size-5(href='/user/' + session.user) #{session.name}
+                            a.is-size-5(href='/profile/' + session.user) #{session.name}
                             p #{data.utils.getRankName(session.rank)}

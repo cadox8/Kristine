@@ -56,7 +56,7 @@ section.hero.is-dark
                                         .navbar-item
                                             .field.is-grouped
                                                 p.control
-                                                    a.button.is-black(href="/profile") #{data.lang.getLang('menu.profile')}
+                                                    a.button.is-black(href="/profile/" + session.user) #{data.lang.getLang('menu.profile')}
                                         .navbar-item
                                             .field.is-grouped
                                                 p.control

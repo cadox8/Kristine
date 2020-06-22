@@ -11,13 +11,10 @@ import {Config} from "./Config";
 import {defaultRanks, Rank} from "./ranks/Rank";
 import {Category} from "./data/Category";
 import {Database} from "../db/Database";
-import {Website} from "../Website";
-import {Lang} from "../lang/Lang";
-import {Utils} from "../utils/Utils";
-import {Permissions} from "./ranks/Permissions";
 import {ForumData} from "./data/ForumData";
 import {PostData} from "./data/PostData";
 import {Author} from "./data/Author";
+import {Achievement} from "./achievements/Achievement";
 
 export class Forum {
 
@@ -28,6 +25,8 @@ export class Forum {
     private readonly _ranks: Rank[];
     private readonly _categories: Category[];
 
+    private readonly _achievements: Achievement[];
+
     constructor() {
         Forum.instance = this;
 
@@ -35,7 +34,7 @@ export class Forum {
 
         this._ranks = [];
         this._categories = [];
-
+        this._achievements = [];
     }
 
     get config(): Config {
@@ -68,6 +67,14 @@ export class Forum {
 
     public getForums(category: number): ForumData[] {
         return this.categories.find(c => c.id === category).forums;
+    }
+
+    public getForum(forum: number): ForumData {
+        return this.categories.find(c => c.forums.find(f => f.id === forum).catId).forums.find(f => f.id === forum);
+    }
+
+    public getPost(forum: number, post: number): PostData {
+        return this.getForum(forum).posts.find(p => p.id === post);
     }
 
 
