@@ -1,7 +1,11 @@
 {
-  "latest_version": 3,
-  "beta_version": 3,
+  "latest_version": 4,
+  "beta_version": 4,
   "versions": [
+    {
+      "version_id": 4,
+      "version": "v0.0.5 - Alpha"
+    },
     {
       "version_id": 3,
       "version": "v0.0.4 - Alpha"

@@ -18,8 +18,10 @@ import {Updater} from "./utils/Updater";
 
 export class Website {
 
-    public static readonly VERSION_DATA = 3
-    public static readonly VERSION = 'v0.0.4 - Alpha'
+    public static readonly VERSION_DATA = 4
+    public static readonly VERSION = 'v0.0.5 - Alpha'
+
+    private readonly update: Updater;
 
     private readonly forum: Forum;
 
@@ -28,6 +30,7 @@ export class Website {
     private routes: Routes;
 
     constructor() {
+        this.update = new Updater();
         Log.spacer(0);
         Log.success('Loading Forum...');
 
@@ -41,12 +44,8 @@ export class Website {
         Log.success('Forum Loaded!');
         Log.spacer(-1);
         Log.success('Kristine Forum ' + Website.VERSION)
-        if (new Updater().timeToUpdate()) {
-            Log.warning('Hey! Seems that you have an older version of Kristine', 'Update');
-            Log.warning('You can update the forum from the Admin Section', 'Update');
-            Log.warning('Or download the latest version from https://github.com/cadox8/Kristine/releases', 'Update')
-        }
-        Log.spacer(1)
+        this.update.timeToUpdate()
+        Log.spacer(1);
     }
 
     private load() {
