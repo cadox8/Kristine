@@ -48,7 +48,7 @@ I'm (cadox8) working all I can to have finished this, so, until we leave the alp
 - [ ] Comments
 - [x] "Custom CSS" (Based on [BulmaCSS](https://bulma.io)
 - [ ] Installation script
-- [x] Post page
+- [ ] Post page
 - [ ] Verify account
 - [ ] Comments
 - [ ] Profile messages

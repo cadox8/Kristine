@@ -19,14 +19,14 @@ block content
                                     .level-item.is-colored
                                         span.icon.is-medium.has-text-warning.ml-2
                                             i.far.fa-lg.fa-folder-open
-                                        p.has-text-weight-bold.is-size-5.has-text-white.my-3 #{forum.title}
+                                        p.has-text-weight-bold.is-size-5.has-text-white.my-3.mx-3 #{forum.title}
                                 if session.user != null
                                     .level-right
                                         .level-item.mr-3
                                             a.button.is-light(href='/new/' + forum.id)
                                                 span.icon
                                                     i.fas.fa-plus.has-text-black
-                                                span #{data.lang.getLang('post.new_post')}
+                                                span New Post
                                                 span.icon
                                                     i.fas.fa-plus.has-text-black
                             hr.is-dark.is-marginless.with-level

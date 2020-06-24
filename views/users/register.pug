@@ -15,29 +15,29 @@ block content
 
                                 form(action="" method="post" autocomplete='off')
                                     .field
-                                        label.label #{data.lang.getLang('user.register.user')}
+                                        label.label Username
                                         .control.has-icons-left
-                                            input.input(type="text" placeholder="kristine" name="username" id="username" required=)
+                                            input.input(type="text" placeholder="Username" name="username" id="username" required=)
                                             span.icon.is-small.is-left
                                                 i.fas.fa-envelope
                                     .field
-                                        label.label #{data.lang.getLang('user.register.email')}
+                                        label.label Email
                                         .control.has-icons-left
-                                            input.input(type="email" placeholder="kristine@kristine.com" name="email" id="email" required=)
+                                            input.input(type="email" placeholder="Email" name="email" id="email" required=)
                                             span.icon.is-small.is-left
                                                 i.fas.fa-envelope
                                     .field.is-horizontal
                                         .field-body
                                             .field
-                                                label.label #{data.lang.getLang('user.register.password')}
+                                                label.label Password
                                                 .control.has-icons-left
-                                                    input.input(type="password" placeholder="********" name="password" required=)
+                                                    input.input(type="password" placeholder="Password" name="password" required=)
                                                     span.icon.is-small.is-left
                                                         i.fas.fa-lock
                                             .field
-                                                label.label #{data.lang.getLang('user.register.password2')}
+                                                label.label Repeat Password
                                                 .control.has-icons-left
-                                                    input.input(type="password" placeholder="********" name="password2" required=)
+                                                    input.input(type="password" placeholder="Password" name="password2" required=)
                                                     span.icon.is-small.is-left
                                                         i.fas.fa-lock
                                     .field.is-horizontal
@@ -50,14 +50,14 @@ block content
                                                         i.fas.fa-calendar
                                     .field.is-grouped
                                         .control
-                                            button.button.is-success #{data.lang.getLang('menu.register')}
+                                            button.button.is-success Register
                                         .control
-                                            a.button.is-success.is-light #{data.lang.getLang('menu.login')}
+                                            a.button.is-success.is-light Log In
                                     p.help
-                                        | #{data.lang.getLang('user.register.tos.1')}
-                                        strong  #{data.lang.getLang('menu.register')}
-                                        |  #{data.lang.getLang('user.register.tos.2')}
-                                        a  #{data.lang.getLang('user.register.tos.3')}
+                                        | By clicking on
+                                        strong  Register
+                                        |  you agree our
+                                        a  Terms and Conditions
                                         | .
 
                 .column.is-3.has-text-centered
