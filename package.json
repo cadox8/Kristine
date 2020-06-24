@@ -29,7 +29,7 @@
   "homepage": "https://github.com/cadox8/Kristine#readme",
   "dependencies": {
     "node-fetch": "^2.6.0",
-    "@ptkdev/logger": "^1.5.0",
+    "@ptkdev/logger": "^1.6.0",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "body-parser": "^1.19.0",
