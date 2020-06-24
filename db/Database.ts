@@ -30,7 +30,6 @@ export class Database {
         });
 
         Database.pool.on('error', err => Log.error(err.sqlMessage, 'Database'));
-        Database.pool.on('connection', connection => Log.success('Connected to Database', 'Database'));
     }
 
     public static query(options: string | QueryOptions, callback?: queryCallback): Query {

@@ -18,6 +18,7 @@
     "user": "root",
     "password": ""
   },
+  "update": 300,
   "debug": {
     "database": false,
     "data": true

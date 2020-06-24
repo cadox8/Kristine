@@ -15,6 +15,8 @@ import {ForumData} from "./data/ForumData";
 import {PostData} from "./data/PostData";
 import {Author} from "./data/Author";
 import {Achievement} from "./achievements/Achievement";
+import {setInterval} from "timers";
+import {Log} from "../utils/Log";
 
 export class Forum {
 
@@ -83,9 +85,17 @@ export class Forum {
 
 
     // Loaders
-    public loader(): void {
+    public async loader(): Promise<void> {
         this.loadRanks();
         this.loadForum();
+        await this.timer();
+    }
+
+    private async timer(): Promise<void> {
+        setInterval(() => {
+            this.loadForum();
+            Log.debugData('Updating forum...')
+        }, 1000 * this.config.update);
     }
 
     private loadForum(): void {
@@ -94,6 +104,7 @@ export class Forum {
                 Database.query("SELECT * FROM `posts`", (error, posts) => {
                     Database.query("SELECT `id`, `name`, `icon` FROM `users`", (error, users) => {
                         const cats: { status: number, cats: Category[] } = this.loadData(categories, forums, posts, users);
+                        this.categories.length = 0
                         cats.cats.forEach(c => this._categories.push(c));
                     });
                 });

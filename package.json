@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/cadox8/Kristine#readme",
   "dependencies": {
+    "node-fetch": "^2.6.0",
     "@ptkdev/logger": "^1.5.0",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
@@ -40,6 +41,7 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "@types/node-fetch": "^2.5.7",
     "@types/bcryptjs": "^2.4.2",
     "@types/cookie-parser": "^1.4.2",
     "@types/body-parser": "^1.19.0",
