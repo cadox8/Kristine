@@ -107,7 +107,7 @@ export class Config {
     }
 
     public save(): void {
-        writeFile(this.path, JSON.stringify(this.toJSON(), null, 2), err => {
+        writeFile('./config.json', JSON.stringify(this.toJSON(), null, 2), 'utf8', err => {
             if (err) {
                 Log.error(err.message, 'Config');
                 return;

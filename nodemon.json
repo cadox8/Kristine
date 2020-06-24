@@ -1,5 +1,6 @@
 {
   "watch": ["*"],
   "ext": "ts, json, scss, css",
-  "exec": "npx ts-node ./Website.ts"
+  "exec": "npx ts-node ./Website.ts",
+  "ignore": [ "./node_modules", "./config.json" ]
 }

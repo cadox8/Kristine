@@ -50,9 +50,16 @@ router.post('/', (req, res, next) => {
 
     const host: string = post.host;
     const db: string = post.db;
-    const port: number = post.port;
+    const port: number = Number(post.port);
     const user: string = post.user;
     const password: string = post.password;
+
+    const key: string = post.key;
+    const cert: string = post.cert;
+    const ca: string = post.ca;
+
+    const data: string = post.data;
+    const database: string = post.database;
 
     config.siteName = sitename;
     config.lang = lang;
@@ -62,6 +69,16 @@ router.post('/', (req, res, next) => {
     config.mysql.port = port;
     config.mysql.user = user;
     config.mysql.password = password;
+
+    if (key && cert && ca) {
+        config.ssl = true;
+        config.options.cert = cert;
+        config.options.ca = ca;
+        config.options.key = key;
+    }
+
+    config.debug.database = database === 'on';
+    config.debug.data = data === 'on';
 
     config.installed = true;
     config.save();

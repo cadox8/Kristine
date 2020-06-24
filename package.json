@@ -12,11 +12,11 @@
   "license": "GNU (https://github.com/cadox8/Kristine/blob/master/LICENSE)",
   "scripts": {
     "tsc": "tsc --module commonjs",
-    "init": "npm prune && npm install",
+    "load": "npm prune && npm install",
     "dev": "nodemon",
-    "prod": "npm install && npm run build",
+    "prod": "npm run load && npm run build",
     "build": "tsc --module commonjs && npm run start",
-    "start": "npm run build && node --experimental-modules ./build/app.js",
+    "start": "node --experimental-modules ./build/Website.js",
     "style": "node-sass sass/kristine.sass public/css/kristine.css --source-map public/css/kristine.css.map -o public/css/kristine.min.css"
   },
   "repository": {

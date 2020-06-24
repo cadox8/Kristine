@@ -93,6 +93,7 @@ export class Forum {
 
     private async timer(): Promise<void> {
         setInterval(() => {
+            this.categories.length = 0
             this.loadForum();
             Log.debugData('Updating forum...')
         }, 1000 * this.config.update);
@@ -104,7 +105,6 @@ export class Forum {
                 Database.query("SELECT * FROM `posts`", (error, posts) => {
                     Database.query("SELECT `id`, `name`, `icon` FROM `users`", (error, users) => {
                         const cats: { status: number, cats: Category[] } = this.loadData(categories, forums, posts, users);
-                        this.categories.length = 0
                         cats.cats.forEach(c => this._categories.push(c));
                     });
                 });

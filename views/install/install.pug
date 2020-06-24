@@ -37,8 +37,8 @@ html(lang='en')
                                         .field
                                             label.label #{data.lang.getLang('install.lang')}
                                             .control.has-icons-left
-                                                .select(id="lang")
-                                                    select
+                                                .select
+                                                    select(id="lang" name="lang")
                                                         option(selected value='en_GB') #{data.lang.parseLang('en_GB')}
                                                         option(value='es_ES') #{data.lang.parseLang('es_ES')}
                                                 span.icon.is-small.is-left
