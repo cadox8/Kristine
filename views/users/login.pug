@@ -15,22 +15,22 @@ block content
 
                                 form(action="" method="post" autocomplete='off')
                                     .field
-                                        label.label Username/Email
+                                        label.label #{data.lang.getLang('user.login.user')}
                                         .control.has-icons-left
-                                            input.input(type="text" placeholder="Username/Email" name="login" id="login" required=)
+                                            input.input(type="text" placeholder="kristine@kristine.com" name="login" id="login" required=)
                                             span.icon.is-small.is-left
                                                 i.fas.fa-envelope
                                     .field
-                                        label.label Password
+                                        label.label #{data.lang.getLang('user.login.password')}
                                         .control.has-icons-left
-                                            input.input(type="password" placeholder="Password" name="password" required=)
+                                            input.input(type="password" placeholder="********" name="password" required=)
                                             span.icon.is-small.is-left
                                                 i.fas.fa-lock
                                     .field.is-grouped
                                         .control
-                                            button.button.is-success Log In
+                                            button.button.is-success #{data.lang.getLang('menu.login')}
                                         .control
-                                            a.button.is-success.is-light(href='/register') Register
+                                            a.button.is-success.is-light(href='/register') #{data.lang.getLang('menu.register')}
 
                 .column.is-3.has-text-centered
                     p Future Text :D

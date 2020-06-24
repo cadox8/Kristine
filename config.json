@@ -12,11 +12,11 @@
     "secure": 443
   },
   "mysql": {
-    "host": "localhost",
+    "host": "cadox8.es",
     "port": 3306,
     "db": "kristine",
     "user": "root",
-    "password": ""
+    "password": "Papelillo0/"
   },
   "update": 300,
   "debug": {

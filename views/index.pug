@@ -14,7 +14,7 @@ block content
                                     .level-item.is-colored
                                         span.icon.is-medium.has-text-warning.ml-2
                                             i.far.fa-lg.fa-folder-open
-                                        a.has-text-weight-bold.is-size-5.has-text-white.my-3.mx-3(href='#cat.' + cat.id) #{cat.title}
+                                        a.has-text-weight-bold.is-size-5.has-text-white.my-3(href='#cat.' + cat.id) #{cat.title}
                             hr.is-dark.is-marginless.with-level
                             if cat.forums.length > 0
                                 for forum in cat.forums
@@ -30,14 +30,14 @@ block content
 
                                                 span
                                                     a.mt-1.is-size-5(href='/forum/' + forum.id)  #{forum.title}
-                                        .level-right.mr-6.my-2
+                                        .level-right.mr-6.my-2.is-hidden-mobile
                                             .level-item
                                                 span.has-text-centered
-                                                    p Threads
+                                                    p #{data.lang.getLang('post.threads')}
                                                     p.has-text-black #{forum.posts.length}
                                             .level-item.ml-4
                                                 span.has-text-centered
-                                                    p Messages
+                                                    p #{data.lang.getLang('post.messages')}
                                                     p.has-text-black #{forum.posts.length}
                                             .level-item.ml-4
                                                 - var lastPost = forum.posts[forum.posts.length-1]
@@ -46,7 +46,7 @@ block content
                                                 span
                                                     a(href='/post/' + lastPost.id) #{lastPost.title}
                                                     p
-                                                        | #{data.utils.parseTime(lastPost.date)} by
+                                                        | #{data.utils.parseTime(lastPost.date)} #{data.lang.getLang('helper.by')}
                                                         |
                                                         a(href='/profile/' + lastPost.author.id) #{lastPost.author.name}
 

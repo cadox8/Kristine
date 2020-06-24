@@ -1,1 +1,108 @@
-p 503
+html(lang='en')
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+        meta(name="theme-color" content="#da532c")
+
+        link(rel='icon', type='image/x-icon', href='/img/favicon/favicon.ico')
+        link(rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon.png")
+        link(rel='apple-touch-icon', sizes='152x152', href='/img/favicon/apple-touch-icon.png')
+        link(rel='icon', type='image/png', sizes='32x32', href='/img/favicon/favicon-32x32.png')
+        link(rel='icon', type='image/png', sizes='16x16', href='/img/favicon/favicon-16x16.png')
+        link(rel='manifest', href='/img/favicon/site.webmanifest')
+        meta(name='msapplication-TileColor', content='#da532c')
+
+        title WTF
+
+    body
+        style().
+            *, :before, :after {
+                box-sizing: border-box;
+            }
+
+            body {
+                display: flex;
+                align-items: center;
+                background: #E3F2FD;
+                min-width: 275px;
+                height: 100vh;
+                margin: 0 10vw;
+                overflow: hidden;
+                color: #138FF2;
+                font-family: Roboto;
+            }
+
+            .wrapper {
+                flex-grow: 2;
+                width: 40vw;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            h1 {
+                margin: 0;
+                font-size: 6em;
+                font-weight: 100;
+            }
+
+            p {
+                width: 95%;
+                font-size: 1.5em;
+                line-height: 1.4;
+            }
+
+            .buttons {
+                white-space: nowrap;
+                display: inline-block;
+            }
+
+            span {
+                display: block;
+                text-transform: uppercase;
+                color: #B9DDFB;
+                letter-spacing: 1.5px;
+                text-align: center;
+            }
+
+            a {
+                display: inline-block;
+                padding: .8em 1em;
+                margin-right: 1em;
+                margin-bottom: 1em;
+                border: 3px solid #B9DDFB;
+                color: #138FF2;
+                font-weight: 500;
+                text-transform: uppercase;
+                text-decoration: none;
+                letter-spacing: .2em;
+                position: relative;
+                overflow: hidden;
+                transition: .3s;
+            }
+
+            a:hover {
+                color: #E3F2FD;
+            }
+
+            a:hover:before {
+                top: 0;
+            }
+
+            a:before {
+                content: '';
+                background: #138FF2;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: -100%;
+                left: 0;
+                transition: .3s;
+                z-index: -1;
+            }
+
+    .wrapper
+        h1 Hmm.
+        p It seems that you're lost in a perpetual black hole. Let us help guide you out and get you back home.
+        .buttons
+            a(href="/") Back Home
