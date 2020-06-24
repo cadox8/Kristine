@@ -7,19 +7,22 @@
  *
  */
 
-import {Forum} from "./Forum";
-import {Database} from "../../db/Database";
+import {PostData} from "./PostData";
 
-export class Category {
+export class ForumData {
 
     private readonly _id: number;
-    private _title: string = '';
-    private _description: string = '';
+    private _title: string;
+    private _description: string;
 
-    private _access: number = 0;
-    private _hidden: boolean = false;
+    private _catId: number;
 
-    private _forums: Forum[] = [];
+    private _access: number;
+    private _hidden: boolean;
+
+    private _read: boolean = false;
+
+    private _posts: PostData[] = [];
 
     constructor(id: number) {
         this._id = id;
@@ -38,6 +41,10 @@ export class Category {
         return this._description;
     }
 
+    get catId(): number {
+        return this._catId;
+    }
+
     get access(): number {
         return this._access;
     }
@@ -46,10 +53,17 @@ export class Category {
         return this._hidden;
     }
 
-    get forums(): Forum[] {
-        return this._forums;
+    get posts(): PostData[] {
+        return this._posts;
     }
 
+    get read(): boolean {
+        return this._read;
+    }
+
+    set read(value: boolean) {
+        this._read = value;
+    }
 
     set title(value: string) {
         this._title = value;
@@ -57,6 +71,10 @@ export class Category {
 
     set description(value: string) {
         this._description = value;
+    }
+
+    set catId(value: number) {
+        this._catId = value;
     }
 
     set access(value: number) {
@@ -67,7 +85,7 @@ export class Category {
         this._hidden = value;
     }
 
-    set forums(value: Forum[]) {
-        this._forums = value;
+    set posts(value: PostData[]) {
+        this._posts = value;
     }
 }

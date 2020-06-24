@@ -40,7 +40,7 @@ I'm (cadox8) working all I can to have finished this, so, until we leave the alp
 
 ## ToDo List
 - [ ] Admin System
-- [ ] Translations
+- [x] Translations
 - [ ] Make it customizable
 - [ ] BBCode/Markdown/highlight.js support
 - [ ] Secure

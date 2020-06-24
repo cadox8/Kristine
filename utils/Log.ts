@@ -7,6 +7,8 @@
  *
  */
 
+import {Forum} from "../forum/Forum";
+
 const Logger = require("@ptkdev/logger");
 
 const options = {
@@ -28,7 +30,11 @@ const logger = new Logger(options);
 
 export class Log {
 
-    public static debug(msg: string, tag: string = ''):void {
+    public static debugData(msg: string, tag: string = ''): void {
+        if (Forum.instance.config.debug.data) Log.debug(msg, tag);
+    }
+
+    public static debug(msg: string, tag: string = ''): void {
         logger.debug(msg, tag);
     }
 
@@ -40,7 +46,17 @@ export class Log {
         logger.error(msg, tag);
     }
 
+    public static warning(msg: string, tag: string = ''):void {
+        logger.warning(msg, tag);
+    }
+
     public static log(msg: string, tag: string = ''):void {
         logger.info(msg, tag);
+    }
+
+    public static spacer(where: number): void {
+        if (where === 0) Log.debug('');
+        Log.debug('----------------------');
+        if (where === 1) Log.debug('');
     }
 }

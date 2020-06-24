@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+    section.section
+        .container
+            .box
+                .columns
+                    .column.is-2
+                        figure.image.is-128x128
+                            img.is-rounded(src='/img/' + user.icon)
+                        h3.is-size-4 #{user.name}
+                        br
+                        h3.is-size-5 Achievements
+                        hr.is-dark.is-marginless
+                    .column

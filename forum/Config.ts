@@ -21,5 +21,10 @@ export class Config {
     public readonly ssl: boolean = this.config.ssl;
     public readonly options = this.config.options;
 
+    public readonly ports = this.config.ports;
     public readonly mysql = this.config.mysql;
+
+    public readonly update: number = this.config.update;
+
+    public readonly debug = this.config.debug;
 }

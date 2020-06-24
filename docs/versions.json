@@ -1,0 +1,18 @@
+{
+  "latest_version": 2,
+  "beta_version": 3,
+  "versions": [
+    {
+      "version_id": 3,
+      "version": "v0.0.4 - Alpha"
+    },
+    {
+      "version_id": 2,
+      "version": "v0.0.3 - Alpha"
+    },
+    {
+      "version_id": 1,
+      "version": "v0.0.2 - Alpha"
+    }
+  ]
+}

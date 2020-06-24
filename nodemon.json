@@ -1,5 +1,5 @@
 {
   "watch": ["*"],
-  "ext": "ts, pug, json",
+  "ext": "ts, json, scss, css",
   "exec": "npx ts-node ./Website.ts"
 }

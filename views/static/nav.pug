@@ -22,7 +22,7 @@ section.hero.is-dark
                                                 i.fas.fa-home
                                             span #{data.lang.getLang('menu.index')}
                         .navbar-end
-                            if session == null
+                            if session.user == null
                                 .navbar-item
                                     .field.has-addons
                                         p.control
@@ -36,16 +36,26 @@ section.hero.is-dark
                                                     i.fas.fa-user
                                                 span #{data.lang.getLang('menu.register')}
                             else
+                                - var rank = session.user.rank;
+                                if rank.permissions.includes(data.permissions.ADMIN_PANEL)
+                                    .navbar-item
+                                        .field.is-grouped
+                                            p.control
+                                                a.button.is-black(href="/")
+                                                    span.icon.has-text-primary
+                                                        i.fas.fa-pastafarianism
+                                                    span Admin
+
                                 .navbar-item.has-dropdown.is-hoverable
                                     a.navbar-link
-                                        span.icon.has-text-warning
-                                            i.fas.fa-user
-                                        span ---
+                                        figure.image.is32x32.is-hidden-mobile.mr-2
+                                            img.is-rounded(src="/img/" + session.user.icon)
+                                        span.has-text-white #{session.user.name}
                                     .navbar-dropdown
                                         .navbar-item
                                             .field.is-grouped
                                                 p.control
-                                                    a.button.is-black(href="/profile") #{data.lang.getLang('menu.profile')}
+                                                    a.button.is-black(href="/profile/" + session.user.id) #{data.lang.getLang('menu.profile')}
                                         .navbar-item
                                             .field.is-grouped
                                                 p.control
@@ -53,4 +63,3 @@ section.hero.is-dark
                                                         span.icon.has-text-black
                                                             i.fas.fa-sign-out-alt
                                                         span.has-text-black #{data.lang.getLang('menu.logout')}
-                            p.navbar-item.is-hidden-mobile

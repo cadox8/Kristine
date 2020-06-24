@@ -2,9 +2,11 @@ extends layout
 
 block content
     section.section
-        .container
+        .container.is-fluid
             .columns.has-text-left
-                .column.is-10
+                .column.is-1
+
+                .column.is-9
                     if content.length > 0
                         for cat in content
                             nav.level.has-background-danger.is-rounded-top(id='cat.' + cat.id)
@@ -16,16 +18,42 @@ block content
                             hr.is-dark.is-marginless.with-level
                             if cat.forums.length > 0
                                 for forum in cat.forums
-                                    nav.level.has-background-grey-lighter.is-rounded-bot
+                                    nav.level.has-background-white
                                         .level-left
-                                            .level-item
+                                            .level-item.my-2
                                                 if forum.read
-                                                    span.icon.is-medium.has-text-grey.mx-2
-                                                        i.far.fa-lg.fa-comments
+                                                    span.icon.is-large.has-text-grey.mx-2
+                                                        i.far.fa-2x.fa-comments
                                                 else
-                                                    span.icon.is-medium.has-text-primary.mx-2
-                                                        i.fas.fa-lg.fa-comments
+                                                    span.icon.is-large.has-text-primary.mx-2
+                                                        i.fas.fa-2x.fa-comments
 
                                                 span
-                                                    a.is-cat(href='/forum?forumID=' + forum.id + '&catName=' + cat.title)  #{forum.title}
-                                                    p.heading  Posts: #{forum.posts.length}
+                                                    a.mt-1.is-size-5(href='/forum/' + forum.id)  #{forum.title}
+                                        .level-right.mr-6.my-2
+                                            .level-item
+                                                span.has-text-centered
+                                                    p Threads
+                                                    p.has-text-black #{forum.posts.length}
+                                            .level-item.ml-4
+                                                span.has-text-centered
+                                                    p Messages
+                                                    p.has-text-black #{forum.posts.length}
+                                            .level-item.ml-4
+                                                - var lastPost = forum.posts[forum.posts.length-1]
+                                                figure.image.is-rounded.is-32x32.mr-2
+                                                    img(src='/img/' + lastPost.author.icon)
+                                                span
+                                                    a(href='/post/' + lastPost.id) #{lastPost.title}
+                                                    p
+                                                        | #{data.utils.parseTime(lastPost.date)} by
+                                                        |
+                                                        a(href='/profile/' + lastPost.author.id) #{lastPost.author.name}
+
+                .column.is-hidden-mobile
+                    if session.user
+                        .box
+                            figure.image.is-64x64.is-centered
+                                img.is-rounded(src="/img/" + session.user.icon)
+                            a.is-size-5(href='/profile/' + session.user.id) #{session.user.name}
+                            p #{session.user.rank.name}
