@@ -43,6 +43,10 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res) => {
+    if (Utils.installed()) {
+        res.redirect('/install');
+        return;
+    }
     Database.hasConnection(connection => {
         if (connection) {
             res.render('errors/503');

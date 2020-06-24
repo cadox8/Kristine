@@ -17,6 +17,10 @@ import {Permissions} from "../../forum/ranks/Permissions";
 const router = Router();
 
 router.get('/:user', (req, res, next) => {
+    if (Utils.installed()) {
+        res.redirect('/install');
+        return;
+    }
     Database.hasConnection(connection => {
         if (connection) {
             res.render('errors/503');

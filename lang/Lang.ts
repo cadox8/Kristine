@@ -7,9 +7,9 @@
  *
  */
 
-import {LangFiles} from "./LangFiles";
-
 export class Lang {
+
+    public static en_GB = require('./files/en_GB.json');
 
     private readonly lang: string;
 
@@ -22,10 +22,10 @@ export class Lang {
 
         switch (this.lang) {
             case 'en_GB':
-                langFile = LangFiles.en_GB;
+                langFile = Lang.en_GB;
                 break;
             default:
-                langFile = LangFiles.en_GB;
+                langFile = Lang.en_GB;
                 break;
         }
         let text: string = 'Error while getting lang (' + data + ')';
@@ -41,7 +41,25 @@ export class Lang {
             case 2:
                 text = langFile[parts[0]][parts[1]];
                 break;
+            case 3:
+                text = langFile[parts[0]][parts[1]][parts[2]];
+                break;
+            case 4:
+                text = langFile[parts[0]][parts[1]][parts[2]][parts[3]];
+                break;
         }
         return text;
+    }
+
+    public parseLang(lang: string): string {
+        switch (lang) {
+            case 'en_GB':
+                return 'English';
+            case 'es_ES':
+                return 'Español';
+
+            default:
+                return 'English';
+        }
     }
 }

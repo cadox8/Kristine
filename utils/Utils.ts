@@ -30,4 +30,8 @@ export class Utils {
        if (r === null) return Forum.instance.getRank(1).name;
        return r.name;
    }
+
+   public static installed(): boolean {
+       return !Forum.instance.config.installed;
+   }
 }

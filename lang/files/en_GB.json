@@ -5,5 +5,56 @@
     "register": "Register",
     "profile": "Profile",
     "logout": "Log Out"
+  },
+  "install": {
+    "sitename": "Site Name",
+    "lang": "Language",
+    "database": "Database",
+    "mysql": {
+      "host": "Host",
+      "database": "Database",
+      "port": "Port",
+      "user": "User",
+      "password": "Password"
+    },
+    "ssl": {
+      "secure": "SSL",
+      "cert": "Cert",
+      "key": "Key",
+      "ca": "Ca"
+    },
+    "debug": {
+      "debug": "Debug",
+      "data": "Data",
+      "database": "Database"
+    },
+    "save": "Save Config"
+  },
+  "post": {
+    "new_post": "New Post",
+    "threads": "Threads",
+    "messages": "Messages"
+  },
+  "user": {
+    "achievements": "Achievements",
+    "login": {
+      "user": "Username/Email",
+      "password": "Password"
+    },
+    "register": {
+      "user": "Username",
+      "email": "Email",
+      "password": "Password",
+      "password2": "Repeat Password",
+      "tos": {
+        "1": "By clicking on",
+        "2": "you agree our",
+        "3": "Terms and Conditions"
+      }
+    }
+  },
+  "helper": {
+    "by": "by",
+    "footer": "You can download this forum at"
   }
 }

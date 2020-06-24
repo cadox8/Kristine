@@ -23,6 +23,8 @@ export class Routes {
         this.register('/forum', 'forums')
         this.register('/post', 'post');
 
+        this.register('/install', 'install/install')
+
         this.register('/register', 'users/register');
         this.register('/login', 'users/login');
         this.register('/logout', 'users/logout')

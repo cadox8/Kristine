@@ -19,6 +19,7 @@
     "password": ""
   },
   "update": 300,
+  "installed": true,
   "debug": {
     "database": false,
     "data": true

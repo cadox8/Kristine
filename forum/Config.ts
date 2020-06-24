@@ -7,24 +7,143 @@
  *
  */
 
+import {writeFile} from "fs";
+import {Log} from "../utils/Log";
+
 export class Config {
 
     //
-    private readonly config = require('../config.json');
+    private readonly path = '../config.json';
+    private config = require(this.path);
     //
 
+    private _siteName: string = this.config.siteName;
 
-    public readonly siteName: string = this.config.siteName;
+    private _lang: string = this.config.lang;
 
-    public readonly lang: string = this.config.lang;
+    private _ssl: boolean = this.config.ssl;
+    private _options = this.config.options;
 
-    public readonly ssl: boolean = this.config.ssl;
-    public readonly options = this.config.options;
+    private _ports = this.config.ports;
+    private _mysql = this.config.mysql;
 
-    public readonly ports = this.config.ports;
-    public readonly mysql = this.config.mysql;
+    private _update: number = this.config.update;
 
-    public readonly update: number = this.config.update;
+    private _installed: boolean = this.config.installed;
 
-    public readonly debug = this.config.debug;
+    private _debug = this.config.debug;
+
+
+    get siteName(): string {
+        return this._siteName;
+    }
+
+    set siteName(value: string) {
+        this._siteName = value;
+    }
+
+    get lang(): string {
+        return this._lang;
+    }
+
+    set lang(value: string) {
+        this._lang = value;
+    }
+
+    get ssl(): boolean {
+        return this._ssl;
+    }
+
+    set ssl(value: boolean) {
+        this._ssl = value;
+    }
+
+    get options(): { key: string, cert: string, ca: string } {
+        return this._options;
+    }
+
+    set options(value: { key: string, cert: string, ca: string }) {
+        this._options = value;
+    }
+
+    get ports(): { insecure: number, secure: number } {
+        return this._ports;
+    }
+
+    set ports(value: { insecure: number, secure: number }) {
+        this._ports = value;
+    }
+
+    get mysql(): { host: string, port: number, db: string, user: string, password: string } {
+        return this._mysql;
+    }
+
+    set mysql(value: { host: string, port: number, db: string, user: string, password: string }) {
+        this._mysql = value;
+    }
+
+    get update(): number {
+        return this._update;
+    }
+
+    set update(value: number) {
+        this._update = value;
+    }
+
+    get installed(): boolean {
+        return this._installed;
+    }
+
+    set installed(value: boolean) {
+        this._installed = value;
+    }
+
+    get debug(): { database: boolean, data: boolean } {
+        return this._debug;
+    }
+
+    set debug(value: { database: boolean, data: boolean }) {
+        this._debug = value;
+    }
+
+    public save(): void {
+        writeFile(this.path, JSON.stringify(this.toJSON(), null, 2), err => {
+            if (err) {
+                Log.error(err.message, 'Config');
+                return;
+            }
+            if (this.debug.data) Log.debug('Saving config...', 'Config')
+            this.config = require(this.path)
+        });
+    }
+
+    public toJSON(): any {
+        return {
+            "siteName": this.siteName,
+            "lang": this.lang,
+            "ssl": this.ssl,
+            "options": {
+                "key": this.options.key,
+                "cert": this.options.cert,
+                "ca": this.options.ca
+            },
+            "ports": {
+                "insecure": this.ports.insecure,
+                "secure": this.ports.secure
+            },
+            "mysql": {
+                "host": this.mysql.host,
+                "port": this.mysql.port,
+                "db": this.mysql.db,
+                "user": this.mysql.user,
+                "password": this.mysql.password
+            },
+            "update": this.update,
+            "installed": this.installed,
+            "debug": {
+                "database": this.debug.database,
+                "data": this.debug.data
+            }
+        }
+    }
 }
