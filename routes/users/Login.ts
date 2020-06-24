@@ -14,6 +14,7 @@ import {compareSync} from "bcryptjs";
 import {Database} from "../../db/Database";
 import {Forum} from "../../forum/Forum";
 import {Utils} from "../../utils/Utils";
+import {User} from "../../forum/User";
 
 const router = Router();
 
@@ -24,13 +25,13 @@ router.get('/', (req, res, next) => {
             return;
         }
     });
-    if (req.session.name != null) {
+    if (req.session.user != null) {
         res.redirect('/');
         return;
     }
     const forum: Forum = Forum.instance;
 
-    const lang = req.session.name == null ? forum.config.lang : req.session.lang;
+    const lang = req.session.user == null ? forum.config.lang : req.session.user.lang;
     const data = {
         siteName: forum.config.siteName,
         lang: new Lang(lang),
@@ -48,13 +49,13 @@ router.post('/', (req, res) => {
             return;
         }
     });
-    if (req.session.name != null) {
+    if (req.session.user != null) {
         res.redirect('/');
         return;
     }
     const forum: Forum = Forum.instance;
 
-    const lang = req.session.name == null ? forum.config.lang : req.session.lang;
+    const lang = req.session.user == null ? forum.config.lang : req.session.user.lang;
     const data = {
         siteName: forum.config.siteName,
         lang: new Lang(lang),
@@ -82,13 +83,7 @@ router.post('/', (req, res) => {
             return;
         }
         if (compareSync(pass, result[0].hash)) {
-            req.session.user = result[0].id;
-            req.session.username = result[0].username;
-            req.session.email = result[0].email;
-            req.session.rank = result[0].rank;
-            req.session.icon = result[0].icon;
-            req.session.name = result[0].name;
-            req.session.lang = result[0].lang;
+            req.session.user = new User(result[0].id, result[0].username, result[0].rank, result[0].name, result[0].email, result[0].lang, result[0].icon).toJSON();
             res.redirect('/');
         } else {
             data.errorCode = 2;

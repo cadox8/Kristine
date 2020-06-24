@@ -25,7 +25,7 @@ router.get('/:user', (req, res, next) => {
     });
     const forum: Forum = Forum.instance;
 
-    const lang = req.session.name == null ? forum.config.lang : req.session.lang;
+    const lang = req.session.user == null ? forum.config.lang : req.session.user.lang;
     const data = {
         siteName: forum.config.siteName,
         lang: new Lang(lang),

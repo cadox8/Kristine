@@ -51,9 +51,9 @@ block content
                                                         a(href='/profile/' + lastPost.author.id) #{lastPost.author.name}
 
                 .column.is-hidden-mobile
-                    if session.name
+                    if session.user
                         .box
                             figure.image.is-64x64.is-centered
-                                img.is-rounded(src="/img/" + session.icon)
-                            a.is-size-5(href='/profile/' + session.user) #{session.name}
-                            p #{data.utils.getRankName(session.rank)}
+                                img.is-rounded(src="/img/" + session.user.icon)
+                            a.is-size-5(href='/profile/' + session.user.id) #{session.user.name}
+                            p #{session.user.rank.name}
