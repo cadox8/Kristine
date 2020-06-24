@@ -65,8 +65,12 @@ export class Forum {
         return this._ranks.includes(rank);
     }
 
+    public getCategory(category: number): Category {
+        return this.categories.find(c => c.id === category);
+    }
+
     public getForums(category: number): ForumData[] {
-        return this.categories.find(c => c.id === category).forums;
+        return this.getCategory(category).forums;
     }
 
     public getForum(forum: number): ForumData {

@@ -7,6 +7,13 @@ block content
                 .column.is-1
 
                 .column.is-9
+                    .box
+                        nav.breadcrumb(aria-label='breadcrumbs')
+                            ul
+                                li
+                                    a(href='/#cat.' + help.cat.id) #{help.cat.title}
+                                li
+                                    a(href='/forum/' + post.forumId) #{help.for}
                     nav.level.has-background-danger.is-rounded-top
                         .level-left
                             .level-item.is-colored

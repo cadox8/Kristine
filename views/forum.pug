@@ -9,6 +9,11 @@ block content
                 .column.is-9
                     if content != null
                         for forum in content
+                            .box
+                                nav.breadcrumb(aria-label='breadcrumbs')
+                                    ul
+                                        li
+                                            a(href='/#cat.' + forum.catId) #{cat}
                             nav.level.has-background-danger.is-rounded-top
                                 .level-left
                                     .level-item.is-colored

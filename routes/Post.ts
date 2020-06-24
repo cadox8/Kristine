@@ -34,7 +34,7 @@ router.get('/:id/:post', (req, res, next) => {
         utils: new Utils(),
         permissions: Permissions
     }
-    res.render('post', { title: 'Forum', post: forum.getPost(Number(req.params.id), Number(req.params.post)), data: data });
+    res.render('post', { title: 'Forum', help: { cat: forum.getCategory(forum.getForum(Number(req.params.id)).catId), for: forum.getForum(Number(req.params.id)).title }, post: forum.getPost(Number(req.params.id), Number(req.params.post)), data: data });
 });
 
 module.exports = router;
