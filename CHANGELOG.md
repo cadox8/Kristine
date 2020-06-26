@@ -1,7 +1,7 @@
 ## Changelog
 
 ### Release v0.1.0 - Alpha
-```
+```diff
 + Added Open Source Libraries and ToS
 + Install Script
 + Log Out option
