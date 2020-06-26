@@ -28,12 +28,11 @@ router.get('/', (req, res, next) => {
     }
     Database.hasConnection(connection => {
         if (connection) {
-            res.render('errors/503');
+            res.render('errors/503', { title: '503', data: {  siteName: Forum.instance.config.siteName } });
             return;
         }
     });
     const forum: Forum = Forum.instance;
-
     const lang = req.session.user == null ? forum.config.lang : req.session.user.lang;
     const data = {
         siteName: forum.config.siteName,

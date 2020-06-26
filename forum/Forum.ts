@@ -86,8 +86,8 @@ export class Forum {
 
     // Loaders
     public async loader(): Promise<void> {
-        this.loadRanks();
-        this.loadForum();
+        await this.loadRanks();
+        await this.loadForum();
         await this.timer();
     }
 
@@ -99,7 +99,7 @@ export class Forum {
         }, 1000 * this.config.update);
     }
 
-    private loadForum(): void {
+    private async loadForum(): Promise<void> {
         Database.query("SELECT * FROM `cat`", (error, categories) => {
             Database.query("SELECT * FROM `forum`", (error, forums) => {
                 Database.query("SELECT * FROM `posts`", (error, posts) => {
@@ -112,7 +112,7 @@ export class Forum {
         });
     }
 
-    private loadRanks(): void {
+    private async loadRanks(): Promise<void> {
         Database.query("SELECT * FROM `ranks`", (err, result) => {
             if (err) { // Load default ranks
                 defaultRanks().forEach(r => this.addRank(r));

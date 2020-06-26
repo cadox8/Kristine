@@ -1,6 +1,6 @@
 ![Kristine](docs/img/kristine.jpg)
 
-![version](https://img.shields.io/badge/version-0.0.3%20Alpha-ff69b4.svg?longCache=true&style=for-the-badge)
+![version](https://img.shields.io/badge/version-0.0.5%20Alpha-ff69b4.svg?longCache=true&style=for-the-badge)
 
 # Kristine
 Kristine is a simple discussion forum you can easily customize to make as unique as your community.
@@ -11,6 +11,7 @@ Check the [Development Branch](https://github.com/cadox8/Kristine/tree/develop) 
 - [Demo](#demo)
 - [Download](https://github.com/cadox8/Kristine/releases)
 - [Installation](#installation)
+- [Changelog](/CHANGELOG.md)
 - [Images](#images)
 - [License](#license)
 - [Notes](#notes)
@@ -46,8 +47,8 @@ I'm (cadox8) working all I can to have finished this, so, until we leave the alp
 - [ ] Secure
 - [ ] User customization
 - [ ] Comments
-- [x] "Custom CSS" (Based on [BulmaCSS](https://bulma.io)
-- [ ] Installation script
+- [x] "Custom CSS" (Based on [Bulma](https://bulma.io)
+- [x] Installation script
 - [ ] Post page
 - [ ] Verify account
 - [ ] Comments

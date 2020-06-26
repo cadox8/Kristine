@@ -29,6 +29,9 @@ export class Routes {
         this.register('/login', 'users/login');
         this.register('/logout', 'users/logout')
         this.register('/profile', 'users/profile');
+
+        this.register('/open', 'utils/open');
+        this.register('/tos', 'utils/tos');
     }
 
     private register(url: string, route: string): void {

@@ -15,11 +15,13 @@ import {defaultRanks, Rank} from "./forum/ranks/Rank";
 import {Forum} from "./forum/Forum";
 import {Log} from "./utils/Log";
 import {Updater} from "./utils/Updater";
+import {Lang} from "./lang/Lang";
+import {Utils} from "./utils/Utils";
 
 export class Website {
 
     public static readonly VERSION_DATA = 4
-    public static readonly VERSION = 'v0.0.5 - Alpha'
+    public static readonly VERSION = 'v0.1.0 - Alpha'
 
     private readonly update: Updater;
 
@@ -41,6 +43,8 @@ export class Website {
         this.forum.loader();
         this.load();
 
+        if (!this.forum.config.installed) Log.warning('The forum is not installed. Will run the install script.', 'Installation');
+
         Log.success('Forum Loaded!');
         Log.spacer(-1);
         Log.success('Kristine Forum ' + Website.VERSION)
@@ -53,13 +57,17 @@ export class Website {
         this.routes.loadURLs();
 
         this.server.app.use((req, res, next) => {
-            res.render('errors/404');
+            res.render('errors/404', { title: '404', data: {
+                    siteName: this.forum.config.siteName,
+                    lang: new Lang(this.forum.config.lang),
+                    utils: new Utils()
+                } });
         });
-        this.server.app.use((err: { message: any; status: any; }, req: any, res: { locals: { message: any; }; status: (arg0: any) => void; render: (arg0: string) => void; }, next: any) => {
+        this.server.app.use((err: { message: any; status: any; }, req: any, res, next: any) => {
             res.locals.message = err.message;
 
             res.status(err.status || 500);
-            res.render('errors/503');
+            res.render('errors/503', { title: '404', data: {  siteName: this.forum.config.siteName } });
             console.log(err);
         });
     }

@@ -23,7 +23,7 @@ router.get('/:user', (req, res, next) => {
     }
     Database.hasConnection(connection => {
         if (connection) {
-            res.render('errors/503');
+            res.render('errors/503', { title: '503', data: {  siteName: Forum.instance.config.siteName } });
             return;
         }
     });
