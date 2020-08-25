@@ -41,19 +41,21 @@ block content
                                                     p.has-text-black #{forum.posts.length}
                                             .level-item.ml-4
                                                 - var lastPost = forum.posts[forum.posts.length-1]
-                                                figure.image.is-rounded.is-32x32.mr-2
-                                                    img(src='/img/' + lastPost.author.icon)
+                                                figure.image.is-rounded.is-64x64.mr-2.py-3
+                                                    img(loading="lazy" src='/img/' + lastPost.author.icon)
                                                 span
                                                     a(href='/post/' + lastPost.id) #{lastPost.title}
                                                     p
                                                         | #{data.utils.parseTime(lastPost.date)} by
                                                         |
                                                         a(href='/profile/' + lastPost.author.id) #{lastPost.author.name}
+                    else
+                        .notification.is-danger.is-light Seems that there is nothing in this forum yet :c
 
                 .column.is-hidden-mobile
                     if session.user
                         .box
-                            figure.image.is-64x64.is-centered
-                                img.is-rounded(src="/img/" + session.user.icon)
+                            figure.image.is-128x128.is-centered
+                                img.is-rounded(loading="lazy" src="/img/" + session.user.icon)
                             a.is-size-5(href='/profile/' + session.user.id) #{session.user.name}
                             p #{session.user.rank.name}

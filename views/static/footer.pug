@@ -1,34 +1,32 @@
-footer.footer.has-background-dark
+footer.footer.has-background-dark.is-paddingless
     .content.has-text-centered
         .columns.has-text-white
             .column.is-4
 
             .column.is-2
                 p.is-size-4.has-text-white About Us
-                p.has-text-justified Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ex non nulla tristique placerat. Vestibulum malesuada, tellus id laoreet cursus, lectus tellus suscipit mi, in vulputate elit mi ac ex. Praesent vel mi neque. In ullamcorper luctus vehicula. Cras laoreet lorem vitae est tincidunt, ac fermentum ligula euismod.
+                p.has-text-justified.is-size-6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ex non nulla tristique placerat. Vestibulum malesuada, tellus id laoreet cursus, lectus tellus suscipit mi, in vulputate elit mi ac ex. Praesent vel mi neque. In ullamcorper luctus vehicula. Cras laoreet lorem vitae est tincidunt, ac fermentum ligula euismod.
 
             .column.is-2
                 p.is-size-4.has-text-white Useful Links
-                ul.block-list.is-small.is-outlined.is-dark.is-left
-                    li.has-radius.has-text-white
-                        a(href="/" referrerpolicy='origin').has-text-primary Home
-                    li.has-radius.has-text-white
-                        a(href="/tos" referrerpolicy='origin').has-text-primary Terms of Service
-                    li.has-radius.has-text-white
-                        a(href="/privacy" referrerpolicy='origin').has-text-primary Privacy Policy
-                    li.has-radius.has-text-white
-                        a(href="/open" referrerpolicy='origin').has-text-primary Open Source
+                .field.is-grouped
+                    p.control
+                        a(href="/" referrerpolicy='origin').button.is-dark.is-active.has-text-primary Home
+                    p.control
+                        a(href="/tos" referrerpolicy='origin').button.is-dark.is-active.has-text-primary Terms of Service
+                .field.is-grouped
+                    p.control
+                        a(href="/privacy" referrerpolicy='origin').button.is-dark.is-active.has-text-primary Privacy Policy
+                    p.control
+                        a(href="/open" referrerpolicy='origin').button.is-dark.is-active.has-text-primary Open Source
 
             .column.is-4
 
-        p.has-text-white
-            strong.has-text-white Kristine
+        hr.has-background-grey-dark.is-paddingless.is-marginless
+        p.has-text-grey-light.py-3
+            | &copy; 2020
+            strong
+                a(href='https://github.com/cadox8/Kristine' target='_blank').has-text-primary  Kristine Forum
             |  by
             a(href='https://cadox8.es' target='_blank').has-text-primary  Cadox8
-            | . You can download this forum at
-            a(href='https://github.com/cadox8/Kristine' target='_blank').has-text-primary  Github
-            | .
-        p.has-text-white
-            | &copy; 2020
-            strong.has-text-white  Kristine Forum
-            |  & #{data.siteName}. All Rights Reserved.
+            |  . All Rights Reserved.

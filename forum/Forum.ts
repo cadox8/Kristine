@@ -88,7 +88,7 @@ export class Forum {
     public async loader(): Promise<void> {
         await this.loadRanks();
         await this.loadForum();
-        await this.timer();
+        //await this.timer();
     }
 
     private async timer(): Promise<void> {

@@ -18,6 +18,13 @@
     "user": "root",
     "password": ""
   },
+  "email": {
+    "from": "info@cadox8.es",
+    "host": "smtp.gmail.com",
+    "port": 993,
+    "user": "user",
+    "password": "password"
+  },
   "update": 300,
   "installed": true,
   "debug": {

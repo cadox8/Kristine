@@ -49,7 +49,8 @@ export class ServerLoader {
             cookie: {
                 path: '/',
                 maxAge: 600000000,
-                secure: this.config.ssl
+                secure: this.config.ssl,
+                sameSite: true
             },
             secret: '1e8b3c8910aa9906',
             name: 'Kristine',
@@ -83,12 +84,12 @@ export class ServerLoader {
         if (this.config.ssl) {
             this._secureServer = https.createServer(this.options, this._app).listen(this.config.ports.secure);
             this._secureServer.on('error', (error) => { throw error; });
-            this._secureServer.on('listening', () => Log.success('Server Started', 'Secure'));
+            this._secureServer.on('listening', () => Log.success('Secure Server Started (' + this.config.ports.secure + ')', 'Server'));
         }
 
         this._server = http.createServer(this._app).listen(this.config.ports.insecure);
         this._server.on('error', (error) => { throw error; });
-        this._server.on('listening', () => Log.success('Server Started', 'Insecure'));
+        this._server.on('listening', () => Log.success('Insecure Server Started (' + this.config.ports.insecure + ')', 'Server'));
     }
 
     get app(): Application {

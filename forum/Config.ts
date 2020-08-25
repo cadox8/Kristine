@@ -26,6 +26,7 @@ export class Config {
 
     private _ports = this.config.ports;
     private _mysql = this.config.mysql;
+    private _email = this.config.email;
 
     private _update: number = this.config.update;
 
@@ -80,6 +81,14 @@ export class Config {
 
     set mysql(value: { host: string, port: number, db: string, user: string, password: string }) {
         this._mysql = value;
+    }
+
+    get email(): { from: string, host: string, port: number, user: string, password: string } {
+        return this._email;
+    }
+
+    set email(value: { from: string, host: string, port: number, user: string, password: string }) {
+        this._email = value;
     }
 
     get update(): number {

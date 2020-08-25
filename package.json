@@ -17,7 +17,8 @@
     "prod": "npm run load && npm run build",
     "build": "tsc --module commonjs && npm run start",
     "start": "node --experimental-modules ./build/Website.js",
-    "style": "node-sass sass/kristine.sass public/css/kristine.css --source-map public/css/kristine.css.map -o public/css/kristine.min.css"
+    "style": "node-sass sass/kristine.sass public/css/kristine.css --source-map public/css/kristine.css.map -o public/css/kristine.min.css",
+    "update": "ncu -u && npm update && npm prune && npm install && npm prune"
   },
   "repository": {
     "type": "git",
@@ -28,34 +29,39 @@
   },
   "homepage": "https://github.com/cadox8/Kristine#readme",
   "dependencies": {
+    "nodemailer": "^6.4.11",
     "node-fetch": "^2.6.0",
-    "@ptkdev/logger": "^1.6.0",
+    "@ptkdev/logger": "^1.7.2",
     "bcryptjs": "^2.4.3",
-    "cookie-parser": "~1.4.4",
+    "cookie-parser": "~1.4.5",
     "body-parser": "^1.19.0",
-    "express": "~4.16.1",
+    "express": "~4.17.1",
     "express-session": "^1.17.1",
-    "http-errors": "~1.6.3",
+    "http-errors": "~1.8.0",
     "mysql": "^2.18.1",
     "node-emoji": "^1.10.0",
-    "pug": "2.0.0-beta11"
+    "pug": "3.0.0",
+    "mjml": "^4.6.3"
   },
   "devDependencies": {
+    "@types/mjml": "^4.0.4",
+    "@types/nodemailer": "^6.4.0",
     "@types/node-fetch": "^2.5.7",
     "@types/bcryptjs": "^2.4.2",
     "@types/cookie-parser": "^1.4.2",
     "@types/body-parser": "^1.19.0",
-    "@types/express": "^4.17.6",
+    "@types/express": "^4.17.7",
     "@types/express-session": "^1.17.0",
-    "@types/http-errors": "^1.6.3",
-    "@types/mysql": "^2.15.14",
-    "@types/node": "^13.13.4",
+    "@types/http-errors": "^1.8.0",
+    "@types/mysql": "^2.15.15",
+    "@types/node": "^14.6.0",
     "@types/node-emoji": "^1.8.1",
     "@types/pug": "^2.0.4",
-    "nodemon": "^2.0.3",
-    "ts-node": "^8.9.1",
-    "tslint": "^6.1.2",
-    "typescript": "^3.8.3",
-    "node-sass": "^4.14.1"
+    "nodemon": "^2.0.4",
+    "ts-node": "^9.0.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.0.2",
+    "node-sass": "^4.14.1",
+    "npm-check-updates": "^7.1.1"
   }
 }

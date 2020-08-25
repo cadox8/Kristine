@@ -22,10 +22,10 @@ const options = {
     "type": "log",
     "path": {
         "debug_log": "./log/debug.log",
-        "error_log": "./log/errors.log",
+        "error_log": "./log/error.log",
     },
     "rotate": {
-        "size": "10M",
+        "interval": "1d",
         "encoding": "utf8"
     },
     "palette": {
@@ -58,11 +58,6 @@ const options = {
             "label": "#ffffff",
             "text": "#1976D2",
             "background": "#1976D2"
-        },
-        "sponsor": {
-            "label": "#ffffff",
-            "text": "#607D8B",
-            "background": "#607D8B"
         }
     }
 };

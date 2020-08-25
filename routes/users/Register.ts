@@ -15,6 +15,8 @@ import {Database} from "../../db/Database";
 import {Utils} from "../../utils/Utils";
 import {Forum} from "../../forum/Forum";
 import {User} from "../../forum/User";
+import {Mailer} from "../../mail/Mailer";
+import {MailType} from "../../mail/MailType";
 
 const router = Router();
 
@@ -97,6 +99,8 @@ router.post('/', (req, res) => {
                     res.render('users/register', { title: 'Register', data: data });
                     return;
                 }
+                const mailer: Mailer = new Mailer(forum.config.email);
+                mailer.sendMail(email, MailType.VERIFICATION());
             }));
             Database.query("SELECT `id`, `rank`, `icon`, `name`, `lang` FROM `users` WHERE `email`=" + email, ((err, result) => {
                 req.session.user = new User(result[0].id, username, 0, result[0].name, email, result[0].lang, result[0].icon).toJSON();

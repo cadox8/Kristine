@@ -496,6 +496,12 @@ table th {
   color: #4a4a4a;
   display: block;
   padding: 1.25rem; }
+  .box.no-top {
+    border-radius: 0 0 6px 6px; }
+  .box.post {
+    border-radius: 0 0 6px 0; }
+  .box.post-profile {
+    border-radius: 0 0 0 6px; }
 
 a.box:hover, a.box:focus {
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px #3273dc; }
