@@ -44,7 +44,7 @@ block content
                                                 figure.image.is-rounded.is-64x64.mr-2.py-3
                                                     img(loading="lazy" src='/img/' + lastPost.author.icon)
                                                 span
-                                                    a(href='/post/' + lastPost.id) #{lastPost.title}
+                                                    a(href='/post/' + forum.id + '/' + lastPost.id) #{lastPost.title}
                                                     p
                                                         | #{data.utils.parseTime(lastPost.date)} by
                                                         |
