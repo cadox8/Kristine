@@ -6,12 +6,11 @@
     "noImplicitAny": false,
     "moduleResolution": "node",
     "sourceMap": true,
+    "resolveJsonModule": true,
     "outDir": "./build",
-    "baseUrl": "./",
-    "paths": {
-      "*": [
-        "node_modules/*"
-      ]
-    }
+    "baseUrl": ".",
+    "typeRoots": [
+      "./src/types"
+    ]
   }
 }
