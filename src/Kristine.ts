@@ -66,7 +66,7 @@ export class Kristine {
         });
 
         this.server = createServer(this.app).listen(this.defaults.port);
-        this.server.on('listening', () => Log.debug('Server started on port ' + this.defaults));
+        this.server.on('listening', () => Log.debug('Server started on port ' + this.defaults.port));
         this.server.on('error', err => Log.error(`${err.name}\n${err.message}\n${err.stack}`));
 
         // Routes

@@ -22,7 +22,7 @@ export class Config {
     };
 
     constructor() {
-        const configFile: any = require('../config/defaults.json');
+        const configFile: any = require('../config/config.json');
 
         this.siteName = configFile.siteName;
         this.themeColor = configFile.themeColor;

@@ -18,6 +18,8 @@ import {Author} from "./data/Author";
 
 export class Forum {
 
+    public static instance: Forum;
+
     public readonly config: Config;
     public readonly database: Database;
 
@@ -25,6 +27,7 @@ export class Forum {
     public readonly ranks: Rank[];
 
     constructor() {
+        Forum.instance = this;
         this.config = new Config();
         this.database = new Database(this.config);
 

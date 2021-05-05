@@ -9,11 +9,12 @@
  */
 
 import {Router} from "express";
+import {Forum} from "../forum/Forum";
 
 const router: Router = Router();
 
 router.get('/', (req, res, next) => {
-
+    res.status(200).send(Forum.instance.categories);
 });
 
 export = router;
