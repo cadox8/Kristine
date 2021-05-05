@@ -16,6 +16,7 @@ import {urlencoded} from "body-parser";
 import session from "express-session";
 import {Log} from "./utils/Log";
 import {Forum} from "./forum/Forum";
+import {installMiddleware} from "./middlewares/InstallMiddleware";
 
 export class Kristine {
 
@@ -42,6 +43,8 @@ export class Kristine {
 
         this.app.use(express.json());
         this.app.use(urlencoded({ extended: true }));
+
+        this.app.use(installMiddleware); // Check installation
 
         this.app.use('/', express.static(path.join(__dirname, '../src/front/public'), { maxAge: 86400000, immutable: true, dotfiles: 'allow' } ));
 

@@ -8,3 +8,8 @@
  * This file is created on 4/5/21 20:37
  */
 
+import { Request, Response, NextFunction } from 'express';
+
+export const installMiddleware = (req: Request, res: Response, next: NextFunction) => {
+    require('../config/defaults.json').install ? next() : res.redirect('/install');
+};

@@ -10,4 +10,19 @@
 
 export class Rank {
 
+    public readonly id: number;
+
+    public name: string;
+    public power: number;
+
+    public color: string;
+
+    // ToDo: Permissions
+
+    constructor(id: number) {
+        this.id = id;
+        this.name = '';
+        this.power = 0;
+        this.color = '000';
+    }
 }
