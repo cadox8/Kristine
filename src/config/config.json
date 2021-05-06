@@ -1,11 +1,5 @@
 {
   "siteName": "Kristine",
   "themeColor": "B21EC9",
-  "mysql": {
-    "host": "localhost",
-    "port": 3306,
-    "database": "kristine",
-    "user": "root",
-    "password": "password"
-  }
+  "uri": "'mongodb://user:password@localhost:27017/kristine&retryWrites=true&w=majority';"
 }

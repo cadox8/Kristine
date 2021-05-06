@@ -69,7 +69,7 @@ You can check the demo [here](https://cadox8.es/kristine).
 ### Requisites
 - [Node >= v14.X](https://nodejs.org/es/download/)
 - [NPM](https://nodejs.org/es/download/)
-- [MySQL >= v8.X](https://dev.mysql.com/downloads/mysql/)
+- [MongoDB](https://www.mongodb.com/try/download/community)
 
 ### Using Git
 - Clone the repository:
@@ -92,7 +92,6 @@ npm install
 - Go to [Configuration](#configuration)
 
 ## Configuration
-- Import `database.sql` into your MySQL
 - Start the forum with `npm run start`
 - Open your favourite web browser and join the domain you installed Kristine on
     - `yourdomain.com/install`

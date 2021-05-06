@@ -17,6 +17,7 @@ import session from "express-session";
 import {Log} from "./utils/Log";
 import {Forum} from "./forum/Forum";
 import {installMiddleware} from "./middlewares/InstallMiddleware";
+import MongoStore from "connect-mongo";
 
 export class Kristine {
 
@@ -54,7 +55,18 @@ export class Kristine {
                 maxAge: 1000 * 60 * 60 * 24 * 30,
                 //secure: true
             },
-            secret: 'absorb-grant-remain',
+            store: MongoStore.create({
+                mongoUrl: this.forum.config.uri,
+                collectionName: 'sessions',
+                touchAfter: 24 * 3600,
+                mongoOptions: {
+                    useUnifiedTopology: true
+                },
+                crypto: {
+                    secret: 'ideology-rebellion-ghost'
+                }
+            }),
+            secret: 'thick-performer-node',
             name: 'Kristine',
             resave: false,
             saveUninitialized: false,

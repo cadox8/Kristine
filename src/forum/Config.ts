@@ -13,19 +13,13 @@ export class Config {
     public siteName: string;
     public themeColor: number;
 
-    public readonly mysql: {
-        host: string,
-        port: number,
-        database: string,
-        user: string,
-        password: string
-    };
+    public readonly uri: string;
 
     constructor() {
         const configFile: any = require('../config/config.json');
 
         this.siteName = configFile.siteName;
         this.themeColor = configFile.themeColor;
-        this.mysql = configFile.mysql;
+        this.uri = configFile.mysql;
     }
 }
