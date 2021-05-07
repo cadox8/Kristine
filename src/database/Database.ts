@@ -19,7 +19,9 @@ export class Database {
             useNewUrlParser: true,
             useFindAndModify: true,
             useUnifiedTopology: true,
-            useCreateIndex: true
+            useCreateIndex: true,
+            poolSize: 10,
+            connectTimeoutMS: 90000
         }).then(() => {
             Log.info('Connected to Database');
         }).catch(err => {

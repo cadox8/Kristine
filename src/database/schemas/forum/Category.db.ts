@@ -22,15 +22,18 @@ const CategorySchema: Schema = new Schema({
     },
     description: {
         type: String,
-        default: ''
+        default: '',
+        required: true
     },
     hidden: {
         type: Boolean,
-        default: false
+        default: false,
+        required: true
     },
     permissions: {
-        type: Number,
-        default: 0
+        type: [String],
+        default: [],
+        required: true
     }
 });
 
@@ -41,7 +44,7 @@ export interface ICategory {
     title: string
     description: string
     hidden: boolean
-    permissions: number
+    permissions: string[]
 }
 
 export interface ICategoryDocument extends ICategory, Document{}

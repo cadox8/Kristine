@@ -1,0 +1,52 @@
+[
+  {
+    "uuid": "6c47526c-4a38-4789-afb0-e149bc8cb6bc",
+    "name": "Guest",
+    "priority": 0,
+    "displayName": "Guest",
+    "block": false,
+    "permissions": [
+      "VIEW"
+    ]
+  },
+  {
+    "uuid": "cec02104-016c-43b8-b7f9-ded5f8dedb92",
+    "name": "Member",
+    "priority": 50,
+    "displayName": "Member",
+    "parent": "6c47526c-4a38-4789-afb0-e149bc8cb6bc",
+    "block": false,
+    "permissions": [
+      "CREATE_POST",
+      "UPDATE_AVATAR"
+    ]
+  },
+  {
+    "uuid": "9563a963-798e-4f6b-b57f-c9ae14c89a16",
+    "name": "Moderator",
+    "priority": 700,
+    "displayName": "Moderator",
+    "parent": "cec02104-016c-43b8-b7f9-ded5f8dedb92",
+    "css": "span.tag.is-info",
+    "block": false,
+    "permissions": [
+      "LOCK_OWN",
+      "LOCK",
+      "STICK_OWN",
+      "STICK",
+      "DELETE_OWN_POST"
+    ]
+  },
+  {
+    "uuid": "531a5496-e658-4e42-9046-49085b068614",
+    "name": "Administrator",
+    "priority": 1000,
+    "displayName": "Administrator",
+    "parent": "9563a963-798e-4f6b-b57f-c9ae14c89a16",
+    "css": "span.tag.is-danger",
+    "block": false,
+    "permissions": [
+      "DELETE_POST"
+    ]
+  }
+]

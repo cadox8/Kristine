@@ -33,15 +33,28 @@ const UserSchema: Schema = new Schema({
     },
     icon: {
         type: String,
-        default: ''
-    },
-    ranks: {
-        type: Array,
+        default: '',
         required: true
     },
+    ranks: {
+        type: [String],
+        default: [ "6c47526c-4a38-4789-afb0-e149bc8cb6bc" ],
+        required: true,
+    },
     permissions: {
-        type: Number,
-        default: 0
+        type: [String],
+        default: [],
+        required: true
+    },
+    administrator: {
+        type: Boolean,
+        default: false,
+        required: true
+    },
+    ban: {
+        type: Boolean,
+        default: false,
+        required: true
     }
 });
 
@@ -55,7 +68,9 @@ export interface IUser {
     hash: string
     icon: string
     ranks: string[]
-    permissions: number
+    permissions: string[]
+    administrator: boolean
+    ban: boolean
 }
 
 export interface IUserDocument extends IUser, Document{}

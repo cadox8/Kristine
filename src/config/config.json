@@ -1,5 +1,8 @@
 {
   "siteName": "Kristine",
   "themeColor": "B21EC9",
-  "uri": "'mongodb://user:password@localhost:27017/kristine&retryWrites=true&w=majority';"
+  "uri": "mongodb://user:password@localhost:27017/kristine&retryWrites=true&w=majority",
+  "maintenance": {
+    "message": "This forum is under maintenance"
+  }
 }

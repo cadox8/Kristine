@@ -5,7 +5,6 @@
  *
  * Check the complete License at [https://github.com/cadox8/Kristine/blob/master/LICENSE]
  *
- * This file is created on 6/5/21 19:15
  */
 
 import {Document, model, Model, Schema} from "mongoose";
@@ -19,20 +18,31 @@ const RankSchema: Schema = new Schema({
         type: String,
         required: true
     },
-    order: {
+    priority: {
         type: Number,
         default: 0
     },
     displayName: {
         type: String,
+        required: true
     },
     css: {
         type: String,
-        default: ''
+        default: 'span.tag',
+        required: true
+    },
+    block: {
+        type: Boolean,
+        default: true,
+        required: true
     },
     permissions: {
-        type: Number,
-        default: 0
+        type: [String],
+        default: [],
+        required: true
+    },
+    parent: {
+        type: String,
     }
 });
 
@@ -41,13 +51,21 @@ export default RankSchema;
 export interface IRank {
     uuid: string
     name: string
-    order: number
+    priority: number
     displayName: string
     css: string
-    permissions: number
+    block: boolean
+    permissions: string[]
+    parent: string
 }
 
 export interface IRankDocument extends IRank, Document{}
 export interface IRankModel extends Model<IRankDocument>{}
 
-export const RankModel: Model<IRankDocument> = model<IRankDocument>('Rank', RankSchema)
+export const RankModel: Model<IRankDocument> = model<IRankDocument>('Rank', RankSchema);
+
+export function loadDefaultRanks(): void {
+    // Deletes ALL Ranks from the db and loads them
+    RankModel.deleteMany({});
+    RankModel.insertMany(require('../../../data/default/ranks.json'));
+}

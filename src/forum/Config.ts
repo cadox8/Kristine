@@ -8,6 +8,9 @@
  * This file is created on 4/5/21 20:37
  */
 
+import {writeFile} from "fs";
+import {Log} from "../utils/Log";
+
 export class Config {
 
     public siteName: string;
@@ -15,11 +18,31 @@ export class Config {
 
     public readonly uri: string;
 
+    public maintenance: {
+        message: string
+    }
+
     constructor() {
         const configFile: any = require('../config/config.json');
 
         this.siteName = configFile.siteName;
         this.themeColor = configFile.themeColor;
         this.uri = configFile.uri;
+
+        this.maintenance = configFile.maintenance
+    }
+
+    public saveConfig(): void {
+        writeFile('../config/config.json', JSON.stringify(this), 'utf8', err => {
+           if (err) {
+               Log.error('Config file could not be saved!')
+               return
+           }
+           Log.info('Config file saved!')
+        });
+    }
+
+    public loadConfig(): Config {
+        return new Config();
     }
 }

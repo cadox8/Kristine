@@ -1,10 +1,59 @@
 [
   {
-    "permission": "AVATAR",
+    "permission": "UPDATE_AVATAR",
     "description": "Allow the user to change their avatar picture",
-    "group": "avatar"
+    "group": "user.profile",
+    "generator": "Kristine"
   },
   {
-
+    "permission": "VIEW",
+    "description": "Allow the user to view the forum",
+    "group": "forum",
+    "generator": "Kristine"
+  },
+  {
+    "permission": "STICK",
+    "description": "Allow the user to stick/unstick a post",
+    "group": "forum.node",
+    "generator": "Kristine",
+    "depends": [ "STICK_OWN" ]
+  },
+  {
+    "permission": "STICK_OWN",
+    "description": "Allow the user to stick/unstick own post",
+    "group": "forum.node",
+    "generator": "Kristine"
+  },
+  {
+    "permission": "LOCK_OWN",
+    "description": "Allow the user to lock/unlock own post",
+    "group": "forum.node",
+    "generator": "Kristine"
+  },
+  {
+    "permission": "LOCK",
+    "description": "Allow the user to lock/unlock a post",
+    "group": "forum.node",
+    "generator": "Kristine",
+    "depends": [ "LOCK_OWN" ]
+  },
+  {
+    "permission": "CREATE_POST",
+    "description": "Allow the user to create a post",
+    "group": "forum.node",
+    "generator": "Kristine"
+  },
+  {
+    "permission": "DELETE_POST",
+    "description": "Allow the user to delete a post",
+    "group": "forum.node.mod",
+    "generator": "Kristine",
+    "depends": [ "DELETE_OWN_POST" ]
+  },
+  {
+    "permission": "DELETE_OWN_POST",
+    "description": "Allow the user to delete own post",
+    "group": "forum.node.mod",
+    "generator": "Kristine"
   }
 ]
