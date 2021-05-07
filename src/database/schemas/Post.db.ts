@@ -9,6 +9,7 @@
  */
 
 import {Document, model, Model, Schema} from "mongoose";
+import {CategoryModel} from "./Category.db";
 
 const PostSchema: Schema = new Schema({
     uuid: {
@@ -76,3 +77,7 @@ export interface IPostDocument extends IPost, Document{}
 export interface IPostModel extends Model<IPostDocument>{}
 
 export const PostModel: Model<IPostDocument> = model<IPostDocument>('Post', PostSchema);
+
+export async function existsPost(uuid: string): Promise<boolean> {
+    return await PostModel.exists({ uuid: uuid })
+}

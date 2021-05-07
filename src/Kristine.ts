@@ -87,6 +87,9 @@ export class Kristine {
 
     private registerRoutes(): void {
         this.route('', 'index');
+
+        // Install Script
+        this.route('install', 'install/install');
     }
 
     private route(route: string, path: string): void {

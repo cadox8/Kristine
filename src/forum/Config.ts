@@ -20,6 +20,6 @@ export class Config {
 
         this.siteName = configFile.siteName;
         this.themeColor = configFile.themeColor;
-        this.uri = configFile.mysql;
+        this.uri = configFile.uri;
     }
 }

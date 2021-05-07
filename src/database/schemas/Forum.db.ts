@@ -9,6 +9,8 @@
  */
 
 import {Document, model, Model, Schema} from "mongoose";
+import {NIL, v4} from "uuid";
+import {CategoryModel, existsCategory} from "./Category.db";
 
 const ForumSchema: Schema = new Schema({
     uuid: {
@@ -52,3 +54,23 @@ export interface IForumDocument extends IForum, Document{}
 export interface IForumModel extends Model<IForumDocument>{}
 
 export const ForumModel: Model<IForumDocument> = model<IForumDocument>('Forum', ForumSchema);
+
+export async function createForum(category: string, title: string, description: string = '', hidden: boolean = false, permissions: number = 0): Promise<void> {
+    const uuid: string = v4();
+    if (await ForumModel.findOne({ uuid: uuid }).exec() !== null) await this.createForum(category, title, description, hidden, permissions);
+
+    if (!await existsCategory(category)) category = NIL;
+
+    await ForumModel.create({
+        uuid: uuid,
+        category: category,
+        title: title,
+        description: description,
+        hidden: hidden,
+        permissions: permissions
+    });
+}
+
+export async function existsForum(uuid: string): Promise<boolean> {
+    return await ForumModel.exists({ uuid: uuid })
+}

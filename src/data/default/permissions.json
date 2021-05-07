@@ -1,0 +1,10 @@
+[
+  {
+    "permission": "AVATAR",
+    "description": "Allow the user to change their avatar picture",
+    "group": "avatar"
+  },
+  {
+
+  }
+]

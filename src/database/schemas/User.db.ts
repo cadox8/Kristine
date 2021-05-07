@@ -34,6 +34,14 @@ const UserSchema: Schema = new Schema({
     icon: {
         type: String,
         default: ''
+    },
+    ranks: {
+        type: Array,
+        required: true
+    },
+    permissions: {
+        type: Number,
+        default: 0
     }
 });
 
@@ -46,6 +54,8 @@ export interface IUser {
     email: string
     hash: string
     icon: string
+    ranks: string[]
+    permissions: number
 }
 
 export interface IUserDocument extends IUser, Document{}

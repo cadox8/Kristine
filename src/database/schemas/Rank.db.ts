@@ -23,9 +23,12 @@ const RankSchema: Schema = new Schema({
         type: Number,
         default: 0
     },
-    color: {
+    displayName: {
         type: String,
-        default: 'ffffff'
+    },
+    css: {
+        type: String,
+        default: ''
     },
     permissions: {
         type: Number,
@@ -39,6 +42,8 @@ export interface IRank {
     uuid: string
     name: string
     order: number
+    displayName: string
+    css: string
     permissions: number
 }
 
