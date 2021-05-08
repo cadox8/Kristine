@@ -8,10 +8,24 @@
  */
 
 import {Router} from "express";
+import {Config} from "../../forum/Config";
 
 const router: Router = Router();
 
 router.get('/', (req, res, next) => {
+    res.render('install/install', { title: Config.SITE_NAME()})
+});
+
+router.post('/', (req, res, next) => {
+
+});
+
+
+router.get('/config', (req, res, next) => {
+
+});
+
+router.post('/config', (req, res, next) => {
 
 });
 

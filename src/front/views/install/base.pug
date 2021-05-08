@@ -1,0 +1,67 @@
+doctype html
+html(lang='en')
+    head
+
+        // Meta tags
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='theme-color' content='#' + THEME_COLOR)
+
+        // SEO tags
+
+        // CSS & JS Files
+        link(rel='stylesheet' href='/css/kristine.css')
+        script(src='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js' integrity='sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==' crossorigin='anonymous')
+
+        title #{ title }
+
+    body
+        section.section
+            .container.is-max-desktop
+                h1.title.has-text-centered Kristine - Setup
+
+                if err
+                    .notification.is-danger!= err
+
+                block form
+
+        footer.footer
+            .content.has-text-centered
+                p
+                    strong Kristine Setup.
+                    |  Read&nbsp;
+                    a(href='https://kristine.cadox8.es' target='_blank') documentation
+                    |  for help. Made with&nbsp;
+                    a(href='https://bulma.io' target='_blank') Bulma
+                    | .
+
+        script(type='text/javascript').
+            function togglePassword() {
+                const input = document.getElementById('password');
+                const button = document.getElementById('pass');
+
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    button.classList.remove('fa-eye');
+                    button.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    button.classList.remove('fa-eye-slash');
+                    button.classList.add('fa-eye');
+                }
+            }
+            function togglePasswordUser() {
+                const input = document.getElementById('password_user');
+                const button = document.getElementById('pass_user');
+
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    button.classList.remove('fa-eye');
+                    button.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    button.classList.remove('fa-eye-slash');
+                    button.classList.add('fa-eye');
+                }
+            }

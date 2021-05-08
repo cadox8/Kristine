@@ -1,0 +1,63 @@
+extends base
+
+block form
+    .box.has-text-centered
+        form(method='post' action='')
+            .field
+                label.label MongoDB Settings
+            .field.has-addons
+                .control
+                    a.button.is-static Hostname
+                .control.is-expanded
+                    input.input(type='text' placeholder='127.0.0.1' required)
+            .field.has-addons
+                .control
+                    a.button.is-static Port
+                .control.is-expanded
+                    input.input(type='text' placeholder='27017' required)
+            .field.has-addons
+                .control
+                    a.button.is-static Database
+                .control.is-expanded
+                    input.input(type='text' placeholder='kristine' required)
+            .field.has-addons
+                .control
+                    a.button.is-static Username
+                .control.is-expanded
+                    input.input(type='text' placeholder='kristine' required)
+            .field.has-addons
+                .control
+                    a.button.is-static Password
+                .control.is-expanded
+                    input.input#password(type='password' placeholder='*********' required)
+                .control
+                    a.button.is-link.is-light(onclick='togglePassword()')
+                        span.icon.is-small
+                            i.far.fa-eye#pass
+            br
+            br
+            .field
+                label.label Administrator User
+            .field.has-addons
+                .control
+                    a.button.is-static Username
+                .control.is-expanded
+                    input.input(type='text' placeholder='kristine' required)
+            .field.has-addons
+                .control
+                    a.button.is-static Email
+                .control.is-expanded
+                    input.input(type='email' placeholder='kristine@kristine.com' required)
+            .field.has-addons
+                .control
+                    a.button.is-static Password
+                .control.is-expanded
+                    input.input#password_user(type='password' placeholder='*********' required)
+                .control
+                    a.button.is-link.is-light(onclick='togglePasswordUser()')
+                        span.icon.is-small
+                            i.far.fa-eye#pass_user
+
+            .field
+                .control
+                    button.button.is-link Setup

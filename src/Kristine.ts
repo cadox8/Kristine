@@ -18,6 +18,7 @@ import {Log} from "./utils/Log";
 import {Forum} from "./forum/Forum";
 import {installMiddleware} from "./middlewares/InstallMiddleware";
 import MongoStore from "connect-mongo";
+import compression from "compression";
 
 export class Kristine {
 
@@ -37,17 +38,20 @@ export class Kristine {
 
 
         // App load
-        this.app.set('views', path.join(__dirname, '../src/front/views'));
+        this.app.set('views', path.join(__dirname, 'front/views'));
         this.app.set('view engine', 'pug');
         this.app.set('view options', { pretty: true });
+        this.app.enable('view cache');
         this.app.locals.pretty = true;
+        this.app.locals.compileDebug = false;
 
+        this.app.use(compression())
         this.app.use(express.json());
         this.app.use(urlencoded({ extended: true }));
 
         this.app.use(installMiddleware); // Check installation
 
-        this.app.use('/', express.static(path.join(__dirname, '../src/front/public'), { maxAge: 86400000, immutable: true, dotfiles: 'allow' } ));
+        this.app.use('/', express.static(path.join(__dirname, 'front/public'), { maxAge: 86400000, immutable: true, dotfiles: 'allow' } ));
 
         this.app.use(session({
             cookie: {
@@ -78,7 +82,7 @@ export class Kristine {
         });
 
         this.server = createServer(this.app).listen(this.defaults.port);
-        this.server.on('listening', () => Log.debug('Server started on port ' + this.defaults.port));
+        this.server.on('listening', () => Log.debug('Server started on http://localhost:' + this.defaults.port));
         this.server.on('error', err => Log.error(`${err.name}\n${err.message}\n${err.stack}`));
 
         // Routes

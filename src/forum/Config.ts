@@ -10,11 +10,12 @@
 
 import {writeFile} from "fs";
 import {Log} from "../utils/Log";
+import {Forum} from "./Forum";
 
 export class Config {
 
     public siteName: string;
-    public themeColor: number;
+    public themeColor: string;
 
     public readonly uri: string;
 
@@ -44,5 +45,14 @@ export class Config {
 
     public loadConfig(): Config {
         return new Config();
+    }
+
+    // Lets make this static just to load in .pug
+    public static SITE_NAME(): String {
+        return Forum.instance.config.siteName;
+    }
+
+    public static THEME_COLOR(): String {
+        return Forum.instance.config.themeColor;
     }
 }
