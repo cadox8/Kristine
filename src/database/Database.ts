@@ -14,19 +14,22 @@ import {Config} from "../forum/Config";
 
 export class Database {
 
-    constructor(config: Config) {
-        connect(config.uri, {
+    public readonly uri: string;
+
+    constructor(mongodb: { host: string, port: string, database: string, user: string, password: string }) {
+        this.uri = `mongodb://${mongodb.user}:${encodeURI(mongodb.password)}@${mongodb.host}:${mongodb.port}/${mongodb.database}`;
+        connect(this.uri, {
             useNewUrlParser: true,
             useFindAndModify: true,
             useUnifiedTopology: true,
             useCreateIndex: true,
             poolSize: 10,
-            connectTimeoutMS: 90000
+            connectTimeoutMS: 3000
         }).then(() => {
             Log.info('Connected to Database');
         }).catch(err => {
             Log.error('Error connecting to Database');
-            Log.error(err);
+            Log.error(err.message);
         });
     }
 

@@ -9,6 +9,7 @@
  */
 
 import {Document, model, Model, Schema} from "mongoose";
+import {v4} from "uuid";
 
 const UserSchema: Schema = new Schema({
     uuid: {
@@ -33,28 +34,23 @@ const UserSchema: Schema = new Schema({
     },
     icon: {
         type: String,
-        default: '',
-        required: true
+        default: ''
     },
     ranks: {
         type: [String],
-        default: [ "6c47526c-4a38-4789-afb0-e149bc8cb6bc" ],
-        required: true,
+        default: [ "6c47526c-4a38-4789-afb0-e149bc8cb6bc" ]
     },
     permissions: {
         type: [String],
-        default: [],
-        required: true
+        default: []
     },
     administrator: {
         type: Boolean,
-        default: false,
-        required: true
+        default: false
     },
     ban: {
         type: Boolean,
-        default: false,
-        required: true
+        default: false
     }
 });
 
@@ -77,3 +73,15 @@ export interface IUserDocument extends IUser, Document{}
 export interface IUserModel extends Model<IUserDocument>{}
 
 export const UserModel: Model<IUserDocument> = model<IUserDocument>('User', UserSchema);
+
+export async function createUser(username: string, email: string, hash: string, name?: string, administrator?: boolean): Promise<boolean> {
+    return new Promise(async created => {
+        if (await existsUser(username, email)) created(false);
+        UserModel.create({ uuid: v4(), username: username, email: email, hash: hash, name: name || username, administrator: administrator || false });
+        created(true);
+    })
+}
+
+export async function existsUser(username: string, email: string): Promise<boolean> {
+    return UserModel.exists({ $or: [{ username: username }, { email: email }] });
+}

@@ -17,13 +17,11 @@ const PermissionSchema: Schema = new Schema({
     },
     description: {
         type: String,
-        default: '',
-        required: true
+        default: ''
     },
     group: {
         type: String,
-        default: '',
-        required: true
+        default: ''
     },
     generator: {
         type: String,

@@ -28,18 +28,15 @@ const RankSchema: Schema = new Schema({
     },
     css: {
         type: String,
-        default: 'span.tag',
-        required: true
+        default: 'span.tag'
     },
     block: {
         type: Boolean,
-        default: true,
-        required: true
+        default: true
     },
     permissions: {
         type: [String],
-        default: [],
-        required: true
+        default: []
     },
     parent: {
         type: String,

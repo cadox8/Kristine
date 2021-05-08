@@ -19,8 +19,7 @@ const ForumSchema: Schema = new Schema({
     },
     category: {
         type: String,
-        default: '',
-        required: true
+        default: ''
     },
     title: {
         type: String,
@@ -28,18 +27,15 @@ const ForumSchema: Schema = new Schema({
     },
     description: {
         type: String,
-        default: '',
-        required: true
+        default: ''
     },
     hidden: {
         type: Boolean,
-        default: false,
-        required: true
+        default: false
     },
     permissions: {
         type: [String],
-        default: [],
-        required: true
+        default: []
     }
 });
 

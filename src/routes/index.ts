@@ -14,6 +14,7 @@ import {Forum} from "../forum/Forum";
 const router: Router = Router();
 
 router.get('/', (req, res, next) => {
+    res.render('base')
 });
 
 export = router;

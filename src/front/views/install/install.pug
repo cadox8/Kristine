@@ -9,27 +9,27 @@ block form
                 .control
                     a.button.is-static Hostname
                 .control.is-expanded
-                    input.input(type='text' placeholder='127.0.0.1' required)
+                    input.input(type='text' placeholder='127.0.0.1' name='hostname' required)
             .field.has-addons
                 .control
                     a.button.is-static Port
                 .control.is-expanded
-                    input.input(type='text' placeholder='27017' required)
+                    input.input(type='text' placeholder='27017' name='port' value='27017' required)
             .field.has-addons
                 .control
                     a.button.is-static Database
                 .control.is-expanded
-                    input.input(type='text' placeholder='kristine' required)
+                    input.input(type='text' placeholder='kristine' name='database' required)
             .field.has-addons
                 .control
                     a.button.is-static Username
                 .control.is-expanded
-                    input.input(type='text' placeholder='kristine' required)
+                    input.input(type='text' placeholder='kristine' name='db_user' required)
             .field.has-addons
                 .control
                     a.button.is-static Password
                 .control.is-expanded
-                    input.input#password(type='password' placeholder='*********' required)
+                    input.input#password(type='password' placeholder='*********' name='db_password' required)
                 .control
                     a.button.is-link.is-light(onclick='togglePassword()')
                         span.icon.is-small
@@ -42,17 +42,17 @@ block form
                 .control
                     a.button.is-static Username
                 .control.is-expanded
-                    input.input(type='text' placeholder='kristine' required)
+                    input.input(type='text' placeholder='kristine' name='username' required)
             .field.has-addons
                 .control
                     a.button.is-static Email
                 .control.is-expanded
-                    input.input(type='email' placeholder='kristine@kristine.com' required)
+                    input.input(type='email' placeholder='kristine@kristine.com' name='email' required)
             .field.has-addons
                 .control
                     a.button.is-static Password
                 .control.is-expanded
-                    input.input#password_user(type='password' placeholder='*********' required)
+                    input.input#password_user(type='password' placeholder='*********' name='user_password' required)
                 .control
                     a.button.is-link.is-light(onclick='togglePasswordUser()')
                         span.icon.is-small
@@ -60,4 +60,12 @@ block form
 
             .field
                 .control
-                    button.button.is-link Setup
+                    button.button.is-link(onclick='send()') Setup
+
+    .pageloader(style='display: none')
+        span.title Conectando con la base de datos...
+
+    script(type='text/javascript').
+        function send() {
+            document.getElementsByClassName('pageloader')[0].style.display = 'block';
+        }

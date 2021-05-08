@@ -16,7 +16,6 @@ import {urlencoded} from "body-parser";
 import session from "express-session";
 import {Log} from "./utils/Log";
 import {Forum} from "./forum/Forum";
-import {installMiddleware} from "./middlewares/InstallMiddleware";
 import MongoStore from "connect-mongo";
 import compression from "compression";
 
@@ -32,10 +31,8 @@ export class Kristine {
     constructor() {
         this.app = express();
 
-
         // Forum load
-        this.forum = new Forum();
-
+        if (require('./config/defaults.json').install) this.forum = new Forum();
 
         // App load
         this.app.set('views', path.join(__dirname, 'front/views'));
@@ -49,37 +46,55 @@ export class Kristine {
         this.app.use(express.json());
         this.app.use(urlencoded({ extended: true }));
 
-        this.app.use(installMiddleware); // Check installation
-
         this.app.use('/', express.static(path.join(__dirname, 'front/public'), { maxAge: 86400000, immutable: true, dotfiles: 'allow' } ));
 
-        this.app.use(session({
-            cookie: {
-                path: '/',
-                maxAge: 1000 * 60 * 60 * 24 * 30,
-                //secure: true
-            },
-            store: MongoStore.create({
-                mongoUrl: this.forum.config.uri,
-                collectionName: 'sessions',
-                touchAfter: 24 * 3600,
-                mongoOptions: {
-                    useUnifiedTopology: true
+        if (require('./config/defaults.json').install) {
+            this.app.use(session({
+                cookie: {
+                    path: '/',
+                    maxAge: 1000 * 60 * 60 * 24 * 30,
+                    //secure: true
                 },
-                crypto: {
-                    secret: 'ideology-rebellion-ghost'
-                }
-            }),
-            secret: 'thick-performer-node',
-            name: 'Kristine',
-            resave: false,
-            saveUninitialized: false,
-        }));
+                store: MongoStore.create({
+                    mongoUrl: this.forum.database.uri,
+                    collectionName: 'sessions',
+                    touchAfter: 24 * 3600,
+                    mongoOptions: {
+                        useUnifiedTopology: true
+                    },
+                    crypto: {
+                        secret: 'ideology-rebellion-ghost'
+                    }
+                }),
+                secret: 'thick-performer-node',
+                name: 'Kristine',
+                resave: false,
+                saveUninitialized: false,
+            }));
+        }
 
         this.app.use((req, res, next) => {
             res.locals.session = req.session;
             next();
         });
+
+        // Middlewares
+        this.app.use(((req, res, next) => {
+            const path: boolean = req.path.includes('install');
+            if (require('./config/defaults.json').install) {
+                if (path) {
+                    res.redirect('/')
+                } else {
+                    next()
+                }
+            } else {
+                if (!path) {
+                    res.render('install', { title: 'Kristine' })
+                } else {
+                    next()
+                }
+            }
+        }))
 
         this.server = createServer(this.app).listen(this.defaults.port);
         this.server.on('listening', () => Log.debug('Server started on http://localhost:' + this.defaults.port));

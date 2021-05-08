@@ -20,7 +20,7 @@ export class Forum {
 
     constructor() {
         Forum.instance = this;
-        this.config = new Config();
-        this.database = new Database(this.config);
+        this.config = new Config(require('../config/config.json'));
+        this.database = new Database(this.config.mongodb);
     }
 }

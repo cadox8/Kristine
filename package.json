@@ -1,6 +1,6 @@
 {
   "name": "kristine",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "src/Kristine.ts",
   "private": true,
   "description": "Kristine is a simple discussion forum you can easily customize to make as unique as your community",
@@ -34,7 +34,7 @@
       "views",
       "public"
     ],
-    "ext": "ts,js",
+    "ext": "ts, js, pug",
     "delay": 2,
     "execMap": {
       "ts": "ts-node"

@@ -17,24 +17,31 @@ export class Config {
     public siteName: string;
     public themeColor: string;
 
-    public readonly uri: string;
+    public readonly mongodb: {
+        host: string,
+        port: string,
+        database: string,
+        user: string,
+        password: string
+    }
 
     public maintenance: {
         message: string
     }
 
-    constructor() {
-        const configFile: any = require('../config/config.json');
-
+    constructor(configFile: any) {
         this.siteName = configFile.siteName;
         this.themeColor = configFile.themeColor;
-        this.uri = configFile.uri;
+        this.mongodb = configFile.mongodb;
 
         this.maintenance = configFile.maintenance
     }
 
-    public saveConfig(): void {
-        writeFile('../config/config.json', JSON.stringify(this), 'utf8', err => {
+    public saveThisConfig(): void {
+        this.saveConfig(this);
+    }
+    public saveConfig(config: Config): void {
+        writeFile('../config/config.json', JSON.stringify(config), 'utf8', err => {
            if (err) {
                Log.error('Config file could not be saved!')
                return
@@ -44,7 +51,7 @@ export class Config {
     }
 
     public loadConfig(): Config {
-        return new Config();
+        return new Config(require('../config/config.json'));
     }
 
     // Lets make this static just to load in .pug

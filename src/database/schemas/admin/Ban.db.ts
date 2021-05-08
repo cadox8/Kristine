@@ -20,8 +20,7 @@ const BanSchema: Schema = new Schema({
     },
     reason: {
         type: String,
-        default: 'No reason',
-        required: true
+        default: 'No reason'
     },
     bannedAt: {
         type: Number,
@@ -30,7 +29,6 @@ const BanSchema: Schema = new Schema({
     until: {
         type: Number,
         default: -1, // -1 Means forever
-        required: true
     },
     by: {
         type: String,

@@ -1,7 +1,13 @@
 {
   "siteName": "Kristine",
   "themeColor": "B21EC9",
-  "uri": "mongodb://user:password@localhost:27017/kristine&retryWrites=true&w=majority",
+  "mongodb": {
+    "host": "localhost",
+    "port": "27017",
+    "database": "kristine",
+    "user": "user",
+    "password": "password"
+  },
   "maintenance": {
     "message": "This forum is under maintenance"
   }
