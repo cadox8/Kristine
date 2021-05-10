@@ -10,7 +10,7 @@
 
 import {Document, model, Model, Schema} from "mongoose";
 import {NIL, v4} from "uuid";
-import {CategoryModel, existsCategory} from "./Category.db";
+import {existsCategory} from "./Category.db";
 
 const ForumSchema: Schema = new Schema({
     uuid: {
@@ -33,6 +33,10 @@ const ForumSchema: Schema = new Schema({
         type: Boolean,
         default: false
     },
+    icon: {
+        type: String,
+        default: 'cat'
+    },
     permissions: {
         type: [String],
         default: []
@@ -54,6 +58,12 @@ export interface IForumDocument extends IForum, Document{}
 export interface IForumModel extends Model<IForumDocument>{}
 
 export const ForumModel: Model<IForumDocument> = model<IForumDocument>('Forum', ForumSchema);
+
+export async function getAllForums(): Promise<IForumDocument[]> {
+    return new Promise(forums => {
+        forums(ForumModel.find({}));
+    })
+}
 
 export async function createForum(category: string, title: string, description: string = '', hidden: boolean = false, permissions: number = 0): Promise<void> {
     const uuid: string = v4();

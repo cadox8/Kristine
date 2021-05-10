@@ -49,6 +49,12 @@ export interface ICategoryModel extends Model<ICategoryDocument>{}
 
 export const CategoryModel: Model<ICategoryDocument> = model<ICategoryDocument>('Category', CategorySchema);
 
+export async function getAllCategories(): Promise<ICategoryDocument[]> {
+    return new Promise(categories => {
+        categories(CategoryModel.find({}));
+    })
+}
+
 export async function createCategory(title: string, description: string = '', hidden: boolean = false, permissions: number = 0): Promise<void> {
     const uuid: string = v4();
 

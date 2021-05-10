@@ -9,12 +9,17 @@
  */
 
 import {Router} from "express";
-import {Forum} from "../forum/Forum";
+import {getAllCategories} from "../database/schemas/forum/Category.db";
+import {getAllForums} from "../database/schemas/forum/Forum.db";
 
 const router: Router = Router();
 
 router.get('/', (req, res, next) => {
-    res.render('base')
+    getAllCategories().then(categories => {
+        getAllForums().then(forums => {
+            res.render('base', { defaults: new Defaults(), cats: categories, forums: forums });
+        })
+    })
 });
 
 export = router;

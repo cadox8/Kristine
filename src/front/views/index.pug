@@ -7,6 +7,20 @@ block body
             .container.is-fluid
                 .columns
                     .column.is-9
+                        for cat in cats
+                            level.level
+                                .level-item
+                                    a.title(id=cat.uuid)(href='#' + cat.uuid) #{ cat.title }
 
+                            for forum in forums
+                                article.media
+                                    figure.media-left
+                                        p.image.is-64x64
+                                            img(src='/img/' + forum.icon id=forum.title)
+                                    .media-content
+                                        .content
+                                            p
+                                                strong #{forum.title}
+                                                |  #{forum.description}
 
                     .column.is-hidden-mobile
