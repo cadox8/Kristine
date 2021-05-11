@@ -6,8 +6,8 @@ html(lang='en')
         meta(charset='UTF-8')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         meta(http-equiv='X-UA-Compatible' content='IE=edge')
-        meta(name='theme-color' content='#' + theme)
-        meta(name='msapplication-TileColor' content='#' + theme)
+        meta(name='theme-color' content='#' + defaults.theme)
+        meta(name='msapplication-TileColor' content='#' + defaults.theme)
 
         // Favicon
         link(rel='apple-touch-icon' sizes='57x57' href='/img/favicon/apple-icon-57x57.png')
@@ -32,6 +32,6 @@ html(lang='en')
         link(rel='stylesheet' href='/css/kristine.css')
         script(src='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js' integrity='sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==' crossorigin='anonymous')
 
-        title #{ title }
+        title #{ defaults.siteName }
 
     block body

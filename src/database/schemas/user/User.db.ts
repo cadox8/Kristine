@@ -51,6 +51,10 @@ const UserSchema: Schema = new Schema({
     ban: {
         type: Boolean,
         default: false
+    },
+    lang: {
+        type: String,
+        default: 'en-GB'
     }
 });
 
@@ -67,6 +71,7 @@ export interface IUser {
     permissions: string[]
     administrator: boolean
     ban: boolean
+    lang: string
 }
 
 export interface IUserDocument extends IUser, Document{}

@@ -1,1 +1,13 @@
-nav.navbar
+nav.navbar.is-light(role='navigation' aria-label='main navigation')
+    .navbar-brand
+        a.navbar-item.has-text-weight-bold.is-uppercase(href='/') #{ defaults.siteName }
+        .navbar-burger(data-target='navbar')
+            span
+            span
+            span
+    .navbar-menu(id='navbar')
+        .navbar-start
+            a.navbar-item(href='/') Home
+
+        .navbar-end
+            a.navbar-item(href='#') Profile

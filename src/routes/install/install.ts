@@ -14,11 +14,12 @@ import {writeFile} from "fs";
 import {Log} from "../../utils/Log";
 import {Database} from "../../database/Database";
 import {createUser} from "../../database/schemas/user/User.db";
+import {Defaults} from "../../utils/Defaults";
 
 const router: Router = Router();
 
 router.get('/', (req, res, next) => {
-    res.render('install/install', { title: 'Kristine' });
+    res.render('install/install', { defaults: new Defaults() })
 });
 
 router.post('/', (req, res, next) => {
@@ -47,7 +48,7 @@ router.post('/', (req, res, next) => {
     writeFile('./src/config/config.json', JSON.stringify(defaultConfigFile, null, 2), err => {
         if (err) {
             Log.error(err);
-            res.render('install/install', { title: 'Kristine', err: 'The configuration file could not be saved. Please check that the folder has the correct permissions (666).' })
+            res.render('install/install', { defaults: new Defaults(), err: 'The configuration file could not be saved. Please check that the folder has the correct permissions (666).' })
             return;
         }
         Log.info('Configuration file saved!');
@@ -58,7 +59,7 @@ router.post('/', (req, res, next) => {
         }, null, 2), err => {
             if (err) {
                 Log.error(err);
-                res.render('install/install', { title: 'Kristine', err: 'The defaults file could not be saved. Please check that the folder has the correct permissions (666).' })
+                res.render('install/install', { defaults: new Defaults(), err: 'The defaults file could not be saved. Please check that the folder has the correct permissions (666).' })
                 return;
             }
             Log.info('Defaults file saved!');
@@ -68,12 +69,12 @@ router.post('/', (req, res, next) => {
         setTimeout(() => {
             createUser(username, email, user_password, username, true).then(created => {
                 if (created) {
-                    res.render('install/success', { title: 'Kristine' });
+                    res.render('install/success', { defaults: new Defaults() })
                     setTimeout(() => {
                         process.exit(0);
                     }, 1000)
                 } else {
-                    res.render('install/install', { title: 'Kristine', err: 'Could not connect with MongoDB. Please, check all fields and try again' })
+                    res.render('install/install', { defaults: new Defaults(), err: 'Could not connect with MongoDB. Please, check all fields and try again' })
                 }
             });
         }, 1000);

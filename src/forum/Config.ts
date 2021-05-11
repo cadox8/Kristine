@@ -55,11 +55,11 @@ export class Config {
     }
 
     // Lets make this static just to load in .pug
-    public static SITE_NAME(): String {
+    public static SITE_NAME(): string {
         return Forum.instance.config.siteName;
     }
 
-    public static THEME_COLOR(): String {
+    public static THEME_COLOR(): string {
         return Forum.instance.config.themeColor;
     }
 }

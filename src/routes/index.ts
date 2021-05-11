@@ -11,6 +11,7 @@
 import {Router} from "express";
 import {getAllCategories} from "../database/schemas/forum/Category.db";
 import {getAllForums} from "../database/schemas/forum/Forum.db";
+import {Defaults} from "../utils/Defaults";
 
 const router: Router = Router();
 
@@ -19,7 +20,7 @@ router.get('/', (req, res, next) => {
         getAllForums().then(forums => {
             res.render('base', { defaults: new Defaults(), cats: categories, forums: forums });
         })
-    })
+    });
 });
 
 export = router;
